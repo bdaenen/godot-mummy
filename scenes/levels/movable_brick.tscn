@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s4kn4gpivjwh"]
+
+[ext_resource type="Texture2D" uid="uid://c7p1hdfssgrpv" path="res://graphics/objects/wall.png" id="1_nyqu7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7goc7"]
+size = Vector2(32, 32)
+
+[node name="MovableBrick" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nyqu7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7goc7")

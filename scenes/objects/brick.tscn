@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bptqxky1x4373"]
+
+[ext_resource type="Texture2D" uid="uid://b7kqnwclvb7pb" path="res://graphics/objects/wall_hard.png" id="1_5yeay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
+size = Vector2(32, 31)
+
+[node name="Brick" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5yeay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_cixri")
