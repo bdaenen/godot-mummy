@@ -10,6 +10,7 @@ var world_x: int = 2
 var world_y: int = 0
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
 var player_spawn_position: Vector2 = Vector2(-304, -144)
+var player_spawn_velocity: Vector2 = Vector2.ZERO
 
 func load_next_level() -> void:
 	var path: String = scene_template_string.format({"x": world_x, "y": world_y})

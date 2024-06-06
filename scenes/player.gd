@@ -1,12 +1,22 @@
 extends CharacterBody2D
 
+signal shoot_tk_projectile(angle: Vector2)
+signal shoot_link_projectile(angle: Vector2)
 
 const SPEED = 230.0
 const JUMP_VELOCITY = -650.0
 
+var skills: Dictionary = {
+	"can_shoot": true,
+	"can_link": false,
+	"can_sprint": false
+}
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready() -> void:
+	%Player.velocity = Globals.player_spawn_velocity
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -26,3 +36,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Shoot"):
+		shoot_tk_projectile.emit(global_position.direction_to(get_viewport().get_mouse_position()))

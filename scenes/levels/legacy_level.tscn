@@ -20,3 +20,5 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="Player" parent="Camera2D" instance=ExtResource("3_2mpkc")]
 unique_name_in_owner = true
+
+[connection signal="shoot_tk_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_tk_projectile"]

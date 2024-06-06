@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnn0ty3ycej63"]
+
+[ext_resource type="Script" path="res://scenes/projectiles/telekinesis.gd" id="1_1po4d"]
+[ext_resource type="Texture2D" uid="uid://1qgk2rqyu6pw" path="res://graphics/abilities/push.png" id="1_mceth"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5m04"]
+radius = 8.06226
+
+[node name="Telekinesis" type="Area2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_1po4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i5m04")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mceth")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
