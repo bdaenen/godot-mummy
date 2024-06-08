@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4kn4gpivjwh"]
+[gd_scene load_steps=5 format=3 uid="uid://s4kn4gpivjwh"]
 
 [ext_resource type="Texture2D" uid="uid://c7p1hdfssgrpv" path="res://graphics/objects/wall.png" id="1_5pbda"]
+[ext_resource type="Script" path="res://scenes/objects/movable_brick.gd" id="1_aqaw8"]
+[ext_resource type="Material" uid="uid://b4rm2uy33uxdh" path="res://scenes/objects/green-border.tres" id="1_c4rev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7goc7"]
 size = Vector2(32, 32)
@@ -10,8 +12,11 @@ collision_layer = 4
 collision_mask = 3
 gravity_scale = 0.0
 lock_rotation = true
+linear_damp = 5.0
+script = ExtResource("1_aqaw8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_c4rev")
 texture = ExtResource("1_5pbda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

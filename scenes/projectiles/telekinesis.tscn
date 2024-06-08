@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1qgk2rqyu6pw" path="res://graphics/abilities/push.png" id="1_mceth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i5m04"]
-radius = 8.06226
+radius = 8.0
 
 [node name="Telekinesis" type="Area2D"]
 collision_layer = 2
@@ -17,4 +17,9 @@ shape = SubResource("CircleShape2D_i5m04")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_mceth")
 
+[node name="DespawnTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

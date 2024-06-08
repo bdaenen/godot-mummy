@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crsxndxw8txua"]
+
+[ext_resource type="Script" path="res://autoload/Linker.gd" id="1_nvs0k"]
+
+[node name="Linker" type="Node2D"]
+script = ExtResource("1_nvs0k")

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://buyk5h1c2xy84"]
+[gd_scene load_steps=3 format=3 uid="uid://bhb0e3utg87nl"]
 
-[ext_resource type="PackedScene" uid="uid://c21tu2mtlrusm" path="res://scenes/levels/legacy_level.tscn" id="1_jqiay"]
+[ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_jqiay"]
 [ext_resource type="Script" path="res://scenes/levels/level_3_1.gd" id="2_13dtc"]
 
 [node name="Level_3_1" instance=ExtResource("1_jqiay")]

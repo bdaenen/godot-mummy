@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bto3cpwnr5wfe"]
+[gd_scene load_steps=3 format=3 uid="uid://5q2de2e2qd4c"]
 
-[ext_resource type="PackedScene" uid="uid://c21tu2mtlrusm" path="res://scenes/levels/legacy_level.tscn" id="1_qk46l"]
-[ext_resource type="Script" path="res://scenes/levels/level_0_0.gd" id="2_eo2qt"]
+[ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_5q4a2"]
+[ext_resource type="Script" path="res://scenes/levels/level_0_0.gd" id="2_fxo87"]
 
-[node name="Level_0_0" instance=ExtResource("1_qk46l")]
-script = ExtResource("2_eo2qt")
+[node name="Level_0_0" instance=ExtResource("1_5q4a2")]
+script = ExtResource("2_fxo87")

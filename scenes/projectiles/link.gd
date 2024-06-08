@@ -10,11 +10,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	global_position += angle * SPEED * delta
 
+
 func _on_body_entered(body: Node2D) -> void:
-	if ("is_movable" in body):
-		body.linear_velocity = angle * SPEED
-	queue_free()
-
-
-func _on_despawn_timer_timeout() -> void:
+	if is_instance_of(body, RigidBody2D):
+		Linker.add_body(body)
 	queue_free()

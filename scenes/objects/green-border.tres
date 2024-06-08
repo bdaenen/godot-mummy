@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b4rm2uy33uxdh"]
+
+[ext_resource type="Shader" path="res://scenes/objects/brick.gdshader" id="1_7fsfb"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_7fsfb")
+shader_parameter/onoff = 0.0

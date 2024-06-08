@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -650.0
 
 var skills: Dictionary = {
 	"can_shoot": true,
-	"can_link": false,
+	"can_link": true,
 	"can_sprint": false
 }
 
@@ -34,9 +34,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		
 	move_and_slide()
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("Shoot"):
-		shoot_tk_projectile.emit(global_position.direction_to(get_viewport().get_mouse_position()))
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("Left"):
+		$Sprite2D.scale.x = -1
+	if Input.is_action_just_pressed("Right"):
+		$Sprite2D.scale.x = 1
+
+	if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
+		shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
+	if Input.is_action_just_pressed("Link") and skills.can_link:
+		shoot_link_projectile.emit(global_position.direction_to(get_global_mouse_position()))
