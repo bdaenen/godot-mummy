@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://autoload/Globals.gd"
-Linker="*res://autoload/Linker.gd"
 
 [debug]
 

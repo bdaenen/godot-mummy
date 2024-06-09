@@ -1,15 +1,25 @@
 extends Node2D
 
 var linked_bodies: Array[RigidBody2D] = []
+var link_line: Line2D
+signal body_linked(body: RigidBody2D)
+signal cleared_links()
 
 func add_body(body: RigidBody2D) -> void:
 	if !linked_bodies.has(body):
 		linked_bodies.append(body)
-		body.is_linked = true
+		if link_line:
+			link_line.add_point(body.global_position)
+		body_linked.emit(body)
 	print('Linker: linked ', linked_bodies.size() , ' bodies.')
 
 func clear_bodies() -> void:
+	var unlinked_bodies: Array[RigidBody2D] = linked_bodies.duplicate()
 	linked_bodies.clear()
+	cleared_links.emit(unlinked_bodies)
+
+func set_line2d(line: Line2D):
+	link_line = line
 
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:

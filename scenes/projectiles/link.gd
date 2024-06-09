@@ -1,5 +1,7 @@
 extends Area2D
+signal on_hit(body: Node2D)
 var angle: Vector2 = Vector2.ZERO
+var has_collided: bool = false
 const SPEED:int = 400
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +14,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if is_instance_of(body, RigidBody2D):
-		Linker.add_body(body)
+	if (!has_collided):
+		on_hit.emit(body)
+		has_collided = true;
 	queue_free()
