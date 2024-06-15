@@ -3,10 +3,12 @@ class_name GodotLevel
 
 var telekinesis_projectile: PackedScene = preload("res://scenes/projectiles/telekinesis.tscn")
 var link_projectile: PackedScene = preload("res://scenes/projectiles/link.tscn")
+var tutorial_dismiss_action: String = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	%Player.position = Globals.player_spawn_position
+	$Linker.clear_bodies()
 	$Linker.set_line2d($LinkLine)
 
 func _process(_delta: float) -> void:
@@ -31,7 +33,11 @@ func _process(_delta: float) -> void:
 		Globals.player_spawn_position = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
 		Globals.player_spawn_velocity = %Player.velocity
 		Globals.load_next_level()
-	pass
+	
+	if tutorial_dismiss_action.length() and Input.is_action_just_pressed(tutorial_dismiss_action):
+		$CanvasLayer/TutorialOverlay.fadeOut()
+		tutorial_dismiss_action = ''
+		
 
 func _on_player_shoot_tk_projectile(angle: Vector2) -> void:
 	var projectile: Area2D = telekinesis_projectile.instantiate() as Area2D
@@ -57,3 +63,10 @@ func _on_link_hit(body: RigidBody2D) -> void:
 func _on_linker_cleared_links(bodies: Array[RigidBody2D]) -> void:
 	for body in bodies:
 		body.is_linked = false
+
+
+func _on_player_gain_telekinesis() -> void:
+	var input_actions: Array = Globals.get_input_action_keynames('Shoot')
+	$CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
+	$CanvasLayer/TutorialOverlay.fadeIn(1)
+	tutorial_dismiss_action = 'Shoot'

@@ -2,15 +2,40 @@ extends CharacterBody2D
 
 signal shoot_tk_projectile(angle: Vector2)
 signal shoot_link_projectile(angle: Vector2)
+signal gain_telekinesis()
+signal gain_link()
+signal gain_sprint()
 
 const SPEED = 230.0
 const JUMP_VELOCITY = -650.0
 
 var skills: Dictionary = {
-	"can_shoot": true,
-	"can_link": true,
-	"can_sprint": false
-}
+	"can_shoot": Globals.player_skills.can_shoot,
+	"can_link": Globals.player_skills.can_link,
+	"can_sprint": Globals.player_skills.can_sprint
+}:
+	get:
+		return skills
+
+func set_can_shoot(can_shoot: bool) -> void:
+	if !skills.can_shoot and can_shoot:
+		gain_telekinesis.emit()
+	skills.can_shoot = can_shoot
+	Globals.player_skills.can_shoot = can_shoot
+	
+
+func set_can_link(can_link: bool) -> void:
+	if !skills.can_link and can_link:
+		gain_link.emit()
+	skills.can_link = can_link
+	Globals.player_skills.can_link = can_link
+
+func set_can_sprint(can_sprint: bool) -> void:
+	if !skills.can_sprint and can_sprint:
+		gain_sprint.emit()
+	skills.can_sprint = can_sprint
+	Globals.player_skills.can_sprint = can_sprint
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")

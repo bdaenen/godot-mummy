@@ -4,6 +4,7 @@ class_name LegacyLevel
 var brick_scene: PackedScene = preload("res://scenes/objects/brick.tscn")
 var movable_brick_scene: PackedScene = preload("res://scenes/objects/movable_brick.tscn")
 var locked_brick_scene: PackedScene = preload("res://scenes/objects/locked_brick.tscn")
+var powerup_telekinesis_scene: PackedScene = preload("res://scenes/objects/powerup_telekinesis.tscn")
 var level_width: int = Globals.LEVEL_WIDTH;
 var level_height: int = Globals.LEVEL_HEIGHT;
 var tile_size: int = Globals.TILE_SIZE;
@@ -13,7 +14,8 @@ var level_structure: Array[int] = []
 var intSceneMap: Dictionary = {
 	1: movable_brick_scene,
 	2: brick_scene,
-	5: locked_brick_scene
+	5: locked_brick_scene,
+	9: powerup_telekinesis_scene
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
