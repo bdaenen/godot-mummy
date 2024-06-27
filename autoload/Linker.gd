@@ -2,7 +2,6 @@ extends Node2D
 
 var linked_bodies: Array[RigidBody2D] = []
 var link_line: Line2D
-var shared_velocity_body: RigidBody2D
 
 signal body_linked(body: RigidBody2D)
 signal cleared_links()
@@ -23,11 +22,6 @@ func clear_bodies() -> void:
 func set_line2d(line: Line2D):
 	link_line = line
 
-func get_moving_block_velocity() -> Vector2:
-	if shared_velocity_body:
-		return shared_velocity_body.linear_velocity
-	return Vector2.ZERO
-
 ## Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#pass # Replace with function body.
@@ -35,6 +29,7 @@ func get_moving_block_velocity() -> Vector2:
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	var shared_velocity_body: RigidBody2D
 	# Loop over the linked_nodes here and sync their velocities.
 	if linked_bodies.size() == 0:
 		return
