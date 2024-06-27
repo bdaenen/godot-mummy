@@ -13,7 +13,7 @@ var player_spawn_position: Vector2 = Vector2(-304, -144)
 var player_spawn_velocity: Vector2 = Vector2.ZERO
 
 var player_skills: Dictionary = {
-	"can_shoot": false,
+	"can_shoot": true,
 	"can_link": true,
 	"can_sprint": false
 }
