@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends AnimatableBody2D
 var is_movable: bool = true
 var is_linked: bool = false:
 	set(value):
@@ -11,5 +11,4 @@ func update_shader_param(val) -> void:
 
 
 func _process(_delta) -> void:
-	if linear_velocity.abs().x + linear_velocity.abs().y < 0.2:
-		linear_velocity = Vector2.ZERO
+	pass

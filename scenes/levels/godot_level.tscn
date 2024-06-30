@@ -33,9 +33,10 @@ default_color = Color(0, 1, 0, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Player" parent="Camera2D" instance=ExtResource("3_odtnp")]
+[node name="Player" parent="Camera2D" node_paths=PackedStringArray("linker_ref") instance=ExtResource("3_odtnp")]
 unique_name_in_owner = true
 position = Vector2(-16, -48)
+linker_ref = NodePath("../../Linker")
 
 [node name="Linker" parent="." instance=ExtResource("4_bghdb")]
 

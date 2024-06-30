@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends AnimatableBody2D
 
 var is_linked: bool = false:
 	set(value):

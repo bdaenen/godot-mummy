@@ -6,9 +6,12 @@ signal gain_telekinesis()
 signal gain_link()
 signal gain_sprint()
 
+@export var linker_ref: Node2D = null
+
 const SPEED = 230.0
 const JUMP_VELOCITY = -650.0
 
+var riding_block: RigidBody2D = null;
 var skills: Dictionary = {
 	"can_shoot": Globals.player_skills.can_shoot,
 	"can_link": Globals.player_skills.can_link,
@@ -44,6 +47,10 @@ func _ready() -> void:
 	%Player.velocity = Globals.player_spawn_velocity
 
 func _physics_process(delta: float) -> void:
+	if riding_block:
+		velocity.x = riding_block.linear_velocity.x
+		velocity.y = riding_block.linear_velocity.y
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -60,16 +67,26 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	
 	move_and_slide()
+	#var slide_collision_count: int = get_slide_collision_count()
+	#if linker_ref and slide_collision_count > 0:
+		#for i in slide_collision_count:
+			#var collider = get_slide_collision(i).get_collider()
+			#if linker_ref.linked_bodies.has(collider) and collider.linear_velocity != Vector2.ZERO:
+				#riding_block = collider
+			#else:
+				#riding_block = null
+	#else:
+		#riding_block = null
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Left"):
+	if Input.is_action_pressed("Left"):
 		$Sprite2D.scale.x = -1
-	if Input.is_action_just_pressed("Right"):
+	if Input.is_action_pressed("Right"):
 		$Sprite2D.scale.x = 1
 
 	if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
 		shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
 	if Input.is_action_just_pressed("Link") and skills.can_link:
 		shoot_link_projectile.emit(global_position.direction_to(get_global_mouse_position()))
+

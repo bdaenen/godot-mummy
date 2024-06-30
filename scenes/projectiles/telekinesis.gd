@@ -12,7 +12,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if ("is_movable" in body):
-		body.linear_velocity = angle * SPEED
+		var tween: Tween = get_tree().create_tween()
+		tween.set_ease(Tween.EASE_OUT)
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.tween_property(body, "position", position + angle * 100, 1)
+		tween.play()
 	queue_free()
 
 

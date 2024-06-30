@@ -53,12 +53,12 @@ func _on_player_shoot_link_projectile(angle: Vector2) -> void:
 	projectile.connect("on_hit", self._on_link_hit)
 	add_child(projectile)
 
-func _on_link_hit(body: RigidBody2D) -> void:
+func _on_link_hit(body: AnimatableBody2D) -> void:
 	# This enables the shader for the green borders
 	body.is_linked = true
 	$Linker.add_body(body)
 
-func _on_linker_cleared_links(bodies: Array[RigidBody2D]) -> void:
+func _on_linker_cleared_links(bodies: Array[AnimatableBody2D]) -> void:
 	for body in bodies:
 		body.is_linked = false
 
