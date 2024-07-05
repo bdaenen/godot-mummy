@@ -286,16 +286,16 @@ position = Vector2(649, 1)
 position = Vector2(649, 33)
 
 [node name="Brick100" parent="Walls" index="52" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 161)
+position = Vector2(649, 65)
 
 [node name="Brick101" parent="Walls" index="53" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 129)
-
-[node name="Brick102" parent="Walls" index="54" instance=ExtResource("4_dgaba")]
 position = Vector2(649, 97)
 
+[node name="Brick102" parent="Walls" index="54" instance=ExtResource("4_dgaba")]
+position = Vector2(649, 129)
+
 [node name="Brick103" parent="Walls" index="55" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 65)
+position = Vector2(649, 161)
 
 [node name="Brick106" parent="Walls" index="56" instance=ExtResource("4_dgaba")]
 position = Vector2(617, 257)

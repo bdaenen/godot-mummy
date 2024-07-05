@@ -18,12 +18,12 @@ layer_0/tile_data = PackedInt32Array(-655343, 3, 0, -655344, 3, 0, -655345, 3, 0
 layer_1/name = "fg"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Floor" type="Node2D" parent="."]
+[node name="Floor" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 
-[node name="Walls" type="Node2D" parent="."]
+[node name="Walls" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 position = Vector2(-89, 15)
 
-[node name="Platforms" type="Node2D" parent="."]
+[node name="Platforms" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 
 [node name="Projectiles" type="Node2D" parent="."]
 
