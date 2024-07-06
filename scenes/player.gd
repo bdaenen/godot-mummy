@@ -11,7 +11,6 @@ signal gain_sprint()
 const SPEED = 230.0
 const JUMP_VELOCITY = -650.0
 
-var riding_block: RigidBody2D = null;
 var dimensions: Vector2 = Vector2.ZERO
 var skills: Dictionary = {
     "can_shoot": Globals.player_skills.can_shoot,
@@ -49,10 +48,6 @@ func _ready() -> void:
     %Player.velocity = Globals.player_spawn_velocity
 
 func _physics_process(delta: float) -> void:
-    if riding_block:
-        velocity.x = riding_block.linear_velocity.x
-        velocity.y = riding_block.linear_velocity.y
-
     # Add the gravity.
     if not is_on_floor():
         velocity.y += gravity * delta
@@ -66,15 +61,17 @@ func _physics_process(delta: float) -> void:
     var direction := Input.get_axis("Left", "Right")
     if direction:
         velocity.x = direction * SPEED
+        $Timer.set_paused(false)
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
+        $Timer.set_paused(true)
     
     move_and_slide()
 
 func _process(_delta: float) -> void:
     if Input.is_action_pressed("Left"):
         $Sprite2D.scale.x = -1
-    if Input.is_action_pressed("Right"):
+    elif Input.is_action_pressed("Right"):
         $Sprite2D.scale.x = 1
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
@@ -84,3 +81,12 @@ func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Clear Link") and skills.can_link and linker_ref:
         linker_ref.clear_bodies()
 
+
+func _on_timer_timeout() -> void:
+    if $Sprite2D.position.y == -2:
+        $Sprite2D.position.y = 0
+    else:
+        $Sprite2D.position.y = -2
+    $Timer.start()
+    $Timer.set_paused(true)
+    

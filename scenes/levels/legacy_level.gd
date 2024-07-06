@@ -20,7 +20,6 @@ var intSceneMap: Dictionary = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     super._ready()
-    print(%Player.dimensions)
     var player_bounds: Rect2 = Rect2(%Player.position - %Player.dimensions/2, %Player.dimensions)
     for idx in level_structure.size():
         var tile: int = level_structure[idx]

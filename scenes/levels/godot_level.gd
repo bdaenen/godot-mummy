@@ -10,6 +10,19 @@ func _ready() -> void:
     %Player.position = Globals.player_spawn_position
     $Linker.clear_bodies()
     $Linker.set_line2d($LinkLine)
+    var player_bounds: Rect2 = Rect2(%Player.global_position - %Player.dimensions/2, %Player.dimensions)
+    for child: AnimatableBody2D in $Walls.get_children():
+        if player_bounds.has_point(child.global_position):
+            print('reeeemove ', child)
+            child.free()
+    for child in $Floor.get_children():
+        if player_bounds.has_point(child.global_position):
+            print('reeeemove ', child)
+            child.free()
+    for child in $Platforms.get_children():
+        if player_bounds.has_point(child.global_position):
+            print('reeeemove ', child)
+            child.free()
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
