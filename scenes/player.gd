@@ -20,6 +20,8 @@ var skills: Dictionary = {
     get:
         return skills
 
+var prev_is_on_floor: bool = true
+
 func set_can_shoot(can_shoot: bool) -> void:
     if !skills.can_shoot and can_shoot:
         gain_telekinesis.emit()
@@ -55,6 +57,7 @@ func _physics_process(delta: float) -> void:
     # Handle jump.
     if Input.is_action_pressed("Jump") and is_on_floor():
         velocity.y = JUMP_VELOCITY
+        $SfxJump.play()
 
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.
@@ -62,10 +65,16 @@ func _physics_process(delta: float) -> void:
     if direction:
         velocity.x = direction * SPEED
         $Timer.set_paused(false)
+        if $SfxWalkTimer.paused:
+            $SfxWalkTimer.set_paused(false)
+            if is_on_floor():
+                $SfxWalk.play()
     else:
         velocity.x = move_toward(velocity.x, 0, SPEED)
         $Timer.set_paused(true)
-    
+        $SfxWalkTimer.stop()
+        $SfxWalkTimer.start()
+        $SfxWalkTimer.set_paused(true)
     move_and_slide()
 
 func _process(_delta: float) -> void:
@@ -73,6 +82,11 @@ func _process(_delta: float) -> void:
         $Sprite2D.scale.x = -1
     elif Input.is_action_pressed("Right"):
         $Sprite2D.scale.x = 1
+    if is_on_floor() and not prev_is_on_floor:
+        print('landed')
+        # reset the walk timer
+        $SfxWalkTimer.start()
+        $SfxWalk.play()
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
         shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
@@ -80,6 +94,7 @@ func _process(_delta: float) -> void:
         shoot_link_projectile.emit(global_position.direction_to(get_global_mouse_position()))
     if Input.is_action_just_pressed("Clear Link") and skills.can_link and linker_ref:
         linker_ref.clear_bodies()
+    prev_is_on_floor = is_on_floor()
 
 
 func _on_timer_timeout() -> void:
@@ -90,3 +105,8 @@ func _on_timer_timeout() -> void:
     $Timer.start()
     $Timer.set_paused(true)
     
+
+func _on_sfx_walk_timer_timeout() -> void:
+    if is_on_floor():
+        $SfxWalk.play()
+    $SfxWalkTimer.start()
