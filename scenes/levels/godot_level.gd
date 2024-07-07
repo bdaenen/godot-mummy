@@ -7,57 +7,64 @@ var tutorial_dismiss_action: String = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    if !$"/root/BgMusicPlayer".is_playing():
+        $"/root/BgMusicPlayer".play()
+
     %Player.position = Globals.player_spawn_position
+    %Player/Sprite2D.scale = Globals.player_spawn_scale
+    %Player.velocity = Globals.player_spawn_velocity
     $Linker.clear_bodies()
     $Linker.set_line2d($LinkLine)
     var player_bounds: Rect2 = Rect2(%Player.global_position - %Player.dimensions/2, %Player.dimensions)
     for child: AnimatableBody2D in $Walls.get_children():
         if player_bounds.has_point(child.global_position):
-            print('reeeemove ', child)
             child.free()
     for child in $Floor.get_children():
         if player_bounds.has_point(child.global_position):
-            print('reeeemove ', child)
             child.free()
     for child in $Platforms.get_children():
         if player_bounds.has_point(child.global_position):
-            print('reeeemove ', child)
             child.free()
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
-        if Globals.world_coordinate_exists(Globals.world_x+1, Globals.world_y):
-            Globals.world_x += 1
+        if Globals.world_coordinate_exists(Globals.world_coord.x+1, Globals.world_coord.y):
+            Globals.world_coord.x += 1
             Globals.player_spawn_position = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
+            Globals.player_spawn_scale = %Player/Sprite2D.scale
             Globals.load_next_level()
         else:
             %Player.velocity.x = -1000
             %Player.move_and_slide()
     elif %Player.position.x < (-Globals.LEVEL_WIDTH_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_x-1, Globals.world_y):
-            Globals.world_x -= 1
+        if Globals.world_coordinate_exists(Globals.world_coord.x-1, Globals.world_coord.y):
+            Globals.world_coord.x -= 1
             Globals.player_spawn_position = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
+            Globals.player_spawn_scale = %Player/Sprite2D.scale
             Globals.load_next_level()
         else:
             %Player.velocity.x = 1000
             %Player.move_and_slide()
     elif %Player.position.y < (-Globals.LEVEL_HEIGHT_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_x, Globals.world_y+1):
-            Globals.world_y += 1
+        if Globals.world_coordinate_exists(Globals.world_coord.x, Globals.world_coord.y+1):
+            Globals.world_coord.y += 1
             Globals.player_spawn_position = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-1))
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
+            Globals.player_spawn_scale = %Player/Sprite2D.scale
+            print(%Player.scale)
             Globals.load_next_level()
         else:
             %Player.velocity.y = 500
             %Player.move_and_slide()
     elif %Player.position.y > (Globals.LEVEL_HEIGHT_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_x, Globals.world_y-1):
-            Globals.world_y -= 1
+        if Globals.world_coordinate_exists(Globals.world_coord.x, Globals.world_coord.y-1):
+            Globals.world_coord.y -= 1
             Globals.player_spawn_position = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
             Globals.player_spawn_velocity = %Player.velocity
+            Globals.player_spawn_scale = %Player/Sprite2D.scale
             Globals.load_next_level()
         else:
             %Player.velocity.y = -500

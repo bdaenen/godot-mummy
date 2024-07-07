@@ -47,7 +47,6 @@ var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
     dimensions = Vector2($Sprite2D.texture.get_width() * $Sprite2D.scale.x, $Sprite2D.texture.get_height() * $Sprite2D.scale.y)
-    %Player.velocity = Globals.player_spawn_velocity
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.

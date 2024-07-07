@@ -33,7 +33,6 @@ func _ready() -> void:
                 add_child(instance)
         elif tile != 0:
             print('Missing tile index ', tile)
-    # %Player.position = Globals.player_spawn_position
     
 
 

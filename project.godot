@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://autoload/Globals.gd"
+BgMusicPlayer="*res://autoload/bg_music_player.tscn"
 
 [debug]
 
@@ -26,8 +27,8 @@ gdscript/warnings/integer_division=0
 [display]
 
 window/size/viewport_height=640
+window/size/transparent=true
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
 
 [input]
 
