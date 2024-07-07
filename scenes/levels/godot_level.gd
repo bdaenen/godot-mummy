@@ -69,6 +69,7 @@ func _physics_process(_delta: float) -> void:
         else:
             %Player.velocity.y = -500
             %Player.move_and_slide()
+            %Player.play_sound_jump()
     
     if tutorial_dismiss_action.length() and Input.is_action_just_pressed(tutorial_dismiss_action):
         $CanvasLayer/TutorialOverlay.fadeOut()

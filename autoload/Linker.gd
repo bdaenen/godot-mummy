@@ -5,7 +5,6 @@ var linked_bodies_previous_positions: Array[Vector2] = []
 var link_line: Line2D
 var shared_velocity_body: AnimatableBody2D
 var shared_velocity_body_idx: int
-var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width")/2, ProjectSettings.get_setting("display/window/size/viewport_height")/2)
 
 signal body_linked(body: AnimatableBody2D)
 signal cleared_links()
@@ -88,6 +87,7 @@ func _physics_process(_delta: float) -> void:
 
     # Keep track of the previous position, and cull offscreen bodies
     var bodies_to_remove: Array[AnimatableBody2D] = []
+    var viewport_bounds: Vector2 = Globals.viewport_bounds
     for i in linked_bodies.size():
         var body: AnimatableBody2D = linked_bodies[i]
         linked_bodies_previous_positions[i] = body.global_position

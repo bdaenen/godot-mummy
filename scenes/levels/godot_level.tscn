@@ -19,6 +19,18 @@ layer_0/tile_data = PackedInt32Array(-655343, 3, 0, -655344, 3, 0, -655345, 3, 0
 layer_1/name = "fg"
 layer_1/tile_data = PackedInt32Array()
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 297.0
+offset_top = -288.0
+offset_right = 553.0
+offset_bottom = -160.0
+
+[node name="Minimap" parent="MarginContainer" node_paths=PackedStringArray("player") instance=ExtResource("6_c657l")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+player = NodePath("../../Camera2D/Player")
+
 [node name="Floor" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 
 [node name="Walls" type="Node2D" parent="." groups=["InteractiveBlocks"]]
@@ -45,18 +57,6 @@ linker_ref = NodePath("../../Linker")
 
 [node name="TutorialOverlay" parent="CanvasLayer" instance=ExtResource("5_put66")]
 size_flags_vertical = 4
-
-[node name="Minimap" parent="." instance=ExtResource("6_c657l")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 317.0
-offset_top = -304.0
-offset_right = 317.0
-offset_bottom = -304.0
-grow_horizontal = 0
-size_flags_horizontal = 8
-size_flags_vertical = 0
 
 [connection signal="gain_telekinesis" from="Camera2D/Player" to="." method="_on_player_gain_telekinesis"]
 [connection signal="shoot_link_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_link_projectile"]

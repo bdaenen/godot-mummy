@@ -45,6 +45,9 @@ func set_can_sprint(can_sprint: bool) -> void:
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func play_sound_jump() -> void:
+    $SfxJump.play()
+
 func _ready() -> void:
     dimensions = Vector2($Sprite2D.texture.get_width() * $Sprite2D.scale.x, $Sprite2D.texture.get_height() * $Sprite2D.scale.y)
 

@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://8winmf6gvnnu"]
+[gd_scene load_steps=3 format=3 uid="uid://8winmf6gvnnu"]
 
 [ext_resource type="AudioStream" uid="uid://bsnx0xdhxu88p" path="res://audio/song.wav" id="1_t0r46"]
+[ext_resource type="Script" path="res://autoload/bg_music_player.gd" id="2_a43el"]
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_t0r46")
+script = ExtResource("2_a43el")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
