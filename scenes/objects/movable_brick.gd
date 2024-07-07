@@ -9,9 +9,9 @@ var is_linked: bool = false:
             tween.tween_method(update_shader_param, 1.0, 0.0, .5)
         tween.play()
 
-func update_shader_param(val) -> void:
+func update_shader_param(val: float) -> void:
     $Sprite2D.material.set_shader_parameter("onoff",val)
 
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
     pass

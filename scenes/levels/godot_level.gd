@@ -26,6 +26,10 @@ func _ready() -> void:
         if player_bounds.has_point(child.global_position):
             child.free()
 
+func _process(_delta: float) -> void:
+    if Input.is_action_just_pressed("Reset Room"):
+        Globals.load_next_level()
+
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
         if Globals.world_coordinate_exists(Globals.world_coord.x+1, Globals.world_coord.y):
@@ -54,7 +58,6 @@ func _physics_process(_delta: float) -> void:
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
             Globals.player_spawn_scale = %Player/Sprite2D.scale
-            print(%Player.scale)
             Globals.load_next_level()
         else:
             %Player.velocity.y = 500
@@ -80,15 +83,27 @@ func _on_player_shoot_tk_projectile(angle: Vector2) -> void:
     var projectile: Area2D = telekinesis_projectile.instantiate() as Area2D
     projectile.angle = angle
     projectile.position = %Player.global_position
-    add_child(projectile)
+    var size: int = $Projectiles.get_children().filter(
+        func find_tk_projectile(child: Area2D) -> bool:
+            return 'is_telekinesis' in child
+    ).size()
+    if size == 0:
+        $Projectiles.add_child(projectile)
 
 
 func _on_player_shoot_link_projectile(angle: Vector2) -> void:
+    if $Linker.linked_bodies.size() >= 2:
+        return
     var projectile: Area2D = link_projectile.instantiate() as Area2D
     projectile.angle = angle
     projectile.position = %Player.global_position
-    projectile.connect("on_hit", self._on_link_hit)
-    add_child(projectile)
+    projectile.connect("on_hit", self._on_link_hit)    
+    var size: int = $Projectiles.get_children().filter(
+        func find_link_projectile(child: Area2D) -> bool:
+            return 'is_link' in child
+    ).size()
+    if size == 0:
+        $Projectiles.add_child(projectile)
 
 func _on_link_hit(body: AnimatableBody2D) -> void:
     # This enables the shader for the green borders

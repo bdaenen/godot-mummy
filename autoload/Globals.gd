@@ -7,12 +7,12 @@ const LEVEL_WIDTH_PX: int = LEVEL_WIDTH * TILE_SIZE
 const LEVEL_HEIGHT_PX: int = LEVEL_HEIGHT * TILE_SIZE
 
 var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width")/2, ProjectSettings.get_setting("display/window/size/viewport_height")/2)
-var world_coord = Vector2(2, 0)
+var world_coord: Vector2i = Vector2i(2, 0)
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
 var player_spawn_position: Vector2 = Vector2(-304, -144)
 var player_spawn_velocity: Vector2 = Vector2.ZERO
 var player_spawn_scale: Vector2 = Vector2(1, 1)
-var visited_levels: Array[Vector2] = [world_coord]
+var visited_levels: Array[Vector2i] = [world_coord]
 
 var player_skills: Dictionary = {
     "can_shoot": true,
@@ -20,10 +20,10 @@ var player_skills: Dictionary = {
     "can_sprint": false
 }
 
-func has_visited_level(coordinate: Vector2):
+func has_visited_level(coordinate: Vector2i) -> bool:
     return visited_levels.has(coordinate)
 
-func world_coordinate_exists(x: int, y: int):
+func world_coordinate_exists(x: int, y: int) -> bool:
     var path: String = scene_template_string.format({"x": x, "y": y})
     return ResourceLoader.exists(path)
 

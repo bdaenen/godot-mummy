@@ -12,11 +12,11 @@ func set_content(new_content: String) -> void:
     %RichTextLabel.text = "[center]%s[/center]" % content
 
 func fadeIn(duration: float = .5) -> void:
-    var tween = create_tween()
+    var tween: Tween = create_tween()
     tween.tween_property($".", "modulate:a", 1, duration).from(0)
 
 
 func fadeOut(duration: float = .5) -> void:
-    var tween = create_tween()
+    var tween: Tween = create_tween()
     tween.tween_property($".", "modulate:a", 0, duration).from(1)
 

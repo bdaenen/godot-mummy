@@ -48,7 +48,7 @@ func clear_bodies() -> void:
     shared_velocity_body = null
     cleared_links.emit()
 
-func set_line2d(line: Line2D):
+func set_line2d(line: Line2D) -> void:
     link_line = line
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -91,7 +91,7 @@ func _physics_process(_delta: float) -> void:
     for i in linked_bodies.size():
         var body: AnimatableBody2D = linked_bodies[i]
         linked_bodies_previous_positions[i] = body.global_position
-        var bpos = body.global_position
+        var bpos: Vector2 = body.global_position
         if bpos.x > viewport_bounds.x || bpos.x < -viewport_bounds.x || bpos.y > viewport_bounds.y || bpos.y < -viewport_bounds.y:
             bodies_to_remove.append(body)
             

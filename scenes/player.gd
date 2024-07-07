@@ -85,7 +85,6 @@ func _process(_delta: float) -> void:
     elif Input.is_action_pressed("Right"):
         $Sprite2D.scale.x = 1
     if is_on_floor() and not prev_is_on_floor:
-        print('landed')
         # reset the walk timer
         $SfxWalkTimer.start()
         $SfxWalk.play()
