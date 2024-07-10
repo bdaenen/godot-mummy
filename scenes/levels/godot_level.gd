@@ -7,6 +7,14 @@ var tutorial_dismiss_action: String = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    var regex: RegEx = RegEx.new()
+    regex.compile("^Level_(\\d)_(\\d)$")
+    var result: RegExMatch = regex.search(name)
+    if result and result.get_group_count() == 2:
+        Globals.world_coord = Vector2i(int(result.get_string(1)), int(result.get_string(2)))
+    # print(result.get_string(2))
+    
+    print(name)
     if !$"/root/BgMusicPlayer".is_playing():
         $"/root/BgMusicPlayer".play()
 
@@ -113,5 +121,21 @@ func _on_link_hit(body: AnimatableBody2D) -> void:
 func _on_player_gain_telekinesis() -> void:
     var input_actions: Array = Globals.get_input_action_keynames('Shoot')
     $CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
-    $CanvasLayer/TutorialOverlay.fadeIn(1)
+    $CanvasLayer/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Shoot'
+
+
+func _on_player_gain_link() -> void:
+    var input_actions: Array = Globals.get_input_action_keynames('Link')
+    $CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
+    $CanvasLayer/TutorialOverlay.fadeIn(.5)
+    tutorial_dismiss_action = 'Link'
+    $Linker.connect('body_linked', checkIfTwoLinked)
+    
+func checkIfTwoLinked(_body: AnimatableBody2D) -> void:
+    if $Linker.linked_bodies.size() == 2:
+        var reset_input_actions: Array = Globals.get_input_action_keynames('Clear Link')
+        $CanvasLayer/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
+        $CanvasLayer/TutorialOverlay.fadeIn(.5)
+        tutorial_dismiss_action = 'Clear Link'
+        $Linker.disconnect('body_linked', checkIfTwoLinked)

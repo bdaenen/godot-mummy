@@ -3,8 +3,11 @@ class_name LegacyLevel
 
 var brick_scene: PackedScene = preload("res://scenes/objects/brick.tscn")
 var movable_brick_scene: PackedScene = preload("res://scenes/objects/movable_brick.tscn")
+var filter_brick_scene: PackedScene = preload("res://scenes/objects/filter_brick.tscn")
 var locked_brick_scene: PackedScene = preload("res://scenes/objects/locked_brick.tscn")
+var spike_scene: PackedScene = preload("res://scenes/objects/spikes.tscn")
 var powerup_telekinesis_scene: PackedScene = preload("res://scenes/objects/powerup_telekinesis.tscn")
+var powerup_link_scene: PackedScene = preload("res://scenes/objects/powerup_link.tscn")
 var level_width: int = Globals.LEVEL_WIDTH;
 var level_height: int = Globals.LEVEL_HEIGHT;
 var tile_size: int = Globals.TILE_SIZE;
@@ -14,8 +17,11 @@ var level_structure: Array[int] = []
 var intSceneMap: Dictionary = {
     1: movable_brick_scene,
     2: brick_scene,
+    3: filter_brick_scene,
+    4: spike_scene,
     5: locked_brick_scene,
-    9: powerup_telekinesis_scene
+    9: powerup_telekinesis_scene,
+    10: powerup_link_scene
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +37,11 @@ func _ready() -> void:
                 var instance: Node2D = scene.instantiate() as Node2D
                 instance.position = pos
                 add_child(instance)
+                if instance.has_signal('player_killed'):
+                    instance.connect('player_killed', func die() -> void:
+                        %Player.kill()
+            )
+            #if scene.has_signal('player_killed'):
         elif tile != 0:
             print('Missing tile index ', tile)
     

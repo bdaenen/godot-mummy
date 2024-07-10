@@ -15,8 +15,8 @@ var player_spawn_scale: Vector2 = Vector2(1, 1)
 var visited_levels: Array[Vector2i] = [world_coord]
 
 var player_skills: Dictionary = {
-    "can_shoot": true,
-    "can_link": true,
+    "can_shoot": false,
+    "can_link": false,
     "can_sprint": false
 }
 

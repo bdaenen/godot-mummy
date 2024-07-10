@@ -12,6 +12,7 @@ const SPEED = 230.0
 const JUMP_VELOCITY = -650.0
 
 var dimensions: Vector2 = Vector2.ZERO
+var dead: bool = false
 var skills: Dictionary = {
     "can_shoot": Globals.player_skills.can_shoot,
     "can_link": Globals.player_skills.can_link,
@@ -46,12 +47,15 @@ func set_can_sprint(can_sprint: bool) -> void:
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func play_sound_jump() -> void:
-    $SfxJump.play()
+    if !dead:
+        $SfxJump.play()
 
 func _ready() -> void:
     dimensions = Vector2($Sprite2D.texture.get_width() * $Sprite2D.scale.x, $Sprite2D.texture.get_height() * $Sprite2D.scale.y)
 
 func _physics_process(delta: float) -> void:
+    if dead:
+        return
     # Add the gravity.
     if not is_on_floor():
         velocity.y += gravity * delta
@@ -59,7 +63,7 @@ func _physics_process(delta: float) -> void:
     # Handle jump.
     if Input.is_action_pressed("Jump") and is_on_floor():
         velocity.y = JUMP_VELOCITY
-        $SfxJump.play()
+        play_sound_jump()
 
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.
@@ -80,6 +84,8 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
 
 func _process(_delta: float) -> void:
+    if dead:
+        return
     if Input.is_action_pressed("Left"):
         $Sprite2D.scale.x = -1
     elif Input.is_action_pressed("Right"):
@@ -96,6 +102,12 @@ func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Clear Link") and skills.can_link and linker_ref:
         linker_ref.clear_bodies()
     prev_is_on_floor = is_on_floor()
+
+func kill() -> void:
+    dead = true
+    $Sprite2D.modulate.a = 0
+    $SfxDeath.play()
+    $SfxDeath.connect("finished", Globals.load_next_level)
 
 
 func _on_timer_timeout() -> void:

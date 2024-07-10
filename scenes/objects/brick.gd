@@ -1,5 +1,4 @@
 extends AnimatableBody2D
-
 var is_linked: bool = false:
     set(value):
         var tween: Tween = create_tween()
