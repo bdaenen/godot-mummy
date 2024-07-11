@@ -16,4 +16,6 @@ mono_crash.*.json
 *.tmp
 build/*
 !build/.gitkeep
+node-server/node_modules/*
 .idea/
+.DS_Store
