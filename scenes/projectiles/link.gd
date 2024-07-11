@@ -8,23 +8,23 @@ const SPEED:int = 500
 
 
 func _physics_process(delta: float) -> void:
-    if not disabled:
-        global_position += angle * SPEED * delta
+	if not disabled:
+		global_position += angle * SPEED * delta
 
 func _on_body_entered(body: Node2D) -> void:
-    if (!has_collided):
-        on_hit.emit(body)
-        has_collided = true;
-    _despawn()
+	if (!has_collided):
+		on_hit.emit(body)
+		has_collided = true;
+	_despawn()
 
 func _on_despawn_timer_timeout() -> void:
-    _despawn()
+	_despawn()
 
 func _despawn() -> void:
-    if !$AudioStreamPlayer.is_playing():
-        queue_free()
-    elif !disabled:
-        disabled = true
-        $CollisionShape2D.set_deferred('disabled', true)
-        modulate.a = 0
-        $AudioStreamPlayer.connect("finished", queue_free)
+	if !$AudioStreamPlayer.is_playing():
+		queue_free()
+	elif !disabled:
+		disabled = true
+		$CollisionShape2D.set_deferred('disabled', true)
+		modulate.a = 0
+		$AudioStreamPlayer.connect("finished", queue_free)
