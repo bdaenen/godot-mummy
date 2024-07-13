@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyhxhpkqehcyw"]
+
+[ext_resource type="Texture2D" uid="uid://cvwqbdwtq3qub" path="res://graphics/pickups/powerup_push.png" id="1_5ca2w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nw6ad"]
+radius = 8.0
+
+[node name="Powerup" type="Area2D"]
+collision_layer = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5ca2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nw6ad")

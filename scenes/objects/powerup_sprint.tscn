@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0n2sgl2bltw2"]
+
+[ext_resource type="PackedScene" uid="uid://dyhxhpkqehcyw" path="res://scenes/objects/powerup.tscn" id="1_uu7lr"]
+[ext_resource type="Texture2D" uid="uid://hy77wffkqmra" path="res://graphics/pickups/powerup_sprint.png" id="2_ahu78"]
+[ext_resource type="Script" path="res://scenes/objects/powerup_sprint.gd" id="2_drcoy"]
+
+[node name="PowerupSprint" instance=ExtResource("1_uu7lr")]
+script = ExtResource("2_drcoy")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_ahu78")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -22,7 +22,7 @@ texture = ExtResource("2_athis")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_oj8eo")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="WalkAnimationTimer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
 
@@ -39,5 +39,11 @@ stream = ExtResource("5_n811r")
 wait_time = 0.2
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="SprintAnimationTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="SfxSprintTimer" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="timeout" from="WalkAnimationTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SfxWalkTimer" to="." method="_on_sfx_walk_timer_timeout"]

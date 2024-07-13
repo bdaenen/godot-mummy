@@ -59,6 +59,7 @@ linker_ref = NodePath("../../Linker")
 size_flags_vertical = 4
 
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
+[connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]
 [connection signal="gain_telekinesis" from="Camera2D/Player" to="." method="_on_player_gain_telekinesis"]
 [connection signal="shoot_link_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_link_projectile"]
 [connection signal="shoot_tk_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_tk_projectile"]
