@@ -9,6 +9,7 @@ var spike_scene: PackedScene = preload("res://scenes/objects/spikes.tscn")
 var powerup_telekinesis_scene: PackedScene = preload("res://scenes/objects/powerup_telekinesis.tscn")
 var powerup_link_scene: PackedScene = preload("res://scenes/objects/powerup_link.tscn")
 var powerup_sprint_scene: PackedScene = preload("res://scenes/objects/powerup_sprint.tscn")
+var warp_scene: PackedScene = preload("res://scenes/objects/warp.tscn")
 var level_width: int = Globals.LEVEL_WIDTH;
 var level_height: int = Globals.LEVEL_HEIGHT;
 var tile_size: int = Globals.TILE_SIZE;
@@ -21,6 +22,7 @@ var intSceneMap: Dictionary = {
     3: filter_brick_scene,
     4: spike_scene,
     5: locked_brick_scene,
+    7: warp_scene,
     9: powerup_telekinesis_scene,
     10: powerup_link_scene,
     11: powerup_sprint_scene
@@ -38,12 +40,11 @@ func _ready() -> void:
             if not player_bounds.has_point(pos):
                 var instance: Node2D = scene.instantiate() as Node2D
                 instance.position = pos
-                add_child(instance)
+                $Floor.add_child(instance)
                 if instance.has_signal('player_killed'):
                     instance.connect('player_killed', func die() -> void:
                         %Player.kill()
             )
-            #if scene.has_signal('player_killed'):
         elif tile != 0:
             print('Missing tile index ', tile)
     

@@ -19,22 +19,9 @@ layer_0/tile_data = PackedInt32Array(-655343, 3, 0, -655344, 3, 0, -655345, 3, 0
 layer_1/name = "fg"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 297.0
-offset_top = -288.0
-offset_right = 553.0
-offset_bottom = -160.0
-
-[node name="Minimap" parent="MarginContainer" node_paths=PackedStringArray("player") instance=ExtResource("6_c657l")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-player = NodePath("../../Camera2D/Player")
-
 [node name="Floor" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 
 [node name="Walls" type="Node2D" parent="." groups=["InteractiveBlocks"]]
-position = Vector2(-89, 15)
 
 [node name="Platforms" type="Node2D" parent="." groups=["InteractiveBlocks"]]
 
@@ -53,14 +40,29 @@ linker_ref = NodePath("../../Linker")
 
 [node name="Projectiles" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TutorialCanvas" type="CanvasLayer" parent="."]
 
-[node name="TutorialOverlay" parent="CanvasLayer" instance=ExtResource("5_put66")]
+[node name="TutorialOverlay" parent="TutorialCanvas" instance=ExtResource("5_put66")]
 size_flags_vertical = 4
+
+[node name="MinimapCanvas" type="CanvasLayer" parent="."]
+
+[node name="Control" type="MarginContainer" parent="MinimapCanvas"]
+offset_right = 317.0
+offset_bottom = 156.0
+theme_override_constants/margin_left = 34
+theme_override_constants/margin_top = 34
+theme_override_constants/margin_right = 34
+theme_override_constants/margin_bottom = 34
+
+[node name="Minimap" parent="MinimapCanvas/Control" node_paths=PackedStringArray("player") instance=ExtResource("6_c657l")]
+layout_mode = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+player = NodePath("../../../Camera2D/Player")
 
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
 [connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]
 [connection signal="gain_telekinesis" from="Camera2D/Player" to="." method="_on_player_gain_telekinesis"]
 [connection signal="shoot_link_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_link_projectile"]
 [connection signal="shoot_tk_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_tk_projectile"]
-[connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

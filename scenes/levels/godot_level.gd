@@ -4,20 +4,31 @@ class_name GodotLevel
 var telekinesis_projectile: PackedScene = preload("res://scenes/projectiles/telekinesis.tscn")
 var link_projectile: PackedScene = preload("res://scenes/projectiles/link.tscn")
 var tutorial_dismiss_action: String = ''
+var minimap_position: String = 'right'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    var regex: RegEx = RegEx.new()
-    regex.compile("^Level_(\\d)_(\\d)$")
-    var result: RegExMatch = regex.search(name)
-    if result and result.get_group_count() == 2:
-        Globals.world_coord = Vector2i(int(result.get_string(1)), int(result.get_string(2)))
-    
+    _setup_world_coords()
+    await _clear_overlapping_blocks()
     if !$"/root/BgMusicPlayer".is_playing():
         $"/root/BgMusicPlayer".play()
 
     $Linker.clear_bodies()
     $Linker.set_line2d($LinkLine)
+    if minimap_position == "right":
+        $MinimapCanvas/Control.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT, Control.PRESET_MODE_KEEP_SIZE)
+    else:
+        $MinimapCanvas/Control.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT, Control.PRESET_MODE_KEEP_SIZE)
+    _setup_player()
+
+func _setup_world_coords() -> void :
+    var regex: RegEx = RegEx.new()
+    regex.compile("^Level_(\\d)_(\\d)$")
+    var result: RegExMatch = regex.search(name)
+    if result and result.get_group_count() == 2:
+        Globals.world_coord = Vector2i(int(result.get_string(1)), int(result.get_string(2)))
+
+func _clear_overlapping_blocks() -> void:
     var player_bounds: Rect2 = Rect2(Globals.player_spawn_position - %Player.dimensions/2, %Player.dimensions)
     for child: AnimatableBody2D in $Walls.get_children():
         if player_bounds.has_point(child.global_position):
@@ -31,10 +42,12 @@ func _ready() -> void:
         if player_bounds.has_point(child.global_position):
             child.queue_free()
             await child.tree_exited
-    
+            
+func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position
     %Player/Sprite2D.scale = Globals.player_spawn_scale
     %Player.velocity = Globals.player_spawn_velocity
+    
 
 func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Reset Room"):
@@ -85,7 +98,7 @@ func _physics_process(_delta: float) -> void:
             %Player.play_sound_jump()
     
     if tutorial_dismiss_action.length() and Input.is_action_just_pressed(tutorial_dismiss_action):
-        $CanvasLayer/TutorialOverlay.fadeOut()
+        $TutorialCanvas/TutorialOverlay.fadeOut()
         tutorial_dismiss_action = ''
         
 
@@ -122,30 +135,30 @@ func _on_link_hit(body: AnimatableBody2D) -> void:
 
 func _on_player_gain_telekinesis() -> void:
     var input_actions: Array = Globals.get_input_action_keynames('Shoot')
-    $CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
-    $CanvasLayer/TutorialOverlay.fadeIn(.5)
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
+    $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Shoot'
 
 
 func _on_player_gain_link() -> void:
     var input_actions: Array = Globals.get_input_action_keynames('Link')
-    $CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
-    $CanvasLayer/TutorialOverlay.fadeIn(.5)
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
+    $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Link'
     $Linker.connect('body_linked', checkIfTwoLinked)
     
     
 func _on_player_gain_sprint() -> void:
     var input_actions: Array = Globals.get_input_action_keynames('Sprint')
-    $CanvasLayer/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % ' OR '.join(input_actions))
-    $CanvasLayer/TutorialOverlay.fadeIn(.5)
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % ' OR '.join(input_actions))
+    $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Sprint'
     
 
 func checkIfTwoLinked(_body: AnimatableBody2D) -> void:
     if $Linker.linked_bodies.size() == 2:
         var reset_input_actions: Array = Globals.get_input_action_keynames('Clear Link')
-        $CanvasLayer/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
-        $CanvasLayer/TutorialOverlay.fadeIn(.5)
+        $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
+        $TutorialCanvas/TutorialOverlay.fadeIn(.5)
         tutorial_dismiss_action = 'Clear Link'
         $Linker.disconnect('body_linked', checkIfTwoLinked)

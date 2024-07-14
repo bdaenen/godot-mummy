@@ -24,4 +24,16 @@ func _init() -> void:
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0,
         2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0,
         2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2
-];
+    ]
+    minimap_position = 'left'
+
+func _ready() -> void:
+    super()
+    for child in $Floor.get_children():
+        if 'world_coord_target' in child:
+            print('updating child')
+            child.world_coord_target = Vector2i(5, 1)
+        if 'level_spawn_position_target' in child:
+            print('updating child')
+            child.level_spawn_position_target = Vector2(-16, 80)
+    

@@ -2,25 +2,22 @@
 
 [ext_resource type="Script" path="res://scenes/gui/minimap.gd" id="1_22nec"]
 
-[node name="Minimap" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_22nec")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+[node name="Minimap" type="MarginContainer"]
 offset_right = 245.0
 offset_bottom = 80.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_22nec")
 
-[node name="Background" type="ColorRect" parent="MarginContainer"]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0, 0, 0, 0.317647)
 
-[node name="Rooms" type="Control" parent="MarginContainer/Background"]
+[node name="Rooms" type="Control" parent="Background"]
 unique_name_in_owner = true
 anchors_preset = 0
 
-[node name="0_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="0_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 60.0
@@ -28,7 +25,7 @@ offset_right = 40.0
 offset_bottom = 76.0
 color = Color(0.00110917, 0.287832, 0.488303, 1)
 
-[node name="1_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="1_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 60.0
@@ -36,7 +33,7 @@ offset_right = 73.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="2_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="2_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 60.0
@@ -44,7 +41,7 @@ offset_right = 106.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="3_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="3_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 60.0
@@ -52,7 +49,7 @@ offset_right = 139.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="4_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="4_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 60.0
@@ -60,7 +57,7 @@ offset_right = 172.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="5_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="5_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 173.0
 offset_top = 60.0
@@ -68,7 +65,7 @@ offset_right = 205.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="6_0" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="6_0" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 206.0
 offset_top = 60.0
@@ -76,7 +73,7 @@ offset_right = 238.0
 offset_bottom = 76.0
 color = Color(0, 0, 0, 1)
 
-[node name="1_1" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="1_1" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 41.0
 offset_top = 43.0
@@ -84,7 +81,7 @@ offset_right = 73.0
 offset_bottom = 59.0
 color = Color(0, 0, 0, 1)
 
-[node name="2_1" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="2_1" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 43.0
@@ -92,7 +89,7 @@ offset_right = 106.0
 offset_bottom = 59.0
 color = Color(0, 0, 0, 1)
 
-[node name="3_1" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="3_1" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 43.0
@@ -100,7 +97,7 @@ offset_right = 139.0
 offset_bottom = 59.0
 color = Color(0, 0, 0, 1)
 
-[node name="4_1" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="4_1" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 43.0
@@ -108,7 +105,7 @@ offset_right = 172.0
 offset_bottom = 59.0
 color = Color(0, 0, 0, 1)
 
-[node name="5_1" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="5_1" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 173.0
 offset_top = 43.0
@@ -116,7 +113,7 @@ offset_right = 205.0
 offset_bottom = 59.0
 color = Color(0, 0, 0, 1)
 
-[node name="2_2" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="2_2" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 74.0
 offset_top = 26.0
@@ -124,7 +121,7 @@ offset_right = 106.0
 offset_bottom = 42.0
 color = Color(0, 0, 0, 1)
 
-[node name="3_2" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="3_2" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 26.0
@@ -132,7 +129,7 @@ offset_right = 139.0
 offset_bottom = 42.0
 color = Color(0, 0, 0, 1)
 
-[node name="4_2" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="4_2" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 140.0
 offset_top = 26.0
@@ -140,7 +137,7 @@ offset_right = 172.0
 offset_bottom = 42.0
 color = Color(0, 0, 0, 1)
 
-[node name="3_3" type="ColorRect" parent="MarginContainer/Background/Rooms"]
+[node name="3_3" type="ColorRect" parent="Background/Rooms"]
 layout_mode = 0
 offset_left = 107.0
 offset_top = 9.0
@@ -148,7 +145,7 @@ offset_right = 139.0
 offset_bottom = 25.0
 color = Color(0, 0, 0, 1)
 
-[node name="PlayerIndicator" type="ColorRect" parent="MarginContainer/Background"]
+[node name="PlayerIndicator" type="ColorRect" parent="Background"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 4.0

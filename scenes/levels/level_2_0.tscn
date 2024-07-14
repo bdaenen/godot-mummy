@@ -130,211 +130,211 @@ position = Vector2(-464, 240)
 position = Vector2(-464, 272)
 
 [node name="Brick37" parent="Walls" index="0" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -95)
+position = Vector2(-560, -80)
 
 [node name="Brick49" parent="Walls" index="1" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -127)
+position = Vector2(-560, -112)
 
 [node name="Brick50" parent="Walls" index="2" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -159)
+position = Vector2(-560, -144)
 
 [node name="Brick51" parent="Walls" index="3" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -191)
+position = Vector2(-560, -176)
 
 [node name="Brick52" parent="Walls" index="4" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -223)
+position = Vector2(-560, -208)
 
 [node name="Brick53" parent="Walls" index="5" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -255)
+position = Vector2(-560, -240)
 
 [node name="Brick54" parent="Walls" index="6" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -287)
+position = Vector2(-560, -272)
 
 [node name="Brick55" parent="Walls" index="7" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -319)
+position = Vector2(-560, -304)
 
 [node name="Brick56" parent="Walls" index="8" instance=ExtResource("4_dgaba")]
-position = Vector2(-439, -319)
+position = Vector2(-528, -304)
 
 [node name="Brick57" parent="Walls" index="9" instance=ExtResource("4_dgaba")]
-position = Vector2(-343, -319)
+position = Vector2(-432, -304)
 
 [node name="Brick58" parent="Walls" index="10" instance=ExtResource("4_dgaba")]
-position = Vector2(-311, -319)
+position = Vector2(-400, -304)
 
 [node name="Brick59" parent="Walls" index="11" instance=ExtResource("4_dgaba")]
-position = Vector2(-279, -319)
+position = Vector2(-368, -304)
 
 [node name="Brick60" parent="Walls" index="12" instance=ExtResource("4_dgaba")]
-position = Vector2(-247, -319)
+position = Vector2(-336, -304)
 
 [node name="Brick61" parent="Walls" index="13" instance=ExtResource("4_dgaba")]
-position = Vector2(-215, -319)
+position = Vector2(-304, -304)
 
 [node name="Brick62" parent="Walls" index="14" instance=ExtResource("4_dgaba")]
-position = Vector2(-183, -319)
+position = Vector2(-272, -304)
 
 [node name="Brick63" parent="Walls" index="15" instance=ExtResource("4_dgaba")]
-position = Vector2(-151, -319)
+position = Vector2(-240, -304)
 
 [node name="Brick64" parent="Walls" index="16" instance=ExtResource("4_dgaba")]
-position = Vector2(-119, -319)
+position = Vector2(-208, -304)
 
 [node name="Brick65" parent="Walls" index="17" instance=ExtResource("4_dgaba")]
-position = Vector2(-87, -319)
+position = Vector2(-176, -304)
 
 [node name="Brick66" parent="Walls" index="18" instance=ExtResource("4_dgaba")]
-position = Vector2(-55, -319)
+position = Vector2(-144, -304)
 
 [node name="Brick67" parent="Walls" index="19" instance=ExtResource("4_dgaba")]
-position = Vector2(-23, -319)
+position = Vector2(-112, -304)
 
 [node name="Brick68" parent="Walls" index="20" instance=ExtResource("4_dgaba")]
-position = Vector2(9, -319)
+position = Vector2(-80, -304)
 
 [node name="Brick69" parent="Walls" index="21" instance=ExtResource("4_dgaba")]
-position = Vector2(41, -319)
+position = Vector2(-48, -304)
 
 [node name="Brick70" parent="Walls" index="22" instance=ExtResource("4_dgaba")]
-position = Vector2(73, -319)
+position = Vector2(-16, -304)
 
 [node name="Brick71" parent="Walls" index="23" instance=ExtResource("4_dgaba")]
-position = Vector2(105, -319)
+position = Vector2(16, -304)
 
 [node name="Brick72" parent="Walls" index="24" instance=ExtResource("4_dgaba")]
-position = Vector2(137, -319)
+position = Vector2(48, -304)
 
 [node name="Brick73" parent="Walls" index="25" instance=ExtResource("4_dgaba")]
-position = Vector2(169, -319)
+position = Vector2(80, -304)
 
 [node name="Brick74" parent="Walls" index="26" instance=ExtResource("4_dgaba")]
-position = Vector2(201, -319)
+position = Vector2(112, -304)
 
 [node name="Brick75" parent="Walls" index="27" instance=ExtResource("4_dgaba")]
-position = Vector2(233, -319)
+position = Vector2(144, -304)
 
 [node name="Brick76" parent="Walls" index="28" instance=ExtResource("4_dgaba")]
-position = Vector2(265, -319)
+position = Vector2(176, -304)
 
 [node name="Brick77" parent="Walls" index="29" instance=ExtResource("4_dgaba")]
-position = Vector2(297, -319)
+position = Vector2(208, -304)
 
 [node name="Brick78" parent="Walls" index="30" instance=ExtResource("4_dgaba")]
-position = Vector2(329, -319)
+position = Vector2(240, -304)
 
 [node name="Brick79" parent="Walls" index="31" instance=ExtResource("4_dgaba")]
-position = Vector2(361, -319)
+position = Vector2(272, -304)
 
 [node name="Brick80" parent="Walls" index="32" instance=ExtResource("4_dgaba")]
-position = Vector2(393, -319)
+position = Vector2(304, -304)
 
 [node name="Brick81" parent="Walls" index="33" instance=ExtResource("4_dgaba")]
-position = Vector2(425, -319)
+position = Vector2(336, -304)
 
 [node name="Brick82" parent="Walls" index="34" instance=ExtResource("4_dgaba")]
-position = Vector2(457, -319)
+position = Vector2(368, -304)
 
 [node name="Brick83" parent="Walls" index="35" instance=ExtResource("4_dgaba")]
-position = Vector2(489, -319)
+position = Vector2(400, -304)
 
 [node name="Brick84" parent="Walls" index="36" instance=ExtResource("4_dgaba")]
-position = Vector2(521, -319)
+position = Vector2(432, -304)
 
 [node name="Brick85" parent="Walls" index="37" instance=ExtResource("4_dgaba")]
-position = Vector2(553, -319)
+position = Vector2(464, -304)
 
 [node name="Brick86" parent="Walls" index="38" instance=ExtResource("4_dgaba")]
-position = Vector2(585, -319)
+position = Vector2(496, -304)
 
 [node name="Brick87" parent="Walls" index="39" instance=ExtResource("4_dgaba")]
-position = Vector2(617, -319)
+position = Vector2(528, -304)
 
 [node name="Brick88" parent="Walls" index="40" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -319)
+position = Vector2(560, -304)
 
 [node name="Brick89" parent="Walls" index="41" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -287)
+position = Vector2(560, -272)
 
 [node name="Brick90" parent="Walls" index="42" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -255)
+position = Vector2(560, -240)
 
 [node name="Brick91" parent="Walls" index="43" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -223)
+position = Vector2(560, -208)
 
 [node name="Brick92" parent="Walls" index="44" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -191)
+position = Vector2(560, -176)
 
 [node name="Brick93" parent="Walls" index="45" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -159)
+position = Vector2(560, -144)
 
 [node name="Brick94" parent="Walls" index="46" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -127)
+position = Vector2(560, -112)
 
 [node name="Brick95" parent="Walls" index="47" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -95)
+position = Vector2(560, -80)
 
 [node name="Brick96" parent="Walls" index="48" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -63)
+position = Vector2(560, -48)
 
 [node name="Brick97" parent="Walls" index="49" instance=ExtResource("4_dgaba")]
-position = Vector2(649, -31)
+position = Vector2(560, -16)
 
 [node name="Brick98" parent="Walls" index="50" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 1)
+position = Vector2(560, 16)
 
 [node name="Brick99" parent="Walls" index="51" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 33)
+position = Vector2(560, 48)
 
 [node name="Brick100" parent="Walls" index="52" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 65)
+position = Vector2(560, 80)
 
 [node name="Brick101" parent="Walls" index="53" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 97)
+position = Vector2(560, 112)
 
 [node name="Brick102" parent="Walls" index="54" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 129)
+position = Vector2(560, 144)
 
 [node name="Brick103" parent="Walls" index="55" instance=ExtResource("4_dgaba")]
-position = Vector2(649, 161)
+position = Vector2(560, 176)
 
 [node name="Brick106" parent="Walls" index="56" instance=ExtResource("4_dgaba")]
-position = Vector2(617, 257)
+position = Vector2(528, 272)
 
 [node name="Brick107" parent="Walls" index="57" instance=ExtResource("4_dgaba")]
-position = Vector2(617, 289)
+position = Vector2(528, 304)
 
 [node name="Brick38" parent="Walls" index="58" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 97)
+position = Vector2(-560, 112)
 
 [node name="Brick39" parent="Walls" index="59" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -63)
+position = Vector2(-560, -48)
 
 [node name="Brick40" parent="Walls" index="60" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 129)
+position = Vector2(-560, 144)
 
 [node name="Brick41" parent="Walls" index="61" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, -31)
+position = Vector2(-560, -16)
 
 [node name="Brick42" parent="Walls" index="62" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 161)
+position = Vector2(-560, 176)
 
 [node name="Brick43" parent="Walls" index="63" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 1)
+position = Vector2(-560, 16)
 
 [node name="Brick44" parent="Walls" index="64" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 193)
+position = Vector2(-560, 208)
 
 [node name="Brick45" parent="Walls" index="65" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 33)
+position = Vector2(-560, 48)
 
 [node name="Brick46" parent="Walls" index="66" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 225)
+position = Vector2(-560, 240)
 
 [node name="Brick47" parent="Walls" index="67" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 65)
+position = Vector2(-560, 80)
 
 [node name="Brick48" parent="Walls" index="68" instance=ExtResource("4_dgaba")]
-position = Vector2(-471, 257)
+position = Vector2(-560, 272)
 
 [node name="Brick108" parent="Platforms" index="0" instance=ExtResource("4_dgaba")]
 position = Vector2(-304, -112)

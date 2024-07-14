@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmcam4ngfcxwf"]
+
+[ext_resource type="Texture2D" uid="uid://duwlcro6gk4g6" path="res://graphics/objects/portal.png" id="1_bfq8a"]
+[ext_resource type="Script" path="res://scenes/objects/warp.gd" id="1_iwu6g"]
+[ext_resource type="AudioStream" uid="uid://cg2sfq8gjig74" path="res://audio/warp.wav" id="3_2kgk3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2w4s"]
+radius = 16.0
+
+[node name="Warp" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_iwu6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l2w4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_bfq8a")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2kgk3")
+pitch_scale = 0.35
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

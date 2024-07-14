@@ -9,15 +9,16 @@ const LEVEL_HEIGHT_PX: int = LEVEL_HEIGHT * TILE_SIZE
 var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width")/2, ProjectSettings.get_setting("display/window/size/viewport_height")/2)
 var world_coord: Vector2i = Vector2i(2, 0)
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
-# var player_spawn_position: Vector2 = Vector2(-304, -144)
-var player_spawn_position: Vector2 = Vector2(550, 250)
+var player_spawn_position: Vector2 = Vector2(-304, -144)
+#var player_spawn_position: Vector2 = Vector2(100, 80)
 var player_spawn_velocity: Vector2 = Vector2.ZERO
 var player_spawn_scale: Vector2 = Vector2(1, 1)
 var visited_levels: Array[Vector2i] = [world_coord]
+var warped_transition: bool = false
 
 var player_skills: Dictionary = {
-    "can_shoot": true,
-    "can_link": true,
+    "can_shoot": false,
+    "can_link": false,
     "can_sprint": false
 }
 

@@ -11,9 +11,11 @@ signal gain_sprint()
 const SPEED = 200.0
 const SPRINT_SPEED = 400.0
 const JUMP_VELOCITY = -600.0
+var is_jump_ready: bool = true
 
 var dimensions: Vector2 = Vector2.ZERO
 var dead: bool = false
+var input_disabled: bool = false
 var skills: Dictionary = {
     "can_shoot": Globals.player_skills.can_shoot,
     "can_link": Globals.player_skills.can_link,
@@ -47,22 +49,49 @@ func set_can_sprint(can_sprint: bool) -> void:
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func play_warp_reverse_sound() -> void:
+    $SfxWarp.play()
+
 func play_sound_jump() -> void:
     if !dead:
         $SfxJump.play()
 
 func _ready() -> void:
     dimensions = Vector2($Sprite2D.texture.get_width() * $Sprite2D.scale.x, $Sprite2D.texture.get_height() * $Sprite2D.scale.y)
+    if (Globals.warped_transition):
+        input_disabled = true
+        Globals.warped_transition = false
+        var tween: Tween = create_tween()
+        tween.set_parallel(true)
+        tween.set_ease(Tween.EASE_OUT)
+        tween.set_trans(Tween.TRANS_CUBIC)
+        tween.tween_property(self, 'rotation_degrees', 0, 3).from(720)
+        tween.tween_property(self, 'scale:x', 1, 3).from(0.2)
+        tween.tween_property(self, 'scale:y', 1, 3).from(0.2)
+        tween.play()
+        play_warp_reverse_sound()
+        tween.connect('finished', func finish() -> void:
+            input_disabled = false
+        )
 
 func _physics_process(delta: float) -> void:
     if dead:
+        return
+    
+    if input_disabled:
+        $WalkAnimationTimer.set_paused(true)
+        $SfxWalkTimer.stop()
+        $SfxWalkTimer.start()
+        $SfxWalkTimer.set_paused(true)
         return
     # Add the gravity.
     if not is_on_floor():
         velocity.y += gravity * delta
 
     # Handle jump.
-    if Input.is_action_pressed("Jump") and is_on_floor():
+    if Input.is_action_pressed("Jump") and is_on_floor() and is_jump_ready:
+        is_jump_ready = false
+        $JumpCooldown.start()
         velocity.y = JUMP_VELOCITY
         play_sound_jump()
 
@@ -79,17 +108,19 @@ func _physics_process(delta: float) -> void:
         if $SfxWalkTimer.paused:
             $SfxWalkTimer.set_paused(false)
             if is_on_floor():
-                $SfxWalk.play()
+                pass
+                #$SfxWalk.play()
     else:
         velocity.x = move_toward(velocity.x, 0, speed)
         $WalkAnimationTimer.set_paused(true)
         $SfxWalkTimer.stop()
         $SfxWalkTimer.start()
         $SfxWalkTimer.set_paused(true)
+        $Sprite2D.position.y = 0
     move_and_slide()
 
 func _process(_delta: float) -> void:
-    if dead:
+    if dead or input_disabled:
         return
     if Input.is_action_pressed("Left"):
         $Sprite2D.scale.x = -1
@@ -112,7 +143,8 @@ func kill() -> void:
     dead = true
     $Sprite2D.modulate.a = 0
     $SfxDeath.play()
-    $SfxDeath.connect("finished", Globals.load_next_level)
+    if not $SfxDeath.is_connected("finished", Globals.load_next_level):
+        $SfxDeath.connect("finished", Globals.load_next_level)
 
 func _on_timer_timeout() -> void:
     if $Sprite2D.position.y == -4:
@@ -127,3 +159,7 @@ func _on_sfx_walk_timer_timeout() -> void:
     if is_on_floor():
         $SfxWalk.play()
     $SfxWalkTimer.start()
+
+
+func _on_jump_cooldown_timeout() -> void:
+    is_jump_ready = true;

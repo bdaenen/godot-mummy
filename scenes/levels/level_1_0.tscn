@@ -5,3 +5,5 @@
 
 [node name="Level_1_0" instance=ExtResource("1_qi5fu")]
 script = ExtResource("2_e677x")
+
+[connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

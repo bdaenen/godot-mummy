@@ -5,3 +5,8 @@
 
 [node name="Level_5_1" instance=ExtResource("1_2leks")]
 script = ExtResource("2_4mt8b")
+
+[node name="Walls" parent="." index="2"]
+position = Vector2(-89, 15)
+
+[connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]
