@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyhxhpkqehcyw"]
+[gd_scene load_steps=3 format=3 uid="uid://dhctq50kb5xqg"]
 
 [ext_resource type="Texture2D" uid="uid://cvwqbdwtq3qub" path="res://graphics/pickups/powerup_push.png" id="1_5ca2w"]
 
@@ -9,6 +9,7 @@ radius = 8.0
 collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_5ca2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -9,6 +9,7 @@ var spike_scene: PackedScene = preload("res://scenes/objects/spikes.tscn")
 var powerup_telekinesis_scene: PackedScene = preload("res://scenes/objects/powerup_telekinesis.tscn")
 var powerup_link_scene: PackedScene = preload("res://scenes/objects/powerup_link.tscn")
 var powerup_sprint_scene: PackedScene = preload("res://scenes/objects/powerup_sprint.tscn")
+var key_scene: PackedScene = preload("res://scenes/objects/key.tscn")
 var warp_scene: PackedScene = preload("res://scenes/objects/warp.tscn")
 var level_width: int = Globals.LEVEL_WIDTH;
 var level_height: int = Globals.LEVEL_HEIGHT;
@@ -22,6 +23,7 @@ var intSceneMap: Dictionary = {
     3: filter_brick_scene,
     4: spike_scene,
     5: locked_brick_scene,
+    6: key_scene,
     7: warp_scene,
     9: powerup_telekinesis_scene,
     10: powerup_link_scene,

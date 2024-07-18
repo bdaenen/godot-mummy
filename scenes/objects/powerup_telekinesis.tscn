@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djck0i3twp6rr"]
 
 [ext_resource type="Script" path="res://scenes/objects/powerup_telekinesis.gd" id="1_3mwbn"]
-[ext_resource type="PackedScene" uid="uid://dyhxhpkqehcyw" path="res://scenes/objects/powerup.tscn" id="1_5luyf"]
+[ext_resource type="PackedScene" uid="uid://dhctq50kb5xqg" path="res://scenes/objects/powerup.tscn" id="1_5luyf"]
 
 [node name="PowerupTelekinesis" instance=ExtResource("1_5luyf")]
 script = ExtResource("1_3mwbn")
