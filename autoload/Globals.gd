@@ -7,8 +7,7 @@ const LEVEL_WIDTH_PX: int = LEVEL_WIDTH * TILE_SIZE
 const LEVEL_HEIGHT_PX: int = LEVEL_HEIGHT * TILE_SIZE
 
 var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/window/size/viewport_width")/2, ProjectSettings.get_setting("display/window/size/viewport_height")/2)
-# var world_coord: Vector2i = Vector2i(2, 0)
-var world_coord: Vector2i = Vector2i(4, 1)
+var world_coord: Vector2i = Vector2i(2, 0)
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
 var player_spawn_position: Vector2 = Vector2(-304, -144)
 #var player_spawn_position: Vector2 = Vector2(100, 80)
