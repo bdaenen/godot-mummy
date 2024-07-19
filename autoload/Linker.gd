@@ -60,7 +60,7 @@ func _physics_process(_delta: float) -> void:
     var move_diff: Vector2 = Vector2.ZERO
     
     # If we found a moving linked_body, update all linked bodies' and line point positions with the diff
-    if shared_velocity_body:
+    if is_instance_valid(shared_velocity_body):
         var prev_pos: Vector2 = linked_bodies_previous_positions[shared_velocity_body_idx]
         # Movement since last frame
         move_diff = prev_pos - shared_velocity_body.global_position

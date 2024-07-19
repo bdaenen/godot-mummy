@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhctq50kb5xqg"]
+[gd_scene load_steps=5 format=3 uid="uid://dhctq50kb5xqg"]
 
 [ext_resource type="Texture2D" uid="uid://cvwqbdwtq3qub" path="res://graphics/pickups/powerup_push.png" id="1_5ca2w"]
+[ext_resource type="Script" path="res://scenes/objects/powerup.gd" id="1_cdfoh"]
+[ext_resource type="AudioStream" uid="uid://dhvskvyqn25x3" path="res://audio/powerup.wav" id="2_ql578"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nw6ad"]
 radius = 8.0
 
 [node name="Powerup" type="Area2D"]
 collision_layer = 4
+script = ExtResource("1_cdfoh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
@@ -14,3 +17,9 @@ texture = ExtResource("1_5ca2w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nw6ad")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ql578")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

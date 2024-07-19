@@ -46,7 +46,12 @@ func _ready() -> void:
                 if instance.has_signal('player_killed'):
                     instance.connect('player_killed', func die() -> void:
                         %Player.kill()
-            )
+                    )
+                if instance.has_signal('block_deleted'):
+                    instance.connect('block_deleted', func delete(block: AnimatableBody2D) -> void:
+                        $Linker.remove_body(block)
+                        block.queue_free()
+                    )
         elif tile != 0:
             print('Missing tile index ', tile)
     

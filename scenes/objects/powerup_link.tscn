@@ -10,4 +10,4 @@ script = ExtResource("1_aj8ri")
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("1_s68xo")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="picked_up" from="." to="." method="_on_picked_up"]

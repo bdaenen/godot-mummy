@@ -23,9 +23,9 @@ var progress_flags: Dictionary = {
 }
 
 var player_skills: Dictionary = {
-    "can_shoot": false,
-    "can_link": false,
-    "can_sprint": false
+    "can_shoot": true,
+    "can_link": true,
+    "can_sprint": true
 }
 
 func has_visited_level(coordinate: Vector2i) -> bool:

@@ -25,3 +25,12 @@ func _init() -> void:
         0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
         2, 2, 2, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2
 ];
+
+func _ready() -> void:
+    super()
+    for child in $Floor.get_children():
+        if 'world_coord_target' in child:
+            child.world_coord_target = Vector2i(1, 1)
+        if 'level_spawn_position_target' in child:
+            child.level_spawn_position_target = Vector2(32, 80)
+    
