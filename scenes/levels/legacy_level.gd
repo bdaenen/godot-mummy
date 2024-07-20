@@ -35,6 +35,9 @@ func _ready() -> void:
     var player_bounds: Rect2 = Rect2(%Player.position - %Player.dimensions/2, %Player.dimensions)
     for idx in level_structure.size():
         var tile: int = level_structure[idx]
+        if tile == 8 and Globals.progress_flags.pressed_left_button and Globals.progress_flags.pressed_right_button:
+            # If both buttons were pressed, spawn the blocks indexed as 8 as normal bricks. Otherwise, skip them.
+            tile = 2
         if tile in intSceneMap:
             var scene: PackedScene = intSceneMap[tile] as PackedScene
             var pos: Vector2 = index_to_vector(idx)
@@ -52,7 +55,7 @@ func _ready() -> void:
                         $Linker.remove_body(block)
                         block.queue_free()
                     )
-        elif tile != 0:
+        elif tile != 0 and tile != 8:
             print('Missing tile index ', tile)
     
 
