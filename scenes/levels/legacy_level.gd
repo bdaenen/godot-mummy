@@ -11,6 +11,7 @@ var powerup_link_scene: PackedScene = preload("res://scenes/objects/powerup_link
 var powerup_sprint_scene: PackedScene = preload("res://scenes/objects/powerup_sprint.tscn")
 var key_scene: PackedScene = preload("res://scenes/objects/key.tscn")
 var warp_scene: PackedScene = preload("res://scenes/objects/warp.tscn")
+var switch_scene: PackedScene = preload("res://scenes/objects/switch.tscn")
 var level_width: int = Globals.LEVEL_WIDTH;
 var level_height: int = Globals.LEVEL_HEIGHT;
 var tile_size: int = Globals.TILE_SIZE;
@@ -25,9 +26,11 @@ var intSceneMap: Dictionary = {
     5: locked_brick_scene,
     6: key_scene,
     7: warp_scene,
+    # 8 is a conditional brick_scene based on progression flags
     9: powerup_telekinesis_scene,
     10: powerup_link_scene,
-    11: powerup_sprint_scene
+    11: powerup_sprint_scene,
+    13: switch_scene
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -35,7 +38,7 @@ func _ready() -> void:
     var player_bounds: Rect2 = Rect2(%Player.position - %Player.dimensions/2, %Player.dimensions)
     for idx in level_structure.size():
         var tile: int = level_structure[idx]
-        if tile == 8 and Globals.progress_flags.pressed_left_button and Globals.progress_flags.pressed_right_button:
+        if tile == 8 and Globals.progress_flags.left_button_pressed and Globals.progress_flags.right_button_pressed:
             # If both buttons were pressed, spawn the blocks indexed as 8 as normal bricks. Otherwise, skip them.
             tile = 2
         if tile in intSceneMap:

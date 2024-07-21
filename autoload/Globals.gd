@@ -18,8 +18,8 @@ var warped_transition: bool = false
 var progress_flags: Dictionary = {
     "obtained_upper_floor_key": false,
     "unlocked_upper_floor": false,
-    "pressed_left_button": false,
-    "pressed_right_button": false
+    "left_button_pressed": false,
+    "right_button_pressed": false
 }
 
 var player_skills: Dictionary = {

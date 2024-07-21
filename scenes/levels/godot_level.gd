@@ -52,6 +52,7 @@ func _setup_player() -> void:
 func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Reset Room"):
         Globals.load_next_level()
+        # $ScreenShaker.shake(2)
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:

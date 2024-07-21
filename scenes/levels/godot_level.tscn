@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ch78wtnj4trnx"]
+[gd_scene load_steps=8 format=3 uid="uid://ch78wtnj4trnx"]
 
 [ext_resource type="Script" path="res://scenes/levels/godot_level.gd" id="1_scb70"]
 [ext_resource type="TileSet" uid="uid://cm56c1q4xohp" path="res://tilesets/level.tres" id="2_xttr1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://crsxndxw8txua" path="res://autoload/linker.tscn" id="4_bghdb"]
 [ext_resource type="PackedScene" uid="uid://b4umid4o0374w" path="res://scenes/gui/tutorial_overlay.tscn" id="5_put66"]
 [ext_resource type="PackedScene" uid="uid://do4wixgs8kjnw" path="res://scenes/gui/minimap.tscn" id="6_c657l"]
+[ext_resource type="PackedScene" uid="uid://dlcgj3ddcrssp" path="res://autoload/screen_shaker.tscn" id="7_nm33y"]
 
 [node name="GodotLevel" type="Node2D"]
 script = ExtResource("1_scb70")
@@ -60,6 +61,9 @@ layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
 player = NodePath("../../../Camera2D/Player")
+
+[node name="ScreenShaker" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("7_nm33y")]
+camera = NodePath("../Camera2D")
 
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
 [connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]

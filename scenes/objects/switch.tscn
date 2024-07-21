@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdvkd68lu1inl"]
+
+[ext_resource type="Script" path="res://scenes/objects/switch.gd" id="1_oidow"]
+[ext_resource type="Texture2D" uid="uid://c5cq6w3bkd7ck" path="res://graphics/objects/switch_down.png" id="2_lcgnq"]
+[ext_resource type="Texture2D" uid="uid://bhm7vrrlhlur6" path="res://graphics/objects/switch.png" id="3_omexa"]
+[ext_resource type="AudioStream" uid="uid://b4pmrhttvikxr" path="res://audio/walk.wav" id="4_6v12t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqa6"]
+size = Vector2(26, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t5gh"]
+size = Vector2(24, 2)
+
+[node name="Switch" type="StaticBody2D"]
+script = ExtResource("1_oidow")
+
+[node name="SwitchPressed" type="Sprite2D" parent="."]
+texture = ExtResource("2_lcgnq")
+
+[node name="SwitchDepressed" type="Sprite2D" parent="."]
+texture = ExtResource("3_omexa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_wwqa6")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_2t5gh")
+
+[node name="SfxSwitchClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6v12t")
+volume_db = 10.624
+pitch_scale = 2.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
