@@ -52,3 +52,25 @@ func get_input_action_keynames(action_name: String) -> Array:
     return InputMap.action_get_events(action_name).map(func (ev: InputEvent) -> String:
         return ev.as_text().split(' (')[0]
     ) as Array
+
+func dump_state() -> Dictionary:
+    return {
+        "world_coord": world_coord,
+        "player_spawn_position": player_spawn_position,
+        "player_spawn_velocity": player_spawn_velocity,
+        "player_spawn_scale": player_spawn_scale,
+        "visited_levels": visited_levels,
+        "warped_transition": warped_transition,
+        "progress_flags": progress_flags,
+        "player_skills": player_skills
+    }
+
+func load_state(state: Dictionary) -> void:
+    world_coord = state.world_coord
+    player_spawn_position = state.player_spawn_position
+    player_spawn_velocity = state.player_spawn_velocity
+    player_spawn_scale = state.player_spawn_scale
+    visited_levels = state.visited_levels
+    warped_transition = state.warped_transition
+    progress_flags = state.progress_flags
+    player_skills = state.player_skills

@@ -19,54 +19,54 @@ var projectile_direction: Vector2 = Vector2.ZERO
 var level_structure: Array[int] = []
 
 var intSceneMap: Dictionary = {
-    1: movable_brick_scene,
-    2: brick_scene,
-    3: filter_brick_scene,
-    4: spike_scene,
-    5: locked_brick_scene,
-    6: key_scene,
-    7: warp_scene,
-    # 8 is a conditional brick_scene based on progression flags
-    9: powerup_telekinesis_scene,
-    10: powerup_link_scene,
-    11: powerup_sprint_scene,
-    13: switch_scene
+	1: movable_brick_scene,
+	2: brick_scene,
+	3: filter_brick_scene,
+	4: spike_scene,
+	5: locked_brick_scene,
+	6: key_scene,
+	7: warp_scene,
+	# 8 is a conditional brick_scene based on progression flags
+	9: powerup_telekinesis_scene,
+	10: powerup_link_scene,
+	11: powerup_sprint_scene,
+	13: switch_scene
 }
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    super._ready()
-    var player_bounds: Rect2 = Rect2(%Player.position - %Player.dimensions/2, %Player.dimensions)
-    for idx in level_structure.size():
-        var tile: int = level_structure[idx]
-        if tile == 8 and Globals.progress_flags.left_button_pressed and Globals.progress_flags.right_button_pressed:
-            # If both buttons were pressed, spawn the blocks indexed as 8 as normal bricks. Otherwise, skip them.
-            tile = 2
-        if tile in intSceneMap:
-            var scene: PackedScene = intSceneMap[tile] as PackedScene
-            var pos: Vector2 = index_to_vector(idx)
-            # If the player overlaps with one of these blocks, skip spawning it.
-            if not player_bounds.has_point(pos):
-                var instance: Node2D = scene.instantiate() as Node2D
-                instance.position = pos
-                $Floor.add_child(instance)
-                if instance.has_signal('player_killed'):
-                    instance.connect('player_killed', func die() -> void:
-                        %Player.kill()
-                    )
-                if instance.has_signal('block_deleted'):
-                    instance.connect('block_deleted', func delete(block: AnimatableBody2D) -> void:
-                        $Linker.remove_body(block)
-                        block.queue_free()
-                    )
-        elif tile != 0 and tile != 8:
-            print('Missing tile index ', tile)
-    
+	super._ready()
+	var player_bounds: Rect2 = Rect2(%Player.position - %Player.dimensions/2, %Player.dimensions)
+	for idx in level_structure.size():
+		var tile: int = level_structure[idx]
+		if tile == 8 and Globals.progress_flags.left_button_pressed and Globals.progress_flags.right_button_pressed:
+			# If both buttons were pressed, spawn the blocks indexed as 8 as normal bricks. Otherwise, skip them.
+			tile = 2
+		if tile in intSceneMap:
+			var scene: PackedScene = intSceneMap[tile] as PackedScene
+			var pos: Vector2 = index_to_vector(idx)
+			# If the player overlaps with one of these blocks, skip spawning it.
+			if not player_bounds.has_point(pos):
+				var instance: Node2D = scene.instantiate() as Node2D
+				instance.position = pos
+				$Floor.add_child(instance)
+				if instance.has_signal('player_killed'):
+					instance.connect('player_killed', func die() -> void:
+						%Player.kill()
+					)
+				if instance.has_signal('block_deleted'):
+					instance.connect('block_deleted', func delete(block: AnimatableBody2D) -> void:
+						$Linker.remove_body(block)
+						block.queue_free()
+					)
+		elif tile != 0 and tile != 8:
+			print('Missing tile index ', tile)
+	
 
 
 func index_to_vector(idx: int) -> Vector2:
-    # Calculate X based on the index, which loops around. Subtract half of the level width as 0, 0 is the center of the level.
-    # Add half a tile because of the center-anchored positioning.
-    var x: float = idx % level_width * tile_size - (level_width/2*tile_size) + tile_size/2;
-    # Same as X, but we divide and discard the floating point part to calculate the Y position.
-    var y: float = idx / level_width * tile_size - (level_height/2*tile_size) + tile_size/2
-    return Vector2(x, y)
+	# Calculate X based on the index, which loops around. Subtract half of the level width as 0, 0 is the center of the level.
+	# Add half a tile because of the center-anchored positioning.
+	var x: float = idx % level_width * tile_size - (level_width/2*tile_size) + tile_size/2;
+	# Same as X, but we divide and discard the floating point part to calculate the Y position.
+	var y: float = idx / level_width * tile_size - (level_height/2*tile_size) + tile_size/2
+	return Vector2(x, y)

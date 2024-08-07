@@ -20,6 +20,7 @@ func _ready() -> void:
     else:
         $MinimapCanvas/Control.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT, Control.PRESET_MODE_KEEP_SIZE)
     _setup_player()
+    SaverLoader.save_current_state()
 
 func _setup_world_coords() -> void :
     var regex: RegEx = RegEx.new()
@@ -146,7 +147,7 @@ func _on_player_gain_link() -> void:
     $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Link'
-    $Linker.connect('body_linked', checkIfTwoLinked)
+    $Linker.connect('body_linked', check_if_two_linked)
     
     
 func _on_player_gain_sprint() -> void:
@@ -156,10 +157,10 @@ func _on_player_gain_sprint() -> void:
     tutorial_dismiss_action = 'Sprint'
     
 
-func checkIfTwoLinked(_body: AnimatableBody2D) -> void:
+func check_if_two_linked(_body: AnimatableBody2D) -> void:
     if $Linker.linked_bodies.size() == 2:
         var reset_input_actions: Array = Globals.get_input_action_keynames('Clear Link')
         $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
         $TutorialCanvas/TutorialOverlay.fadeIn(.5)
         tutorial_dismiss_action = 'Clear Link'
-        $Linker.disconnect('body_linked', checkIfTwoLinked)
+        $Linker.disconnect('body_linked', check_if_two_linked)
