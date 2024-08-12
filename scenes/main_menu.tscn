@@ -2,33 +2,18 @@
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_34h0c"]
 [ext_resource type="Texture2D" uid="uid://dvjffdva57c6q" path="res://graphics/menu.png" id="1_dn3xt"]
-[ext_resource type="PackedScene" uid="uid://dtx8gs4evobhc" path="res://scenes/gui/main_menu_button.tscn" id="2_s0jmx"]
+[ext_resource type="PackedScene" uid="uid://bt7s1xjkhff68" path="res://scenes/gui/main_menu.tscn" id="3_co6a1"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_34h0c")
 
-[node name="Menu" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576.81, 320)
 scale = Vector2(1.63, 1.61)
 texture = ExtResource("1_dn3xt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_right = 1175.0
-offset_bottom = 621.0
-theme_override_constants/separation = 5
-alignment = 2
+[node name="MainMenu" parent="." instance=ExtResource("3_co6a1")]
 
-[node name="Continue" parent="VBoxContainer" instance=ExtResource("2_s0jmx")]
-layout_mode = 2
-text = "Continue"
-
-[node name="NewGame" parent="VBoxContainer" instance=ExtResource("2_s0jmx")]
-layout_mode = 2
-text = "New Game"
-
-[node name="Settings2" parent="VBoxContainer" instance=ExtResource("2_s0jmx")]
-layout_mode = 2
-text = "Settings"
-
-[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="continue_pressed" from="MainMenu" to="." method="_on_main_menu_continue_pressed"]
+[connection signal="new_game_pressed" from="MainMenu" to="." method="_on_main_menu_new_game_pressed"]
+[connection signal="settings_pressed" from="MainMenu" to="." method="_on_main_menu_settings_pressed"]

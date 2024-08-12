@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmcam4ngfcxwf"]
+[gd_scene load_steps=5 format=3 uid="uid://dn7iorresd00i"]
 
 [ext_resource type="Texture2D" uid="uid://duwlcro6gk4g6" path="res://graphics/objects/portal.png" id="1_bfq8a"]
 [ext_resource type="Script" path="res://scenes/objects/warp.gd" id="1_iwu6g"]
@@ -20,6 +20,7 @@ texture = ExtResource("1_bfq8a")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2kgk3")
 pitch_scale = 0.35
+bus = &"Sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

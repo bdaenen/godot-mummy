@@ -36,5 +36,6 @@ shape = SubResource("RectangleShape2D_2t5gh")
 stream = ExtResource("4_6v12t")
 volume_db = 10.624
 pitch_scale = 2.0
+bus = &"Sfx"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

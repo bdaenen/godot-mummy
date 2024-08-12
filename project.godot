@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Globals="*res://autoload/Globals.gd"
 BgMusicPlayer="*res://autoload/bg_music_player.tscn"
 SaverLoader="*res://autoload/saver_loader.gd"
+GGS="*res://addons/ggs/classes/global/ggs.tscn"
 
 [debug]
 
@@ -31,6 +32,10 @@ gdscript/warnings/integer_division=0
 window/size/viewport_height=640
 window/size/transparent=true
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
 
 [input]
 

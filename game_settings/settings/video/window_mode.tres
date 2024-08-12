@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dhofbfllfodcy"]
+
+[ext_resource type="Script" path="res://game_settings/settings/video/window_mode.gd" id="1_mexqd"]
+
+[resource]
+resource_name = "window_mode"
+script = ExtResource("1_mexqd")
+current = true
+default = false
+name = "window_mode"
+category = "video"
+value_type = 1
+value_hint = 6
+value_hint_string = "Enable fullscreen"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmburhckr52e"]
+
+[ext_resource type="Script" path="res://scenes/gui/slider_control.gd" id="1_apjv5"]
+
+[node name="SliderControl" type="GridContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+columns = 2
+script = ExtResource("1_apjv5")
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="Label" type="Label" parent="LabelMarginContainer"]
+layout_mode = 2
+text = "Label"
+
+[node name="ControlMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
