@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5tcsxn61vwjf"]
+
+[ext_resource type="Script" path="res://scenes/base_settings_menu.gd" id="1_cud08"]
+[ext_resource type="Texture2D" uid="uid://dvjffdva57c6q" path="res://graphics/menu.png" id="2_htpga"]
+
+[node name="BaseSettingsMenu" type="Node2D"]
+script = ExtResource("1_cud08")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576.81, 320)
+scale = Vector2(1.63, 1.61)
+texture = ExtResource("2_htpga")
+offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 642.0
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 28
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 28
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.654902)

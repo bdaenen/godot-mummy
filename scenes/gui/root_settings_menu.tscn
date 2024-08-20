@@ -1,0 +1,139 @@
+[gd_scene load_steps=8 format=3 uid="uid://d163trrwkea16"]
+
+[ext_resource type="PackedScene" uid="uid://mmburhckr52e" path="res://scenes/gui/slider_control.tscn" id="1_kabji"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="2_pyqih"]
+[ext_resource type="Resource" uid="uid://cnh1hu0aa1b2g" path="res://game_settings/settings/audio/master_volume.tres" id="3_rn5nl"]
+[ext_resource type="Resource" uid="uid://btlq1p2klf7lj" path="res://game_settings/settings/audio/bg_volume.tres" id="4_8sr6t"]
+[ext_resource type="Resource" uid="uid://w58kruy5t7m8" path="res://game_settings/settings/audio/sfx_volume.tres" id="5_g5kku"]
+[ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="6_tdc66"]
+[ext_resource type="Resource" uid="uid://dhofbfllfodcy" path="res://game_settings/settings/video/window_mode.tres" id="7_02ody"]
+
+[node name="RootSettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1103.0
+offset_bottom = 588.0
+
+[node name="HeaderMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 24
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HeaderMarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
+text = "[center] Settings [/center]"
+
+[node name="SettingsMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 1103.0
+offset_bottom = 588.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_top = 124
+theme_override_constants/margin_right = 350
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMarginContainer"]
+layout_mode = 2
+
+[node name="AudioHeader" type="RichTextLabel" parent="SettingsMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u] Audio [/u]"
+fit_content = true
+
+[node name="MasterVolume" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "Master Volume"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/MasterVolume/LabelMarginContainer" index="0"]
+text = "Master Volume"
+
+[node name="Slider" parent="SettingsMarginContainer/VBoxContainer/MasterVolume/ControlMarginContainer" index="0" instance=ExtResource("2_pyqih")]
+layout_mode = 2
+setting = ExtResource("3_rn5nl")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="BgmVolume" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "BGM Volume"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/BgmVolume/LabelMarginContainer" index="0"]
+text = "BGM Volume"
+
+[node name="BgmSlider" parent="SettingsMarginContainer/VBoxContainer/BgmVolume/ControlMarginContainer" index="0" instance=ExtResource("2_pyqih")]
+layout_mode = 2
+size_flags_horizontal = 4
+setting = ExtResource("4_8sr6t")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="SfxVolume" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "SFX Volume"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/SfxVolume/LabelMarginContainer" index="0"]
+text = "SFX Volume"
+
+[node name="SfxSlider" parent="SettingsMarginContainer/VBoxContainer/SfxVolume/ControlMarginContainer" index="0" instance=ExtResource("2_pyqih")]
+layout_mode = 2
+size_flags_horizontal = 4
+setting = ExtResource("5_g5kku")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="VideoHeader" type="RichTextLabel" parent="SettingsMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u]Video[/u]"
+fit_content = true
+
+[node name="WindowMode" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "Fullscreen"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/WindowMode/LabelMarginContainer" index="0"]
+text = "Fullscreen"
+
+[node name="Checkbox" parent="SettingsMarginContainer/VBoxContainer/WindowMode/ControlMarginContainer" index="0" instance=ExtResource("6_tdc66")]
+layout_mode = 2
+setting = ExtResource("7_02ody")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="InputHeader" type="RichTextLabel" parent="SettingsMarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "[u]Input[/u]"
+fit_content = true
+
+[node name="InputOptions" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "Keybinds"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/InputOptions/LabelMarginContainer" index="0"]
+text = "Keybinds"
+
+[node name="KeybindButtons" type="Button" parent="SettingsMarginContainer/VBoxContainer/InputOptions/ControlMarginContainer" index="0"]
+layout_mode = 2
+text = "Change keybinds..."
+
+[editable path="SettingsMarginContainer/VBoxContainer/MasterVolume"]
+[editable path="SettingsMarginContainer/VBoxContainer/MasterVolume/ControlMarginContainer/Slider"]
+[editable path="SettingsMarginContainer/VBoxContainer/BgmVolume"]
+[editable path="SettingsMarginContainer/VBoxContainer/BgmVolume/ControlMarginContainer/BgmSlider"]
+[editable path="SettingsMarginContainer/VBoxContainer/SfxVolume"]
+[editable path="SettingsMarginContainer/VBoxContainer/SfxVolume/ControlMarginContainer/SfxSlider"]
+[editable path="SettingsMarginContainer/VBoxContainer/WindowMode"]
+[editable path="SettingsMarginContainer/VBoxContainer/WindowMode/ControlMarginContainer/Checkbox"]
+[editable path="SettingsMarginContainer/VBoxContainer/InputOptions"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cil67i6gy4b3y"]
+
+[ext_resource type="PackedScene" uid="uid://c5tcsxn61vwjf" path="res://scenes/base_settings_menu.tscn" id="1_pte3l"]
+
+[node name="KeybindSettingsMenu" instance=ExtResource("1_pte3l")]

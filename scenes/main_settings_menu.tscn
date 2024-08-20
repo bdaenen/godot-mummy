@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct37bvrd7jdcb"]
+
+[ext_resource type="PackedScene" uid="uid://c5tcsxn61vwjf" path="res://scenes/base_settings_menu.tscn" id="1_tstq4"]
+[ext_resource type="PackedScene" uid="uid://d163trrwkea16" path="res://scenes/gui/root_settings_menu.tscn" id="2_7wleh"]
+
+[node name="MainSettingsMenu" instance=ExtResource("1_tstq4")]
+
+[node name="RootSettingsMenu" parent="MarginContainer/ColorRect" index="0" instance=ExtResource("2_7wleh")]
