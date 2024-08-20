@@ -15,13 +15,19 @@ Every push to master automatically deploys to https://mummy.benn0.be, but as it'
 - ~~Tutorial/instructional popups~~ (done)
 - ~~Background music~~ (done)
 - Sound effects are mostly (done)
-- Various level-building blocks
+- ~~Various level-building blocks~~ (done)
     - ~~Brick~~ (done)
     - ~~Movable brick~~ (done)
     - ~~Brick filter (remove any other blocks that overlap)~~ (done)
     - ~~Spikes~~ (done)
     - ~~Warp points~~ (done)
     - ~~Key/keyhole~~ (done)
-    - Switches
-- Port all of the rooms over (12/16)
+    - ~~Switches~~ (done)
+- ~~Port all of the rooms over (16/16)~~ (done)
 - Game over/win states
+- Allow users to continue on run after quitting the game through an autosave feature
+- Working main menu / settings menu
+- Controller support
+- Custom keybindings
+- Difficulty selection (game-over timer vs speedrun timer)
+- Secrets???
