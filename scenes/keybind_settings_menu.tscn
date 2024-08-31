@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cil67i6gy4b3y"]
+[gd_scene load_steps=3 format=3 uid="uid://cil67i6gy4b3y"]
 
 [ext_resource type="PackedScene" uid="uid://c5tcsxn61vwjf" path="res://scenes/base_settings_menu.tscn" id="1_pte3l"]
+[ext_resource type="PackedScene" uid="uid://dr77wafg75w1c" path="res://scenes/gui/keybind_settings_menu.tscn" id="2_2imt3"]
 
 [node name="KeybindSettingsMenu" instance=ExtResource("1_pte3l")]
+
+[node name="KeybindSettingsMenu" parent="MarginContainer/ColorRect" index="0" instance=ExtResource("2_2imt3")]
+layout_mode = 1

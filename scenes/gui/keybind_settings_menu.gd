@@ -1,62 +1,25 @@
 extends Control
 
-var current_button : Button
-
-@onready var button_01 : Button = $SettingsMarginContainer/VBoxContainer/SliderControl/ControlMarginContainer/Shoot
-#@onready var button_02 : Button = $Button_02
-@onready var label_01 : Label = $SettingsMarginContainer/VBoxContainer/SliderControl/LabelMarginContainer/Label
-# @onready var label_02 : Label = $Label_02
-
+var keybind_button: PackedScene = preload('res://scenes/gui/keybind_button.tscn')
+# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    $PanelContainer.hide()
+    var config: ConfigFile = ConfigFile.new()
+    config.load('user://input.cfg')
+    var actions: Array[StringName] = InputMap.get_actions().filter(func remove_ui_keys(action: StringName) -> bool:
+        return not action.begins_with('ui_')
+    )
+    for action in actions:
+        var btn: Control = keybind_button.instantiate()
+        btn.action_string_name = action
+        btn.connect('waiting_for_input', disable_buttons)
+        btn.connect('waiting_complete', enable_buttons)
+        %KeybindContainer.add_child(btn)
     
-    
-# Whenerver a button is pressed, do:
-func _on_button_pressed(button: Button) -> void:
-    current_button = button # assign clicked button to current_button
-    $PanelContainer.show() # show the panel with the info
+func disable_buttons() -> void:
+    for btn in %KeybindContainer.get_children():
+        btn.disabled = true
 
-func _input(event: InputEvent) -> void:
-    if !current_button: # return if current_button is null
-        return
-        
-    if event is InputEventKey || event is InputEventMouseButton:
-        
-        # This part is for deleting duplicate assignments:
-        # Add all assigned keys to a dictionary
-        var all_ies : Dictionary = {}
-        for ia in InputMap.get_actions():
-            for iae in InputMap.action_get_events(ia):
-                all_ies[iae.as_text()] = ia
-
-        # check if the new key is already in the dict.
-        # If yes, delete the old one.
-        if all_ies.keys().has(event.as_text()):
-            InputMap.action_erase_events(all_ies[event.as_text()])
-        
-        # This part is where the actual remapping occures:
-        # Erase the event in the Input map
-        InputMap.action_erase_events(current_button.name)
-        # And assign the new event to it
-        InputMap.action_add_event(current_button.name, event)
-        
-        # After a key is assigned, set current_button back to null
-        current_button = null
-        $PanelContainer.hide() # hide the info panel again
-        
-        _update_labels() # refresh the labels
-        
-func _update_labels() -> void:
-    # This is just a quick way to update the labels:
-    var eb1 : Array[InputEvent] = InputMap.action_get_events("Shoot")
-    print(eb1)
-    if !eb1.is_empty():
-        label_01.text = eb1[0].as_text()
-    else:
-        label_01.text = ""
-        
-    # var eb2 : Array[InputEvent] = InputMap.action_get_events("Button_02")
-#	if !eb2.is_empty():
-#		label_02.text = eb2[0].as_text()
-#	else:
-#		label_02.text = ""
+func enable_buttons() -> void:
+    print('reenabling buttons')
+    for btn in %KeybindContainer.get_children():
+        btn.disabled = false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d163trrwkea16"]
+[gd_scene load_steps=9 format=3 uid="uid://d163trrwkea16"]
 
 [ext_resource type="PackedScene" uid="uid://mmburhckr52e" path="res://scenes/gui/slider_control.tscn" id="1_kabji"]
+[ext_resource type="Script" path="res://scenes/gui/root_settings_menu.gd" id="1_pg6kv"]
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="2_pyqih"]
 [ext_resource type="Resource" uid="uid://cnh1hu0aa1b2g" path="res://game_settings/settings/audio/master_volume.tres" id="3_rn5nl"]
 [ext_resource type="Resource" uid="uid://btlq1p2klf7lj" path="res://game_settings/settings/audio/bg_volume.tres" id="4_8sr6t"]
@@ -13,6 +14,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1103.0
 offset_bottom = 588.0
+script = ExtResource("1_pg6kv")
 
 [node name="HeaderMarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -127,6 +129,8 @@ text = "Keybinds"
 [node name="KeybindButtons" type="Button" parent="SettingsMarginContainer/VBoxContainer/InputOptions/ControlMarginContainer" index="0"]
 layout_mode = 2
 text = "Change keybinds..."
+
+[connection signal="pressed" from="SettingsMarginContainer/VBoxContainer/InputOptions/ControlMarginContainer/KeybindButtons" to="." method="_on_keybind_buttons_pressed"]
 
 [editable path="SettingsMarginContainer/VBoxContainer/MasterVolume"]
 [editable path="SettingsMarginContainer/VBoxContainer/MasterVolume/ControlMarginContainer/Slider"]

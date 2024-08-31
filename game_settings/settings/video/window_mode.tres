@@ -5,7 +5,7 @@
 [resource]
 resource_name = "window_mode"
 script = ExtResource("1_mexqd")
-current = true
+current = false
 default = false
 name = "window_mode"
 category = "video"

@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://7gt34nv4wxaj"]
+
+[ext_resource type="Script" path="res://scenes/gui/keybind_button.gd" id="1_dcvcv"]
+
+[node name="KeybindButton" type="GridContainer"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+script = ExtResource("1_dcvcv")
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Label"
+
+[node name="Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Button"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -6,7 +6,7 @@
 resource_name = "bg_volume"
 script = ExtResource("1_2xdcj")
 audio_bus = "Bgm"
-current = 76.0
+current = 100.0
 default = 100.0
 name = "bg_volume"
 category = "audio"
