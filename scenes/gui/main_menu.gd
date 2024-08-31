@@ -6,7 +6,7 @@ signal settings_pressed()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     if not SaverLoader.saved_game_exists():
-        $VBoxContainer/Continue.hide()
+        $Continue.hide()
 
 
 func _on_continue_pressed() -> void:

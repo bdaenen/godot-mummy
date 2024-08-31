@@ -8,8 +8,11 @@ var waiting: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    var regex: RegEx = RegEx.new()
+    regex.compile("\\(.*\\)")
+    var sanitized_label: String = regex.sub(InputMap.action_get_events(action_string_name)[0].as_text(), '', true)
     %Label.text = action_string_name
-    %Button.text = InputMap.action_get_events(action_string_name)[0].as_text()
+    %Button.text = sanitized_label.lstrip(' ').rstrip(' ')
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +21,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-    print('pressed')
     if disabled or waiting:
         return
     %Button.text = "Waiting for input..."
@@ -28,20 +30,25 @@ func _on_button_pressed() -> void:
 func _input(event: InputEvent) -> void:
     if not waiting or not $Timer.is_stopped():
         return
-    if event is InputEventMouseButton or event is InputEventKey or event is InputEventJoypadButton:
+    
+    
+    var actions: Array[StringName] = InputMap.get_actions().filter(func remove_ui_keys(action: StringName) -> bool:
+        return not action.begins_with('ui_')
+    )
+    var duplicates: Array = actions.filter(func keybind_exists(action: StringName) -> bool:
+        return InputMap.action_has_event(action, event) && action != action_string_name
+    )
+    
+    if duplicates.size():
+        %Button.text = "Duplicate keybind: %s" % duplicates[0]
+        self.modulate = Color.RED
+    elif event is InputEventMouseButton or event is InputEventKey or event is InputEventJoypadButton:
+        self.modulate = Color.WHITE
         InputMap.action_erase_events(action_string_name)
         InputMap.action_add_event(action_string_name, event)
         %Button.text = InputMap.action_get_events(action_string_name)[0].as_text()
         $Timer.start()
-        print('awaiting timer')
         await $Timer.timeout
-        print('timer timed out!')
         $Timer.stop()
         waiting_complete.emit()
         waiting = false
-    
-    #if not InputMap.event_is_action(event):
-    #    print('binding new key, ', event)
-    #else:
-    #    print('DUPLICATE')
-    # InputMap.action_erase_events(action_string_name)

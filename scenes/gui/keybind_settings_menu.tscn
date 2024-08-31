@@ -42,3 +42,11 @@ theme_override_constants/margin_bottom = 100
 [node name="KeybindContainer" type="VBoxContainer" parent="SettingsMarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="Button" type="Button" parent="SettingsMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Back"
+
+[connection signal="pressed" from="SettingsMarginContainer/Button" to="." method="_on_button_pressed"]
