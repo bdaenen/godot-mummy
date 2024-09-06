@@ -45,7 +45,6 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="SettingsMarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Back"
 
