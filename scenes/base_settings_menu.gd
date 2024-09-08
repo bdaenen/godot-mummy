@@ -9,8 +9,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
     pass
-
-
-#func _on_keybind_buttons_pressed() -> void:
-    #get_tree().change_scene_to_packed(keybind_scene)
-    ## TODO: launch new keybind settings scene

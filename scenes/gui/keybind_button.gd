@@ -4,6 +4,7 @@ class_name KeybindButton
 @export var disabled: bool
 signal waiting_for_input()
 signal waiting_complete()
+signal keybind_changed(action: StringName, event: InputEvent)
 var waiting: bool = false
 
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +47,7 @@ func _input(event: InputEvent) -> void:
         self.modulate = Color.WHITE
         InputMap.action_erase_events(action_string_name)
         InputMap.action_add_event(action_string_name, event)
+        keybind_changed.emit(action_string_name, event)
         %Button.text = InputMap.action_get_events(action_string_name)[0].as_text()
         $Timer.start()
         await $Timer.timeout

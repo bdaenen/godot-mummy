@@ -34,6 +34,24 @@ var player_skills: Dictionary = {
     #"can_sprint": false
 #}
 
+func _ready() -> void:
+    load_input_config()
+        
+func load_input_config() -> void:
+    var input_config: ConfigFile = ConfigFile.new()
+    var err: Error = input_config.load('user://input.cfg')
+    if (err != OK):
+        return
+    var actions: Array[StringName] = InputMap.get_actions().filter(func remove_ui_keys(action: StringName) -> bool:
+        return not action.begins_with('ui_')
+    )
+    for section in input_config.get_sections():
+        if section == "input":
+            for action in actions:
+                var existing_input: Variant = input_config.get_value('input', action, false)
+                if (existing_input):
+                    InputMap.action_erase_events(action)
+                    InputMap.action_add_event(action, existing_input)
 
 func has_visited_level(coordinate: Vector2i) -> bool:
     return visited_levels.has(coordinate)

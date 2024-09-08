@@ -24,10 +24,18 @@ Every push to master automatically deploys to https://mummy.benn0.be, but as it'
     - ~~Key/keyhole~~ (done)
     - ~~Switches~~ (done)
 - ~~Port all of the rooms over (16/16)~~ (done)
-- Game over/win states
-- Allow users to continue on run after quitting the game through an autosave feature
-- Working main menu / settings menu
+- ~~Game over/win states~~ (done)
+- ~~Allow users to continue on run after quitting the game through an autosave feature~~ (done)
+- ~~Working main menu / settings menu~~ (done)
 - Controller support
-- Custom keybindings
+- ~~Custom keybindings~~ (done)
 - Difficulty selection (game-over timer vs speedrun timer)
+- Polish:
+    - Screen-shake/sfx/particles when both switches are pushed
+    - Splash screen?
+    - Add some music to main menu, feedback for sfx/bgm sliders
+    - Main menu animations and sfx, controller support
+    - Controller / keyboard key icons instead of text
+    - Add some particle affects and lighting
+    - Add missing sound effect when picking up key
 - Secrets???
