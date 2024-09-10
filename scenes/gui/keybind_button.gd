@@ -32,7 +32,6 @@ func _input(event: InputEvent) -> void:
     if not waiting or not $Timer.is_stopped():
         return
     
-    
     var actions: Array[StringName] = InputMap.get_actions().filter(func remove_ui_keys(action: StringName) -> bool:
         return not action.begins_with('ui_')
     )
@@ -43,7 +42,7 @@ func _input(event: InputEvent) -> void:
     if duplicates.size():
         %Button.text = "Duplicate keybind: %s" % duplicates[0]
         self.modulate = Color.RED
-    elif event is InputEventMouseButton or event is InputEventKey or event is InputEventJoypadButton:
+    elif event is InputEventMouseButton or event is InputEventKey or event is InputEventJoypadButton or event is InputEventJoypadMotion:
         self.modulate = Color.WHITE
         InputMap.action_erase_events(action_string_name)
         InputMap.action_add_event(action_string_name, event)

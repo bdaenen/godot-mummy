@@ -39,3 +39,6 @@ Every push to master automatically deploys to https://mummy.benn0.be, but as it'
     - Add some particle affects and lighting
     - Add missing sound effect when picking up key
 - Secrets???
+- Improvements to level design:
+    - Flip the bottom layer left and right sections of the pyramid. This leads to neater progression
+    - Add in a way of getting to the left-most second-layer floor from the flipped filter block puzzle room

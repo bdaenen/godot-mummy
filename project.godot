@@ -37,6 +37,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://graphics/fonts/04B_03__.TTF"
+
 [input]
 
 Left={

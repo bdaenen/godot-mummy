@@ -43,12 +43,6 @@ bus = &"Sfx"
 wait_time = 0.2
 autostart = true
 
-[node name="SprintAnimationTimer" type="Timer" parent="."]
-wait_time = 0.05
-
-[node name="SfxSprintTimer" type="Timer" parent="."]
-wait_time = 0.1
-
 [node name="JumpCooldown" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
@@ -57,6 +51,8 @@ one_shot = true
 stream = ExtResource("6_4qd5i")
 pitch_scale = 0.35
 bus = &"Sfx"
+
+[node name="Crosshair" type="Sprite2D" parent="."]
 
 [connection signal="timeout" from="WalkAnimationTimer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="SfxWalkTimer" to="." method="_on_sfx_walk_timer_timeout"]

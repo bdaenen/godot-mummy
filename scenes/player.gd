@@ -100,11 +100,13 @@ func _physics_process(delta: float) -> void:
     var direction := Input.get_axis("Left", "Right")
     var is_sprinting: bool = Input.is_action_pressed("Sprint") and skills.can_sprint
     $SfxWalkTimer.wait_time = 0.1 if is_sprinting else 0.2
+    $WalkAnimationTimer.wait_time = 0.05 if is_sprinting else 0.1
     var speed: float = SPRINT_SPEED if is_sprinting else SPEED
     
     if direction:
         velocity.x = direction * speed
-        $WalkAnimationTimer.set_paused(false)
+        if is_on_floor():
+            $WalkAnimationTimer.set_paused(false)
         if $SfxWalkTimer.paused:
             $SfxWalkTimer.set_paused(false)
             if is_on_floor():
@@ -129,7 +131,12 @@ func _process(_delta: float) -> void:
     if is_on_floor() and not prev_is_on_floor:
         # reset the walk timer
         $SfxWalkTimer.start()
+        $WalkAnimationTimer.start()
         $SfxWalk.play()
+    elif not is_on_floor() and prev_is_on_floor:
+        print('pausing walktimers')
+        $SfxWalkTimer.set_paused(true)
+        $WalkAnimationTimer.set_paused(true)
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
         shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
