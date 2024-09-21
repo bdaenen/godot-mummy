@@ -8,6 +8,7 @@ var minimap_position: String = 'right'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     _setup_world_coords()
     await _clear_overlapping_blocks()
     if !$"/root/BgMusicPlayer".is_playing():
@@ -46,6 +47,7 @@ func _clear_overlapping_blocks() -> void:
             
 func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position
+    %Player/Crosshair.position = Globals.player_crosshair_spawn_position
     %Player/Sprite2D.scale = Globals.player_spawn_scale
     %Player.velocity = Globals.player_spawn_velocity
     
@@ -62,6 +64,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.x = -1000
@@ -72,6 +75,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.x = 1000
@@ -83,6 +87,7 @@ func _physics_process(_delta: float) -> void:
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.y = 500
@@ -93,6 +98,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.y = -500

@@ -12,6 +12,9 @@ const SPEED = 200.0
 const SPRINT_SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 var is_jump_ready: bool = true
+var is_shoot_bound_to_gamepad: bool = Globals.is_input_action_bound_to_gamepad('Shoot')
+
+
 
 var dimensions: Vector2 = Vector2.ZERO
 var dead: bool = false
@@ -119,7 +122,16 @@ func _physics_process(delta: float) -> void:
         $SfxWalkTimer.start()
         $SfxWalkTimer.set_paused(true)
         $Sprite2D.position.y = 0
+    
     move_and_slide()
+
+    if not is_shoot_bound_to_gamepad:
+        $Crosshair.global_position = round(get_global_mouse_position())
+    else:
+        var crosshair_horizontal_direction := Input.get_axis("Aim_Left", "Aim_Right")
+        var crosshair_vertical_direction := Input.get_axis("Aim_Up", "Aim_Down")
+        if abs(crosshair_horizontal_direction) > 0.5 or abs(crosshair_vertical_direction) > 0.5:
+            $Crosshair.global_position = global_position + (Vector2(crosshair_horizontal_direction, crosshair_vertical_direction) * 100)
 
 func _process(_delta: float) -> void:
     if dead or input_disabled:
@@ -134,14 +146,14 @@ func _process(_delta: float) -> void:
         $WalkAnimationTimer.start()
         $SfxWalk.play()
     elif not is_on_floor() and prev_is_on_floor:
-        print('pausing walktimers')
         $SfxWalkTimer.set_paused(true)
         $WalkAnimationTimer.set_paused(true)
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
-        shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
+        #shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
+        shoot_tk_projectile.emit(global_position.direction_to($Crosshair.global_position))
     if Input.is_action_just_pressed("Link") and skills.can_link:
-        shoot_link_projectile.emit(global_position.direction_to(get_global_mouse_position()))
+        shoot_link_projectile.emit(global_position.direction_to($Crosshair.global_position))
     if Input.is_action_just_pressed("Clear Link") and skills.can_link and linker_ref:
         linker_ref.clear_bodies()
     prev_is_on_floor = is_on_floor()

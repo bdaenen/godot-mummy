@@ -10,6 +10,7 @@ var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/wind
 var world_coord: Vector2i = Vector2i(2, 0)
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
 var player_spawn_position: Vector2 = Vector2(-304, -144)
+var player_crosshair_spawn_position: Vector2 = Vector2(100, 0)
 #var player_spawn_position: Vector2 = Vector2(100, 80)
 var player_spawn_velocity: Vector2 = Vector2.ZERO
 var player_spawn_scale: Vector2 = Vector2(1, 1)
@@ -70,11 +71,39 @@ func get_input_action_keynames(action_name: String) -> Array:
     return InputMap.action_get_events(action_name).map(func (ev: InputEvent) -> String:
         return ev.as_text().split(' (')[0]
     ) as Array
+func is_input_action_bound_to_gamepad(action_name: String) -> bool:
+    return InputMap.action_get_events(action_name).any(func (ev: InputEvent) -> bool:
+        print(ev)
+        return ev is InputEventJoypadButton or ev is InputEventJoypadMotion
+    )
+    
+const __2root2 := 2.0 * sqrt(2.0)
+
+# Map a circle grid to a square grid
+# input: vector from a circular domain with radius of 1
+# output: vector in a square domain from (-1,-1) to (1,1)
+func map_circle_to_square( xy :Vector2 ) -> Vector2:
+    var x2 := xy[0]*xy[0]
+    var y2 := xy[1]*xy[1]
+    return Vector2(
+        0.5 * (sqrt(2.0 + x2 - y2 + xy[0] * __2root2) - sqrt(2.0 + x2 - y2 - xy[0] * __2root2)),
+        0.5 * (sqrt(2.0 - x2 + y2 + xy[1] * __2root2) - sqrt(2.0 - x2 + y2 - xy[1] * __2root2))
+    )
+
+# Map a square grid to a circular grid
+# input: vector from a square domain from (-1,-1) to (1,1)
+# output: vector in a circle domain with radius of 1
+func map_square_to_circle( xy :Vector2 ) -> Vector2:
+    return Vector2(
+        xy.x * sqrt(1.0 - xy.y*xy.y/2.0),
+        xy.y * sqrt(1.0 - xy.x*xy.x/2.0)
+    )
 
 func dump_state() -> Dictionary:
     return {
         "world_coord": world_coord,
         "player_spawn_position": player_spawn_position,
+        "player_crosshair_spawn_position": player_crosshair_spawn_position,
         "player_spawn_velocity": player_spawn_velocity,
         "player_spawn_scale": player_spawn_scale,
         "visited_levels": visited_levels,
@@ -86,6 +115,7 @@ func dump_state() -> Dictionary:
 func load_state(state: Dictionary) -> void:
     world_coord = state.world_coord
     player_spawn_position = state.player_spawn_position
+    player_crosshair_spawn_position = state.player_crosshair_spawn_position
     player_spawn_velocity = state.player_spawn_velocity
     player_spawn_scale = state.player_spawn_scale
     visited_levels = state.visited_levels
