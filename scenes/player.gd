@@ -12,9 +12,6 @@ const SPEED = 200.0
 const SPRINT_SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 var is_jump_ready: bool = true
-var is_shoot_bound_to_gamepad: bool = Globals.is_input_action_bound_to_gamepad('Shoot')
-
-
 
 var dimensions: Vector2 = Vector2.ZERO
 var dead: bool = false
@@ -125,11 +122,11 @@ func _physics_process(delta: float) -> void:
     
     move_and_slide()
 
-    if not is_shoot_bound_to_gamepad:
+    if not Globals.current_input_mode == Globals.JOYPAD:
         $Crosshair.global_position = round(get_global_mouse_position())
     else:
-        var crosshair_horizontal_direction := Input.get_axis("Aim_Left", "Aim_Right")
-        var crosshair_vertical_direction := Input.get_axis("Aim_Up", "Aim_Down")
+        var crosshair_horizontal_direction := Input.get_axis("_controller_Aim_Left", "_controller_Aim_Right")
+        var crosshair_vertical_direction := Input.get_axis("_controller_Aim_Up", "_controller_Aim_Down")
         if abs(crosshair_horizontal_direction) > 0.5 or abs(crosshair_vertical_direction) > 0.5:
             $Crosshair.global_position = global_position + (Vector2(crosshair_horizontal_direction, crosshair_vertical_direction) * 100)
 

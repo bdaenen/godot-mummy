@@ -142,31 +142,31 @@ func _on_link_hit(body: AnimatableBody2D) -> void:
 
 
 func _on_player_gain_telekinesis() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Shoot')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Shoot')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Shoot'
 
 
 func _on_player_gain_link() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Link')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Link')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Link'
     $Linker.connect('body_linked', check_if_two_linked)
     
     
 func _on_player_gain_sprint() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Sprint')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Sprint')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Sprint'
     
 
 func check_if_two_linked(_body: AnimatableBody2D) -> void:
     if $Linker.linked_bodies.size() == 2:
-        var reset_input_actions: Array = Globals.get_input_action_keynames('Clear Link')
-        $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
+        var reset_input_actions: String = Globals.get_input_action_keyname('Clear Link')
+        $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % reset_input_actions)
         $TutorialCanvas/TutorialOverlay.fadeIn(.5)
         tutorial_dismiss_action = 'Clear Link'
         $Linker.disconnect('body_linked', check_if_two_linked)
