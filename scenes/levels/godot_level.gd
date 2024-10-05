@@ -8,6 +8,7 @@ var minimap_position: String = 'right'
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     _setup_world_coords()
     await _clear_overlapping_blocks()
     if !$"/root/BgMusicPlayer".is_playing():
@@ -46,6 +47,7 @@ func _clear_overlapping_blocks() -> void:
             
 func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position
+    %Player/Crosshair.position = Globals.player_crosshair_spawn_position
     %Player/Sprite2D.scale = Globals.player_spawn_scale
     %Player.velocity = Globals.player_spawn_velocity
     
@@ -62,6 +64,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.x = -1000
@@ -72,6 +75,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.x = 1000
@@ -83,6 +87,7 @@ func _physics_process(_delta: float) -> void:
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.y = 500
@@ -93,6 +98,7 @@ func _physics_process(_delta: float) -> void:
             Globals.player_spawn_position = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
             Globals.player_spawn_velocity = %Player.velocity
             Globals.player_spawn_scale = %Player/Sprite2D.scale
+            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
             Globals.load_next_level()
         else:
             %Player.velocity.y = -500
@@ -136,31 +142,31 @@ func _on_link_hit(body: AnimatableBody2D) -> void:
 
 
 func _on_player_gain_telekinesis() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Shoot')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Shoot')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use telekinesis" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Shoot'
 
 
 func _on_player_gain_link() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Link')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Link')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Link'
     $Linker.connect('body_linked', check_if_two_linked)
     
     
 func _on_player_gain_sprint() -> void:
-    var input_actions: Array = Globals.get_input_action_keynames('Sprint')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % ' OR '.join(input_actions))
+    var input_actions: String = Globals.get_input_action_keyname('Sprint')
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto sprint" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Sprint'
     
 
 func check_if_two_linked(_body: AnimatableBody2D) -> void:
     if $Linker.linked_bodies.size() == 2:
-        var reset_input_actions: Array = Globals.get_input_action_keynames('Clear Link')
-        $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % ' OR '.join(reset_input_actions))
+        var reset_input_actions: String = Globals.get_input_action_keyname('Clear Link')
+        $TutorialCanvas/TutorialOverlay.set_content("Linked blocks move together. \n Press <%s>\nto reset" % reset_input_actions)
         $TutorialCanvas/TutorialOverlay.fadeIn(.5)
         tutorial_dismiss_action = 'Clear Link'
         $Linker.disconnect('body_linked', check_if_two_linked)

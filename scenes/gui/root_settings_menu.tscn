@@ -130,6 +130,17 @@ text = "Keybinds"
 layout_mode = 2
 text = "Change keybinds..."
 
+[node name="ControllerInputOptions" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
+layout_mode = 2
+label = "Controller bindings"
+
+[node name="Label" parent="SettingsMarginContainer/VBoxContainer/ControllerInputOptions/LabelMarginContainer" index="0"]
+text = "Controller bindings"
+
+[node name="ControllerBindingButtons" type="Button" parent="SettingsMarginContainer/VBoxContainer/ControllerInputOptions/ControlMarginContainer" index="0"]
+layout_mode = 2
+text = "Change bindigs..."
+
 [node name="MarginContainer" type="MarginContainer" parent="SettingsMarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 24
@@ -139,6 +150,7 @@ layout_mode = 2
 text = "Back"
 
 [connection signal="pressed" from="SettingsMarginContainer/VBoxContainer/InputOptions/ControlMarginContainer/KeybindButtons" to="." method="_on_keybind_buttons_pressed"]
+[connection signal="pressed" from="SettingsMarginContainer/VBoxContainer/ControllerInputOptions/ControlMarginContainer/ControllerBindingButtons" to="." method="_on_controller_binding_buttons_pressed"]
 [connection signal="pressed" from="SettingsMarginContainer/VBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
 
 [editable path="SettingsMarginContainer/VBoxContainer/MasterVolume"]
@@ -150,3 +162,4 @@ text = "Back"
 [editable path="SettingsMarginContainer/VBoxContainer/WindowMode"]
 [editable path="SettingsMarginContainer/VBoxContainer/WindowMode/ControlMarginContainer/Checkbox"]
 [editable path="SettingsMarginContainer/VBoxContainer/InputOptions"]
+[editable path="SettingsMarginContainer/VBoxContainer/ControllerInputOptions"]

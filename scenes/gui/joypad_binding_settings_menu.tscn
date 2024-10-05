@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://8qmd410ehbhe"]
+
+[ext_resource type="PackedScene" uid="uid://dr77wafg75w1c" path="res://scenes/gui/keybind_settings_menu.tscn" id="1_v8orj"]
+[ext_resource type="Script" path="res://scenes/gui/joypad_binding_settings_menu.gd" id="2_kinkn"]
+
+[node name="JoypadBindingSettingsMenu" instance=ExtResource("1_v8orj")]
+script = ExtResource("2_kinkn")
+
+[node name="RichTextLabel" parent="HeaderMarginContainer" index="0"]
+text = "[center] Controller Bindings [/center]"

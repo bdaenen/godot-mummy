@@ -9,4 +9,5 @@ script = ExtResource("2_3gbh1")
 
 [node name="RootSettingsMenu" parent="MarginContainer/ColorRect" index="0" instance=ExtResource("2_7wleh")]
 
+[connection signal="controller_binding_button_pressed" from="MarginContainer/ColorRect/RootSettingsMenu" to="." method="_on_root_settings_menu_controller_binding_button_pressed"]
 [connection signal="keybind_button_pressed" from="MarginContainer/ColorRect/RootSettingsMenu" to="." method="_on_root_settings_menu_keybind_button_pressed"]
