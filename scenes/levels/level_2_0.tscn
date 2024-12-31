@@ -124,10 +124,10 @@ position = Vector2(496, 272)
 position = Vector2(560, 272)
 
 [node name="MovableBrick" parent="Floor" index="39" instance=ExtResource("3_qka07")]
-position = Vector2(-464, 240)
+position = Vector2(-560, 240)
 
 [node name="MovableBrick2" parent="Floor" index="40" instance=ExtResource("3_qka07")]
-position = Vector2(-464, 272)
+position = Vector2(-560, 272)
 
 [node name="Brick37" parent="Walls" index="0" instance=ExtResource("4_dgaba")]
 position = Vector2(-560, -80)
@@ -327,14 +327,8 @@ position = Vector2(-560, 208)
 [node name="Brick45" parent="Walls" index="65" instance=ExtResource("4_dgaba")]
 position = Vector2(-560, 48)
 
-[node name="Brick46" parent="Walls" index="66" instance=ExtResource("4_dgaba")]
-position = Vector2(-560, 240)
-
-[node name="Brick47" parent="Walls" index="67" instance=ExtResource("4_dgaba")]
+[node name="Brick47" parent="Walls" index="66" instance=ExtResource("4_dgaba")]
 position = Vector2(-560, 80)
-
-[node name="Brick48" parent="Walls" index="68" instance=ExtResource("4_dgaba")]
-position = Vector2(-560, 272)
 
 [node name="Brick108" parent="Platforms" index="0" instance=ExtResource("4_dgaba")]
 position = Vector2(-304, -112)
