@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/levels/level_1_1.gd" id="2_sfu23"]
 
 [node name="Level_1_1" instance=ExtResource("1_rfbi8")]
+position = Vector2(0, -2)
 script = ExtResource("2_sfu23")
 
 [node name="Walls" parent="." index="2"]

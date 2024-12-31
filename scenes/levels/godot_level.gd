@@ -11,6 +11,7 @@ func _ready() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
     _setup_world_coords()
     await _clear_overlapping_blocks()
+    _bind_block_events()
     if !$"/root/BgMusicPlayer".is_playing():
         $"/root/BgMusicPlayer".play()
 
@@ -44,7 +45,24 @@ func _clear_overlapping_blocks() -> void:
         if player_bounds.has_point(child.global_position):
             child.queue_free()
             await child.tree_exited
-            
+
+func _bind_block_events() -> void:
+    var children: Array[Node] = $Walls.get_children()
+    children.append_array($Floor.get_children())
+    children.append_array($Platforms.get_children())
+    
+    for child in children:
+        if child.has_signal('player_killed'):
+            child.connect('player_killed', func die() -> void:
+                %Player.kill()
+            )
+    
+        if child.has_signal('block_deleted'):
+            child.connect('block_deleted', func delete(block: AnimatableBody2D) -> void:
+                $Linker.remove_body(block)
+                block.queue_free()
+            )
+
 func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position
     %Player/Crosshair.position = Globals.player_crosshair_spawn_position

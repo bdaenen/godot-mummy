@@ -49,15 +49,6 @@ func _ready() -> void:
                 var instance: Node2D = scene.instantiate() as Node2D
                 instance.position = pos
                 $Floor.add_child(instance)
-                if instance.has_signal('player_killed'):
-                    instance.connect('player_killed', func die() -> void:
-                        %Player.kill()
-                    )
-                if instance.has_signal('block_deleted'):
-                    instance.connect('block_deleted', func delete(block: AnimatableBody2D) -> void:
-                        $Linker.remove_body(block)
-                        block.queue_free()
-                    )
         elif tile != 0 and tile != 8:
             print('Missing tile index ', tile)
     

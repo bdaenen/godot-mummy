@@ -1,9 +1,345 @@
-[gd_scene load_steps=3 format=3 uid="uid://chgcgbw1qifgk"]
+[gd_scene load_steps=6 format=3 uid="uid://chgcgbw1qifgk"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_qi5fu"]
-[ext_resource type="Script" path="res://scenes/levels/level_1_0.gd" id="2_e677x"]
+[ext_resource type="Script" path="res://scenes/levels/godot_level.gd" id="2_7otom"]
+[ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_oyido"]
+[ext_resource type="PackedScene" uid="uid://bwwuq1aly2w4r" path="res://scenes/objects/spikes.tscn" id="4_dhm16"]
+[ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="5_gu0i5"]
 
 [node name="Level_1_0" instance=ExtResource("1_qi5fu")]
-script = ExtResource("2_e677x")
+script = ExtResource("2_7otom")
+
+[node name="Brick20" parent="Floor" index="0" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 304)
+
+[node name="Brick21" parent="Floor" index="1" instance=ExtResource("3_oyido")]
+position = Vector2(-464, 304)
+
+[node name="Brick22" parent="Floor" index="2" instance=ExtResource("3_oyido")]
+position = Vector2(-496, 304)
+
+[node name="Brick23" parent="Floor" index="3" instance=ExtResource("3_oyido")]
+position = Vector2(-528, 304)
+
+[node name="Brick24" parent="Floor" index="4" instance=ExtResource("3_oyido")]
+position = Vector2(-432, 304)
+
+[node name="Brick25" parent="Floor" index="5" instance=ExtResource("3_oyido")]
+position = Vector2(-336, 304)
+
+[node name="Brick26" parent="Floor" index="6" instance=ExtResource("3_oyido")]
+position = Vector2(-368, 304)
+
+[node name="Brick27" parent="Floor" index="7" instance=ExtResource("3_oyido")]
+position = Vector2(-400, 304)
+
+[node name="Brick28" parent="Floor" index="8" instance=ExtResource("3_oyido")]
+position = Vector2(-304, 304)
+
+[node name="Brick31" parent="Floor" index="9" instance=ExtResource("3_oyido")]
+position = Vector2(-272, 304)
+
+[node name="Brick33" parent="Floor" index="10" instance=ExtResource("3_oyido")]
+position = Vector2(304, 304)
+
+[node name="Brick34" parent="Floor" index="11" instance=ExtResource("3_oyido")]
+position = Vector2(272, 304)
+
+[node name="Brick35" parent="Floor" index="12" instance=ExtResource("3_oyido")]
+position = Vector2(240, 304)
+
+[node name="Brick36" parent="Floor" index="13" instance=ExtResource("3_oyido")]
+position = Vector2(336, 304)
+
+[node name="Brick37" parent="Floor" index="14" instance=ExtResource("3_oyido")]
+position = Vector2(432, 304)
+
+[node name="Brick38" parent="Floor" index="15" instance=ExtResource("3_oyido")]
+position = Vector2(400, 304)
+
+[node name="Brick39" parent="Floor" index="16" instance=ExtResource("3_oyido")]
+position = Vector2(368, 304)
+
+[node name="Brick40" parent="Floor" index="17" instance=ExtResource("3_oyido")]
+position = Vector2(464, 304)
+
+[node name="Brick41" parent="Floor" index="18" instance=ExtResource("3_oyido")]
+position = Vector2(560, 304)
+
+[node name="Brick42" parent="Floor" index="19" instance=ExtResource("3_oyido")]
+position = Vector2(528, 304)
+
+[node name="Brick43" parent="Floor" index="20" instance=ExtResource("3_oyido")]
+position = Vector2(496, 304)
+
+[node name="Spikes" parent="Floor" index="21" instance=ExtResource("4_dhm16")]
+position = Vector2(-240, 304)
+
+[node name="Spikes2" parent="Floor" index="22" instance=ExtResource("4_dhm16")]
+position = Vector2(48, 304)
+
+[node name="Spikes3" parent="Floor" index="23" instance=ExtResource("4_dhm16")]
+position = Vector2(16, 304)
+
+[node name="Spikes4" parent="Floor" index="24" instance=ExtResource("4_dhm16")]
+position = Vector2(-208, 304)
+
+[node name="Spikes5" parent="Floor" index="25" instance=ExtResource("4_dhm16")]
+position = Vector2(-176, 304)
+
+[node name="Spikes6" parent="Floor" index="26" instance=ExtResource("4_dhm16")]
+position = Vector2(-144, 304)
+
+[node name="Spikes7" parent="Floor" index="27" instance=ExtResource("4_dhm16")]
+position = Vector2(-112, 304)
+
+[node name="Spikes8" parent="Floor" index="28" instance=ExtResource("4_dhm16")]
+position = Vector2(-80, 304)
+
+[node name="Spikes9" parent="Floor" index="29" instance=ExtResource("4_dhm16")]
+position = Vector2(-48, 304)
+
+[node name="Spikes10" parent="Floor" index="30" instance=ExtResource("4_dhm16")]
+position = Vector2(-16, 304)
+
+[node name="Spikes11" parent="Floor" index="31" instance=ExtResource("4_dhm16")]
+position = Vector2(80, 304)
+
+[node name="Spikes12" parent="Floor" index="32" instance=ExtResource("4_dhm16")]
+position = Vector2(112, 304)
+
+[node name="Spikes13" parent="Floor" index="33" instance=ExtResource("4_dhm16")]
+position = Vector2(144, 304)
+
+[node name="Spikes14" parent="Floor" index="34" instance=ExtResource("4_dhm16")]
+position = Vector2(176, 304)
+
+[node name="Spikes15" parent="Floor" index="35" instance=ExtResource("4_dhm16")]
+position = Vector2(208, 304)
+
+[node name="Brick" parent="Walls" index="0" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -304)
+
+[node name="Brick2" parent="Walls" index="1" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -272)
+
+[node name="Brick3" parent="Walls" index="2" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -240)
+
+[node name="Brick4" parent="Walls" index="3" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -208)
+
+[node name="Brick5" parent="Walls" index="4" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -176)
+
+[node name="Brick6" parent="Walls" index="5" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -144)
+
+[node name="Brick7" parent="Walls" index="6" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -112)
+
+[node name="Brick8" parent="Walls" index="7" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -80)
+
+[node name="Brick9" parent="Walls" index="8" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -48)
+
+[node name="Brick10" parent="Walls" index="9" instance=ExtResource("3_oyido")]
+position = Vector2(-560, -16)
+
+[node name="Brick11" parent="Walls" index="10" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 16)
+
+[node name="Brick12" parent="Walls" index="11" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 48)
+
+[node name="Brick13" parent="Walls" index="12" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 80)
+
+[node name="Brick14" parent="Walls" index="13" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 112)
+
+[node name="Brick15" parent="Walls" index="14" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 144)
+
+[node name="Brick16" parent="Walls" index="15" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 176)
+
+[node name="Brick17" parent="Walls" index="16" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 208)
+
+[node name="Brick18" parent="Walls" index="17" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 240)
+
+[node name="Brick19" parent="Walls" index="18" instance=ExtResource("3_oyido")]
+position = Vector2(-560, 272)
+
+[node name="Brick29" parent="Walls" index="19" instance=ExtResource("3_oyido")]
+position = Vector2(560, -304)
+
+[node name="Brick30" parent="Walls" index="20" instance=ExtResource("3_oyido")]
+position = Vector2(560, -272)
+
+[node name="Brick32" parent="Walls" index="21" instance=ExtResource("3_oyido")]
+position = Vector2(560, -240)
+
+[node name="Brick31" parent="Walls" index="22" instance=ExtResource("3_oyido")]
+position = Vector2(560, -208)
+
+[node name="Brick33" parent="Walls" index="23" instance=ExtResource("3_oyido")]
+position = Vector2(560, -176)
+
+[node name="Brick34" parent="Walls" index="24" instance=ExtResource("3_oyido")]
+position = Vector2(560, -144)
+
+[node name="Brick35" parent="Walls" index="25" instance=ExtResource("3_oyido")]
+position = Vector2(560, -112)
+
+[node name="Brick36" parent="Walls" index="26" instance=ExtResource("3_oyido")]
+position = Vector2(560, -80)
+
+[node name="Brick37" parent="Walls" index="27" instance=ExtResource("3_oyido")]
+position = Vector2(560, -48)
+
+[node name="Brick38" parent="Walls" index="28" instance=ExtResource("3_oyido")]
+position = Vector2(560, -16)
+
+[node name="Brick39" parent="Walls" index="29" instance=ExtResource("3_oyido")]
+position = Vector2(560, 16)
+
+[node name="Brick40" parent="Walls" index="30" instance=ExtResource("3_oyido")]
+position = Vector2(560, 48)
+
+[node name="Brick41" parent="Walls" index="31" instance=ExtResource("3_oyido")]
+position = Vector2(560, 80)
+
+[node name="Brick42" parent="Walls" index="32" instance=ExtResource("3_oyido")]
+position = Vector2(560, 112)
+
+[node name="Brick43" parent="Walls" index="33" instance=ExtResource("3_oyido")]
+position = Vector2(560, 144)
+
+[node name="Brick44" parent="Walls" index="34" instance=ExtResource("3_oyido")]
+position = Vector2(560, 176)
+
+[node name="Brick45" parent="Walls" index="35" instance=ExtResource("3_oyido")]
+position = Vector2(560, 208)
+
+[node name="Brick46" parent="Walls" index="36" instance=ExtResource("3_oyido")]
+position = Vector2(-528, -304)
+
+[node name="Brick47" parent="Walls" index="37" instance=ExtResource("3_oyido")]
+position = Vector2(-336, -304)
+
+[node name="Brick48" parent="Walls" index="38" instance=ExtResource("3_oyido")]
+position = Vector2(-368, -304)
+
+[node name="Brick49" parent="Walls" index="39" instance=ExtResource("3_oyido")]
+position = Vector2(-400, -304)
+
+[node name="Brick50" parent="Walls" index="40" instance=ExtResource("3_oyido")]
+position = Vector2(-432, -304)
+
+[node name="Brick51" parent="Walls" index="41" instance=ExtResource("3_oyido")]
+position = Vector2(-464, -304)
+
+[node name="Brick52" parent="Walls" index="42" instance=ExtResource("3_oyido")]
+position = Vector2(-496, -304)
+
+[node name="Brick53" parent="Walls" index="43" instance=ExtResource("3_oyido")]
+position = Vector2(-304, -304)
+
+[node name="Brick54" parent="Walls" index="44" instance=ExtResource("3_oyido")]
+position = Vector2(-112, -304)
+
+[node name="Brick55" parent="Walls" index="45" instance=ExtResource("3_oyido")]
+position = Vector2(-144, -304)
+
+[node name="Brick56" parent="Walls" index="46" instance=ExtResource("3_oyido")]
+position = Vector2(-176, -304)
+
+[node name="Brick57" parent="Walls" index="47" instance=ExtResource("3_oyido")]
+position = Vector2(-208, -304)
+
+[node name="Brick58" parent="Walls" index="48" instance=ExtResource("3_oyido")]
+position = Vector2(-240, -304)
+
+[node name="Brick59" parent="Walls" index="49" instance=ExtResource("3_oyido")]
+position = Vector2(-272, -304)
+
+[node name="Brick60" parent="Walls" index="50" instance=ExtResource("3_oyido")]
+position = Vector2(-80, -304)
+
+[node name="Brick61" parent="Walls" index="51" instance=ExtResource("3_oyido")]
+position = Vector2(112, -304)
+
+[node name="Brick62" parent="Walls" index="52" instance=ExtResource("3_oyido")]
+position = Vector2(80, -304)
+
+[node name="Brick63" parent="Walls" index="53" instance=ExtResource("3_oyido")]
+position = Vector2(48, -304)
+
+[node name="Brick64" parent="Walls" index="54" instance=ExtResource("3_oyido")]
+position = Vector2(16, -304)
+
+[node name="Brick65" parent="Walls" index="55" instance=ExtResource("3_oyido")]
+position = Vector2(-16, -304)
+
+[node name="Brick66" parent="Walls" index="56" instance=ExtResource("3_oyido")]
+position = Vector2(-48, -304)
+
+[node name="Brick67" parent="Walls" index="57" instance=ExtResource("3_oyido")]
+position = Vector2(144, -304)
+
+[node name="Brick68" parent="Walls" index="58" instance=ExtResource("3_oyido")]
+position = Vector2(336, -304)
+
+[node name="Brick69" parent="Walls" index="59" instance=ExtResource("3_oyido")]
+position = Vector2(304, -304)
+
+[node name="Brick70" parent="Walls" index="60" instance=ExtResource("3_oyido")]
+position = Vector2(272, -304)
+
+[node name="Brick71" parent="Walls" index="61" instance=ExtResource("3_oyido")]
+position = Vector2(240, -304)
+
+[node name="Brick72" parent="Walls" index="62" instance=ExtResource("3_oyido")]
+position = Vector2(208, -304)
+
+[node name="Brick73" parent="Walls" index="63" instance=ExtResource("3_oyido")]
+position = Vector2(176, -304)
+
+[node name="Brick74" parent="Walls" index="64" instance=ExtResource("3_oyido")]
+position = Vector2(368, -304)
+
+[node name="Brick76" parent="Walls" index="65" instance=ExtResource("3_oyido")]
+position = Vector2(528, -304)
+
+[node name="Brick77" parent="Walls" index="66" instance=ExtResource("3_oyido")]
+position = Vector2(496, -304)
+
+[node name="Brick78" parent="Walls" index="67" instance=ExtResource("3_oyido")]
+position = Vector2(464, -304)
+
+[node name="Brick79" parent="Walls" index="68" instance=ExtResource("3_oyido")]
+position = Vector2(432, -304)
+
+[node name="Brick80" parent="Walls" index="69" instance=ExtResource("3_oyido")]
+position = Vector2(400, -304)
+
+[node name="Brick42" parent="Platforms" index="0" instance=ExtResource("3_oyido")]
+position = Vector2(-48, 272)
+
+[node name="Brick44" parent="Platforms" index="1" instance=ExtResource("3_oyido")]
+position = Vector2(304, 208)
+
+[node name="Brick43" parent="Platforms" index="2" instance=ExtResource("3_oyido")]
+position = Vector2(-16, 272)
+
+[node name="MovableBrick" parent="Platforms" index="3" instance=ExtResource("5_gu0i5")]
+position = Vector2(272, 240)
+
+[node name="TutorialCanvas" parent="." index="8"]
+visible = false
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]
