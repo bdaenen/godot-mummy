@@ -33,16 +33,12 @@ func _setup_world_coords() -> void :
 
 func _clear_overlapping_blocks() -> void:
     var player_bounds: Rect2 = Rect2(Globals.player_spawn_position - %Player.dimensions/2, %Player.dimensions)
-    for child: AnimatableBody2D in $Walls.get_children():
-        if player_bounds.has_point(child.global_position):
-            child.queue_free()
-            await child.tree_exited
-    for child in $Floor.get_children():
-        if player_bounds.has_point(child.global_position):
-            child.queue_free()
-            await child.tree_exited
-    for child in $Platforms.get_children():
-        if player_bounds.has_point(child.global_position):
+    var children: Array[Node] = $Walls.get_children()
+    children.append_array($Floor.get_children())
+    children.append_array($Platforms.get_children())
+    
+    for child in children:
+        if player_bounds.has_point(child.global_position) and not child.is_in_group('disable_on_player_spawn'):
             child.queue_free()
             await child.tree_exited
 
@@ -62,6 +58,14 @@ func _bind_block_events() -> void:
                 $Linker.remove_body(block)
                 block.queue_free()
             )
+        if child.is_in_group('disable_on_player_spawn'):
+            var warp_child: Warp = child as Warp
+            var player_bounds: Rect2 = Rect2(Globals.player_spawn_position - %Player.dimensions/2, %Player.dimensions)
+            if player_bounds.has_point(warp_child.global_position):
+                warp_child.is_active = false
+                warp_child.connect('body_exited', func enable(_body: CharacterBody2D) -> void:
+                    warp_child.is_active = true
+                )
 
 func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position

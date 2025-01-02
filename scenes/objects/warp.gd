@@ -1,15 +1,18 @@
 extends Area2D
-
+class_name Warp
 @export var world_coord_target: Vector2i = Vector2i(5, 1)
 @export var level_spawn_position_target: Vector2 = Vector2(100, 100)
+
+var is_active: bool = true
 var triggered: bool = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
     rotation_degrees += (50 * delta)
 
 
 func _on_body_entered(body: Node2D) -> void:
-    if (body.is_in_group('Player') and not triggered):
+    if (body.is_in_group('Player') and not triggered and is_active):
         triggered = true
         var tween: Tween = body.create_tween()
         body.input_disabled = true

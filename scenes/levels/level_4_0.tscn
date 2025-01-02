@@ -51,71 +51,71 @@ position = Vector2(240, 304)
 [node name="Brick36" parent="Floor" index="13" instance=ExtResource("3_oyido")]
 position = Vector2(336, 304)
 
-[node name="Brick37" parent="Floor" index="14" instance=ExtResource("3_oyido")]
-position = Vector2(432, 304)
-
-[node name="Brick38" parent="Floor" index="15" instance=ExtResource("3_oyido")]
+[node name="Brick38" parent="Floor" index="14" instance=ExtResource("3_oyido")]
 position = Vector2(400, 304)
 
-[node name="Brick39" parent="Floor" index="16" instance=ExtResource("3_oyido")]
+[node name="Brick39" parent="Floor" index="15" instance=ExtResource("3_oyido")]
 position = Vector2(368, 304)
 
-[node name="Brick40" parent="Floor" index="17" instance=ExtResource("3_oyido")]
-position = Vector2(464, 304)
-
-[node name="Brick41" parent="Floor" index="18" instance=ExtResource("3_oyido")]
+[node name="Brick41" parent="Floor" index="16" instance=ExtResource("3_oyido")]
 position = Vector2(560, 304)
 
-[node name="Brick42" parent="Floor" index="19" instance=ExtResource("3_oyido")]
+[node name="Brick42" parent="Floor" index="17" instance=ExtResource("3_oyido")]
 position = Vector2(528, 304)
 
-[node name="Brick43" parent="Floor" index="20" instance=ExtResource("3_oyido")]
+[node name="Brick43" parent="Floor" index="18" instance=ExtResource("3_oyido")]
 position = Vector2(496, 304)
 
-[node name="Spikes" parent="Floor" index="21" instance=ExtResource("4_dhm16")]
+[node name="Spikes" parent="Floor" index="19" instance=ExtResource("4_dhm16")]
 position = Vector2(-240, 304)
 
-[node name="Spikes2" parent="Floor" index="22" instance=ExtResource("4_dhm16")]
+[node name="Spikes2" parent="Floor" index="20" instance=ExtResource("4_dhm16")]
 position = Vector2(48, 304)
 
-[node name="Spikes3" parent="Floor" index="23" instance=ExtResource("4_dhm16")]
+[node name="Spikes3" parent="Floor" index="21" instance=ExtResource("4_dhm16")]
 position = Vector2(16, 304)
 
-[node name="Spikes4" parent="Floor" index="24" instance=ExtResource("4_dhm16")]
+[node name="Spikes4" parent="Floor" index="22" instance=ExtResource("4_dhm16")]
 position = Vector2(-208, 304)
 
-[node name="Spikes5" parent="Floor" index="25" instance=ExtResource("4_dhm16")]
+[node name="Spikes5" parent="Floor" index="23" instance=ExtResource("4_dhm16")]
 position = Vector2(-176, 304)
 
-[node name="Spikes6" parent="Floor" index="26" instance=ExtResource("4_dhm16")]
+[node name="Spikes6" parent="Floor" index="24" instance=ExtResource("4_dhm16")]
 position = Vector2(-144, 304)
 
-[node name="Spikes7" parent="Floor" index="27" instance=ExtResource("4_dhm16")]
+[node name="Spikes7" parent="Floor" index="25" instance=ExtResource("4_dhm16")]
 position = Vector2(-112, 304)
 
-[node name="Spikes8" parent="Floor" index="28" instance=ExtResource("4_dhm16")]
+[node name="Spikes8" parent="Floor" index="26" instance=ExtResource("4_dhm16")]
 position = Vector2(-80, 304)
 
-[node name="Spikes9" parent="Floor" index="29" instance=ExtResource("4_dhm16")]
+[node name="Spikes9" parent="Floor" index="27" instance=ExtResource("4_dhm16")]
 position = Vector2(-48, 304)
 
-[node name="Spikes10" parent="Floor" index="30" instance=ExtResource("4_dhm16")]
+[node name="Spikes10" parent="Floor" index="28" instance=ExtResource("4_dhm16")]
 position = Vector2(-16, 304)
 
-[node name="Spikes11" parent="Floor" index="31" instance=ExtResource("4_dhm16")]
+[node name="Spikes11" parent="Floor" index="29" instance=ExtResource("4_dhm16")]
 position = Vector2(80, 304)
 
-[node name="Spikes12" parent="Floor" index="32" instance=ExtResource("4_dhm16")]
+[node name="Spikes12" parent="Floor" index="30" instance=ExtResource("4_dhm16")]
 position = Vector2(112, 304)
 
-[node name="Spikes13" parent="Floor" index="33" instance=ExtResource("4_dhm16")]
+[node name="Spikes13" parent="Floor" index="31" instance=ExtResource("4_dhm16")]
 position = Vector2(144, 304)
 
-[node name="Spikes14" parent="Floor" index="34" instance=ExtResource("4_dhm16")]
+[node name="Spikes14" parent="Floor" index="32" instance=ExtResource("4_dhm16")]
 position = Vector2(176, 304)
 
-[node name="Spikes15" parent="Floor" index="35" instance=ExtResource("4_dhm16")]
+[node name="Spikes15" parent="Floor" index="33" instance=ExtResource("4_dhm16")]
 position = Vector2(208, 304)
+
+[node name="MovableBrick" parent="Floor" index="34" instance=ExtResource("5_gu0i5")]
+position = Vector2(432, 304)
+
+[node name="MovableBrick2" parent="Floor" index="35" instance=ExtResource("5_gu0i5")]
+position = Vector2(464, 304)
 
 [node name="Brick" parent="Walls" index="0" instance=ExtResource("3_oyido")]
 position = Vector2(-560, -304)
@@ -332,8 +332,5 @@ position = Vector2(16, 272)
 
 [node name="MovableBrick" parent="Platforms" index="3" instance=ExtResource("5_gu0i5")]
 position = Vector2(-304, 240)
-
-[node name="TutorialCanvas" parent="." index="8"]
-visible = false
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

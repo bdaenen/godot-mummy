@@ -26,7 +26,7 @@ var progress_flags: Dictionary = {
 }
 
 var player_skills: Dictionary = {
-    "can_shoot": true,
+    "can_shoot": false,
     "can_link": false,
     "can_sprint": false
 }

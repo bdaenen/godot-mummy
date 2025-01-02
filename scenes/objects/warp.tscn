@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2w4s"]
 radius = 16.0
 
-[node name="Warp" type="Area2D"]
+[node name="Warp" type="Area2D" groups=["disable_on_player_spawn"]]
 collision_layer = 4
 script = ExtResource("1_iwu6g")
 

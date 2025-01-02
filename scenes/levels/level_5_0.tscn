@@ -323,7 +323,7 @@ position = Vector2(560, 176)
 position = Vector2(560, 208)
 
 [node name="PowerupSprint" parent="Platforms" index="0" instance=ExtResource("5_jmcvq")]
-position = Vector2(112, -112)
+position = Vector2(111, -112)
 
 [node name="_AnimatableBody2D_881" parent="Platforms" index="1" instance=ExtResource("3_tb5i5")]
 position = Vector2(48, -80)
@@ -426,11 +426,5 @@ position = Vector2(-240, 240)
 
 [node name="_AnimatableBody2D_932" parent="Platforms" index="34" instance=ExtResource("6_kx7m8")]
 position = Vector2(-240, 272)
-
-[node name="TutorialCanvas" parent="." index="8"]
-visible = false
-
-[node name="MinimapCanvas" parent="." index="9"]
-visible = false
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

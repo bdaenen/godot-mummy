@@ -1,9 +1,335 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx0cmex2k1ubd"]
+[gd_scene load_steps=6 format=3 uid="uid://dx0cmex2k1ubd"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_eakrt"]
 [ext_resource type="Script" path="res://scenes/levels/level_6_0.gd" id="2_afqqt"]
+[ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_nbuik"]
+[ext_resource type="PackedScene" uid="uid://bwwuq1aly2w4r" path="res://scenes/objects/spikes.tscn" id="4_xbxcp"]
+[ext_resource type="PackedScene" uid="uid://dn7iorresd00i" path="res://scenes/objects/warp.tscn" id="5_8ehlc"]
 
 [node name="Level_6_0" instance=ExtResource("1_eakrt")]
 script = ExtResource("2_afqqt")
+
+[node name="_AnimatableBody2D_74" parent="Floor" index="0" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 304)
+
+[node name="_AnimatableBody2D_75" parent="Floor" index="1" instance=ExtResource("3_nbuik")]
+position = Vector2(-528, 304)
+
+[node name="_AnimatableBody2D_76" parent="Floor" index="2" instance=ExtResource("3_nbuik")]
+position = Vector2(-496, 304)
+
+[node name="_AnimatableBody2D_77" parent="Floor" index="3" instance=ExtResource("3_nbuik")]
+position = Vector2(-464, 304)
+
+[node name="_AnimatableBody2D_78" parent="Floor" index="4" instance=ExtResource("3_nbuik")]
+position = Vector2(-432, 304)
+
+[node name="_AnimatableBody2D_79" parent="Floor" index="5" instance=ExtResource("3_nbuik")]
+position = Vector2(-400, 304)
+
+[node name="_AnimatableBody2D_80" parent="Floor" index="6" instance=ExtResource("3_nbuik")]
+position = Vector2(-368, 304)
+
+[node name="_AnimatableBody2D_81" parent="Floor" index="7" instance=ExtResource("3_nbuik")]
+position = Vector2(-336, 304)
+
+[node name="_AnimatableBody2D_82" parent="Floor" index="8" instance=ExtResource("3_nbuik")]
+position = Vector2(-304, 304)
+
+[node name="_AnimatableBody2D_83" parent="Floor" index="9" instance=ExtResource("3_nbuik")]
+position = Vector2(-272, 304)
+
+[node name="_AnimatableBody2D_84" parent="Floor" index="10" instance=ExtResource("3_nbuik")]
+position = Vector2(-240, 304)
+
+[node name="_AnimatableBody2D_85" parent="Floor" index="11" instance=ExtResource("3_nbuik")]
+position = Vector2(-208, 304)
+
+[node name="_AnimatableBody2D_86" parent="Floor" index="12" instance=ExtResource("3_nbuik")]
+position = Vector2(-176, 304)
+
+[node name="_AnimatableBody2D_87" parent="Floor" index="13" instance=ExtResource("3_nbuik")]
+position = Vector2(-144, 304)
+
+[node name="_AnimatableBody2D_88" parent="Floor" index="14" instance=ExtResource("3_nbuik")]
+position = Vector2(-112, 304)
+
+[node name="_AnimatableBody2D_89" parent="Floor" index="15" instance=ExtResource("3_nbuik")]
+position = Vector2(-80, 304)
+
+[node name="_AnimatableBody2D_90" parent="Floor" index="16" instance=ExtResource("3_nbuik")]
+position = Vector2(-48, 304)
+
+[node name="_AnimatableBody2D_91" parent="Floor" index="17" instance=ExtResource("3_nbuik")]
+position = Vector2(-16, 304)
+
+[node name="_AnimatableBody2D_92" parent="Floor" index="18" instance=ExtResource("3_nbuik")]
+position = Vector2(16, 304)
+
+[node name="Spikes" parent="Floor" index="19" instance=ExtResource("4_xbxcp")]
+position = Vector2(48, 304)
+
+[node name="_Area2D_93" parent="Floor" index="20" instance=ExtResource("4_xbxcp")]
+position = Vector2(80, 304)
+
+[node name="_Area2D_94" parent="Floor" index="21" instance=ExtResource("4_xbxcp")]
+position = Vector2(112, 304)
+
+[node name="_Area2D_95" parent="Floor" index="22" instance=ExtResource("4_xbxcp")]
+position = Vector2(144, 304)
+
+[node name="_Area2D_96" parent="Floor" index="23" instance=ExtResource("4_xbxcp")]
+position = Vector2(176, 304)
+
+[node name="_Area2D_97" parent="Floor" index="24" instance=ExtResource("4_xbxcp")]
+position = Vector2(208, 304)
+
+[node name="_Area2D_98" parent="Floor" index="25" instance=ExtResource("4_xbxcp")]
+position = Vector2(240, 304)
+
+[node name="_Area2D_99" parent="Floor" index="26" instance=ExtResource("4_xbxcp")]
+position = Vector2(272, 304)
+
+[node name="_AnimatableBody2D_100" parent="Floor" index="27" instance=ExtResource("3_nbuik")]
+position = Vector2(304, 304)
+
+[node name="_AnimatableBody2D_101" parent="Floor" index="28" instance=ExtResource("3_nbuik")]
+position = Vector2(336, 304)
+
+[node name="_AnimatableBody2D_102" parent="Floor" index="29" instance=ExtResource("3_nbuik")]
+position = Vector2(368, 304)
+
+[node name="_AnimatableBody2D_103" parent="Floor" index="30" instance=ExtResource("3_nbuik")]
+position = Vector2(400, 304)
+
+[node name="_AnimatableBody2D_104" parent="Floor" index="31" instance=ExtResource("3_nbuik")]
+position = Vector2(432, 304)
+
+[node name="_AnimatableBody2D_105" parent="Floor" index="32" instance=ExtResource("3_nbuik")]
+position = Vector2(464, 304)
+
+[node name="_AnimatableBody2D_106" parent="Floor" index="33" instance=ExtResource("3_nbuik")]
+position = Vector2(496, 304)
+
+[node name="_AnimatableBody2D_107" parent="Floor" index="34" instance=ExtResource("3_nbuik")]
+position = Vector2(528, 304)
+
+[node name="_AnimatableBody2D_108" parent="Floor" index="35" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 304)
+
+[node name="Brick" parent="Walls" index="0" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -304)
+
+[node name="_AnimatableBody2D_5" parent="Walls" index="1" instance=ExtResource("3_nbuik")]
+position = Vector2(-528, -304)
+
+[node name="_AnimatableBody2D_6" parent="Walls" index="2" instance=ExtResource("3_nbuik")]
+position = Vector2(-496, -304)
+
+[node name="_AnimatableBody2D_7" parent="Walls" index="3" instance=ExtResource("3_nbuik")]
+position = Vector2(-464, -304)
+
+[node name="_AnimatableBody2D_8" parent="Walls" index="4" instance=ExtResource("3_nbuik")]
+position = Vector2(-432, -304)
+
+[node name="_AnimatableBody2D_9" parent="Walls" index="5" instance=ExtResource("3_nbuik")]
+position = Vector2(-400, -304)
+
+[node name="_AnimatableBody2D_10" parent="Walls" index="6" instance=ExtResource("3_nbuik")]
+position = Vector2(-368, -304)
+
+[node name="_AnimatableBody2D_11" parent="Walls" index="7" instance=ExtResource("3_nbuik")]
+position = Vector2(-336, -304)
+
+[node name="_AnimatableBody2D_12" parent="Walls" index="8" instance=ExtResource("3_nbuik")]
+position = Vector2(-304, -304)
+
+[node name="_AnimatableBody2D_13" parent="Walls" index="9" instance=ExtResource("3_nbuik")]
+position = Vector2(-272, -304)
+
+[node name="_AnimatableBody2D_14" parent="Walls" index="10" instance=ExtResource("3_nbuik")]
+position = Vector2(-240, -304)
+
+[node name="_AnimatableBody2D_15" parent="Walls" index="11" instance=ExtResource("3_nbuik")]
+position = Vector2(-208, -304)
+
+[node name="_AnimatableBody2D_16" parent="Walls" index="12" instance=ExtResource("3_nbuik")]
+position = Vector2(-176, -304)
+
+[node name="_AnimatableBody2D_17" parent="Walls" index="13" instance=ExtResource("3_nbuik")]
+position = Vector2(-144, -304)
+
+[node name="_AnimatableBody2D_18" parent="Walls" index="14" instance=ExtResource("3_nbuik")]
+position = Vector2(-112, -304)
+
+[node name="_AnimatableBody2D_19" parent="Walls" index="15" instance=ExtResource("3_nbuik")]
+position = Vector2(-80, -304)
+
+[node name="_AnimatableBody2D_20" parent="Walls" index="16" instance=ExtResource("3_nbuik")]
+position = Vector2(-48, -304)
+
+[node name="_AnimatableBody2D_21" parent="Walls" index="17" instance=ExtResource("3_nbuik")]
+position = Vector2(-16, -304)
+
+[node name="_AnimatableBody2D_22" parent="Walls" index="18" instance=ExtResource("3_nbuik")]
+position = Vector2(16, -304)
+
+[node name="_AnimatableBody2D_23" parent="Walls" index="19" instance=ExtResource("3_nbuik")]
+position = Vector2(48, -304)
+
+[node name="_AnimatableBody2D_24" parent="Walls" index="20" instance=ExtResource("3_nbuik")]
+position = Vector2(80, -304)
+
+[node name="_AnimatableBody2D_25" parent="Walls" index="21" instance=ExtResource("3_nbuik")]
+position = Vector2(112, -304)
+
+[node name="_AnimatableBody2D_26" parent="Walls" index="22" instance=ExtResource("3_nbuik")]
+position = Vector2(144, -304)
+
+[node name="_AnimatableBody2D_27" parent="Walls" index="23" instance=ExtResource("3_nbuik")]
+position = Vector2(176, -304)
+
+[node name="_AnimatableBody2D_28" parent="Walls" index="24" instance=ExtResource("3_nbuik")]
+position = Vector2(208, -304)
+
+[node name="_AnimatableBody2D_29" parent="Walls" index="25" instance=ExtResource("3_nbuik")]
+position = Vector2(240, -304)
+
+[node name="_AnimatableBody2D_30" parent="Walls" index="26" instance=ExtResource("3_nbuik")]
+position = Vector2(272, -304)
+
+[node name="_AnimatableBody2D_31" parent="Walls" index="27" instance=ExtResource("3_nbuik")]
+position = Vector2(304, -304)
+
+[node name="_AnimatableBody2D_32" parent="Walls" index="28" instance=ExtResource("3_nbuik")]
+position = Vector2(336, -304)
+
+[node name="_AnimatableBody2D_33" parent="Walls" index="29" instance=ExtResource("3_nbuik")]
+position = Vector2(368, -304)
+
+[node name="_AnimatableBody2D_34" parent="Walls" index="30" instance=ExtResource("3_nbuik")]
+position = Vector2(400, -304)
+
+[node name="_AnimatableBody2D_35" parent="Walls" index="31" instance=ExtResource("3_nbuik")]
+position = Vector2(432, -304)
+
+[node name="_AnimatableBody2D_36" parent="Walls" index="32" instance=ExtResource("3_nbuik")]
+position = Vector2(464, -304)
+
+[node name="_AnimatableBody2D_37" parent="Walls" index="33" instance=ExtResource("3_nbuik")]
+position = Vector2(496, -304)
+
+[node name="_AnimatableBody2D_38" parent="Walls" index="34" instance=ExtResource("3_nbuik")]
+position = Vector2(528, -304)
+
+[node name="_AnimatableBody2D_39" parent="Walls" index="35" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -304)
+
+[node name="_AnimatableBody2D_40" parent="Walls" index="36" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -272)
+
+[node name="_AnimatableBody2D_41" parent="Walls" index="37" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -272)
+
+[node name="_AnimatableBody2D_42" parent="Walls" index="38" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -240)
+
+[node name="_AnimatableBody2D_43" parent="Walls" index="39" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -240)
+
+[node name="_AnimatableBody2D_44" parent="Walls" index="40" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -208)
+
+[node name="_AnimatableBody2D_45" parent="Walls" index="41" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -208)
+
+[node name="_AnimatableBody2D_46" parent="Walls" index="42" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -176)
+
+[node name="_AnimatableBody2D_47" parent="Walls" index="43" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -176)
+
+[node name="_AnimatableBody2D_48" parent="Walls" index="44" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -144)
+
+[node name="_AnimatableBody2D_49" parent="Walls" index="45" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -144)
+
+[node name="_AnimatableBody2D_50" parent="Walls" index="46" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -112)
+
+[node name="_AnimatableBody2D_51" parent="Walls" index="47" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -112)
+
+[node name="_AnimatableBody2D_52" parent="Walls" index="48" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -80)
+
+[node name="_AnimatableBody2D_53" parent="Walls" index="49" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -80)
+
+[node name="_AnimatableBody2D_54" parent="Walls" index="50" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -48)
+
+[node name="_AnimatableBody2D_55" parent="Walls" index="51" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -48)
+
+[node name="_AnimatableBody2D_56" parent="Walls" index="52" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, -16)
+
+[node name="_AnimatableBody2D_57" parent="Walls" index="53" instance=ExtResource("3_nbuik")]
+position = Vector2(560, -16)
+
+[node name="_AnimatableBody2D_58" parent="Walls" index="54" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 16)
+
+[node name="_AnimatableBody2D_59" parent="Walls" index="55" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 16)
+
+[node name="_AnimatableBody2D_60" parent="Walls" index="56" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 48)
+
+[node name="_AnimatableBody2D_61" parent="Walls" index="57" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 48)
+
+[node name="_AnimatableBody2D_62" parent="Walls" index="58" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 80)
+
+[node name="_AnimatableBody2D_63" parent="Walls" index="59" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 80)
+
+[node name="_AnimatableBody2D_64" parent="Walls" index="60" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 112)
+
+[node name="_AnimatableBody2D_65" parent="Walls" index="61" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 112)
+
+[node name="_AnimatableBody2D_66" parent="Walls" index="62" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 144)
+
+[node name="_AnimatableBody2D_67" parent="Walls" index="63" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 144)
+
+[node name="_AnimatableBody2D_68" parent="Walls" index="64" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 176)
+
+[node name="_AnimatableBody2D_69" parent="Walls" index="65" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 176)
+
+[node name="_AnimatableBody2D_70" parent="Walls" index="66" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 208)
+
+[node name="_AnimatableBody2D_71" parent="Walls" index="67" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 240)
+
+[node name="_AnimatableBody2D_72" parent="Walls" index="68" instance=ExtResource("3_nbuik")]
+position = Vector2(-560, 272)
+
+[node name="_AnimatableBody2D_73" parent="Walls" index="69" instance=ExtResource("3_nbuik")]
+position = Vector2(560, 272)
+
+[node name="Warp" parent="." index="11" instance=ExtResource("5_8ehlc")]
+position = Vector2(496, 272)
+world_coord_target = Vector2i(2, 1)
+level_spawn_position_target = Vector2(-280, -16)
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]
