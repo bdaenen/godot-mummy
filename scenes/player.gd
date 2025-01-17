@@ -24,7 +24,7 @@ var skills: Dictionary = {
     get:
         return skills
 
-var prev_is_on_floor: bool = true
+var prev_is_on_floor: bool = false
 
 func set_can_shoot(can_shoot: bool) -> void:
     if !skills.can_shoot and can_shoot:
