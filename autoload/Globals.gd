@@ -25,6 +25,7 @@ var progress_flags: Dictionary = {
     "right_button_pressed": false
 }
 
+var previous_player_skills: Dictionary = {}
 var player_skills: Dictionary = {
     "can_shoot": false,
     "can_link": false,
@@ -56,6 +57,12 @@ func load_next_level() -> void:
     if (!visited_levels.has(world_coord)):
         visited_levels.append(world_coord)
     get_tree().change_scene_to_file(path)
+    print('dooplicate')
+    previous_player_skills = player_skills.duplicate()
+
+func reset_level() -> void:
+    player_skills = previous_player_skills.duplicate()
+    load_next_level()
 
 ## INPUT HANDLING
 func _input(event: InputEvent) -> void:
@@ -157,6 +164,11 @@ func map_square_to_circle( xy :Vector2 ) -> Vector2:
         xy.y * sqrt(1.0 - xy.x*xy.x/2.0)
     )
 
+
+### SET PLAYER SKILL
+func set_player_skill(skill_name: String, enabled: bool) -> void:
+    
+    player_skills[skill_name] = enabled
 
 ## SAVE/LOAD
 func dump_state() -> Dictionary:

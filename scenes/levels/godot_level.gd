@@ -81,7 +81,7 @@ func _setup_player() -> void:
 
 func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Reset Room"):
-        Globals.load_next_level()
+        Globals.reset_level()
         # $ScreenShaker.shake(2)
 
 func _physics_process(_delta: float) -> void:
@@ -178,7 +178,7 @@ func _on_player_gain_telekinesis() -> void:
 
 func _on_player_gain_link() -> void:
     var input_actions: String = Globals.get_input_action_keyname('Link')
-    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto use link and connect two blocks together" % input_actions)
+    $TutorialCanvas/TutorialOverlay.set_content("New ability unlocked! \n Press <%s>\nto link two targeted blocks together" % input_actions)
     $TutorialCanvas/TutorialOverlay.fadeIn(.5)
     tutorial_dismiss_action = 'Link'
     $Linker.connect('body_linked', check_if_two_linked)

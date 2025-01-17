@@ -30,20 +30,20 @@ func set_can_shoot(can_shoot: bool) -> void:
     if !skills.can_shoot and can_shoot:
         gain_telekinesis.emit()
     skills.can_shoot = can_shoot
-    Globals.player_skills.can_shoot = can_shoot
+    Globals.set_player_skill('can_shoot', can_shoot)
     
 
 func set_can_link(can_link: bool) -> void:
     if !skills.can_link and can_link:
         gain_link.emit()
     skills.can_link = can_link
-    Globals.player_skills.can_link = can_link
+    Globals.set_player_skill('can_link', can_link)
 
 func set_can_sprint(can_sprint: bool) -> void:
     if !skills.can_sprint and can_sprint:
         gain_sprint.emit()
     skills.can_sprint = can_sprint
-    Globals.player_skills.can_sprint = can_sprint
+    Globals.set_player_skill('can_sprint', can_sprint)
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

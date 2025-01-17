@@ -11,6 +11,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj8eo"]
 radius = 3.0
+height = 22.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2w61h"]
 shader = ExtResource("7_tl36k")
@@ -25,6 +26,7 @@ position = Vector2(-1, -1)
 texture = ExtResource("2_athis")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_oj8eo")
 
 [node name="WalkAnimationTimer" type="Timer" parent="."]
