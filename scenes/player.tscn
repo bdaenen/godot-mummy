@@ -48,7 +48,13 @@ wait_time = 0.2
 autostart = true
 
 [node name="JumpCooldown" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.25
+one_shot = true
+
+[node name="CoyoteTime" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.125
 one_shot = true
 
 [node name="SfxWarp" type="AudioStreamPlayer2D" parent="."]

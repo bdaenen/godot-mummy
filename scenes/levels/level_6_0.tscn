@@ -327,7 +327,7 @@ position = Vector2(-560, 272)
 [node name="_AnimatableBody2D_73" parent="Walls" index="69" instance=ExtResource("3_nbuik")]
 position = Vector2(560, 272)
 
-[node name="Warp" parent="." index="11" instance=ExtResource("5_8ehlc")]
+[node name="Warp" parent="." index="10" instance=ExtResource("5_8ehlc")]
 position = Vector2(496, 272)
 world_coord_target = Vector2i(2, 1)
 level_spawn_position_target = Vector2(-280, -16)

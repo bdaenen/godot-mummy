@@ -1,7 +1,554 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwf41i60o541"]
+[gd_scene load_steps=7 format=3 uid="uid://dwf41i60o541"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_e77df"]
 [ext_resource type="Script" path="res://scenes/levels/level_2_2.gd" id="2_0lq32"]
+[ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_6r6ck"]
+[ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_yqe3i"]
+[ext_resource type="PackedScene" uid="uid://br34fvuyehy22" path="res://scenes/objects/filter_brick.tscn" id="5_pdiin"]
+[ext_resource type="PackedScene" uid="uid://bdvkd68lu1inl" path="res://scenes/objects/switch.tscn" id="6_dn3vw"]
 
 [node name="Level_2_2" instance=ExtResource("1_e77df")]
 script = ExtResource("2_0lq32")
+
+[node name="Brick" parent="Floor" index="0" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -304)
+
+[node name="_AnimatableBody2D_5" parent="Floor" index="1" instance=ExtResource("3_6r6ck")]
+position = Vector2(-528, -304)
+
+[node name="_AnimatableBody2D_6" parent="Floor" index="2" instance=ExtResource("3_6r6ck")]
+position = Vector2(-496, -304)
+
+[node name="_AnimatableBody2D_7" parent="Floor" index="3" instance=ExtResource("3_6r6ck")]
+position = Vector2(-464, -304)
+
+[node name="_AnimatableBody2D_8" parent="Floor" index="4" instance=ExtResource("3_6r6ck")]
+position = Vector2(-432, -304)
+
+[node name="_AnimatableBody2D_9" parent="Floor" index="5" instance=ExtResource("3_6r6ck")]
+position = Vector2(-400, -304)
+
+[node name="_AnimatableBody2D_10" parent="Floor" index="6" instance=ExtResource("3_6r6ck")]
+position = Vector2(-368, -304)
+
+[node name="_AnimatableBody2D_11" parent="Floor" index="7" instance=ExtResource("3_6r6ck")]
+position = Vector2(-336, -304)
+
+[node name="_AnimatableBody2D_12" parent="Floor" index="8" instance=ExtResource("3_6r6ck")]
+position = Vector2(-304, -304)
+
+[node name="_AnimatableBody2D_13" parent="Floor" index="9" instance=ExtResource("3_6r6ck")]
+position = Vector2(-272, -304)
+
+[node name="_AnimatableBody2D_14" parent="Floor" index="10" instance=ExtResource("3_6r6ck")]
+position = Vector2(-240, -304)
+
+[node name="_AnimatableBody2D_15" parent="Floor" index="11" instance=ExtResource("3_6r6ck")]
+position = Vector2(-208, -304)
+
+[node name="_AnimatableBody2D_16" parent="Floor" index="12" instance=ExtResource("3_6r6ck")]
+position = Vector2(-176, -304)
+
+[node name="_AnimatableBody2D_17" parent="Floor" index="13" instance=ExtResource("3_6r6ck")]
+position = Vector2(-144, -304)
+
+[node name="_AnimatableBody2D_18" parent="Floor" index="14" instance=ExtResource("3_6r6ck")]
+position = Vector2(-112, -304)
+
+[node name="_AnimatableBody2D_19" parent="Floor" index="15" instance=ExtResource("3_6r6ck")]
+position = Vector2(-80, -304)
+
+[node name="_AnimatableBody2D_20" parent="Floor" index="16" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, -304)
+
+[node name="_AnimatableBody2D_21" parent="Floor" index="17" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, -304)
+
+[node name="_AnimatableBody2D_22" parent="Floor" index="18" instance=ExtResource("3_6r6ck")]
+position = Vector2(16, -304)
+
+[node name="_AnimatableBody2D_23" parent="Floor" index="19" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, -304)
+
+[node name="_AnimatableBody2D_24" parent="Floor" index="20" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, -304)
+
+[node name="_AnimatableBody2D_25" parent="Floor" index="21" instance=ExtResource("3_6r6ck")]
+position = Vector2(112, -304)
+
+[node name="_AnimatableBody2D_26" parent="Floor" index="22" instance=ExtResource("3_6r6ck")]
+position = Vector2(144, -304)
+
+[node name="_AnimatableBody2D_27" parent="Floor" index="23" instance=ExtResource("3_6r6ck")]
+position = Vector2(176, -304)
+
+[node name="_AnimatableBody2D_28" parent="Floor" index="24" instance=ExtResource("3_6r6ck")]
+position = Vector2(208, -304)
+
+[node name="_AnimatableBody2D_29" parent="Floor" index="25" instance=ExtResource("3_6r6ck")]
+position = Vector2(240, -304)
+
+[node name="_AnimatableBody2D_30" parent="Floor" index="26" instance=ExtResource("3_6r6ck")]
+position = Vector2(272, -304)
+
+[node name="_AnimatableBody2D_31" parent="Floor" index="27" instance=ExtResource("3_6r6ck")]
+position = Vector2(304, -304)
+
+[node name="_AnimatableBody2D_32" parent="Floor" index="28" instance=ExtResource("3_6r6ck")]
+position = Vector2(336, -304)
+
+[node name="_AnimatableBody2D_33" parent="Floor" index="29" instance=ExtResource("3_6r6ck")]
+position = Vector2(368, -304)
+
+[node name="_AnimatableBody2D_34" parent="Floor" index="30" instance=ExtResource("3_6r6ck")]
+position = Vector2(400, -304)
+
+[node name="_AnimatableBody2D_35" parent="Floor" index="31" instance=ExtResource("3_6r6ck")]
+position = Vector2(432, -304)
+
+[node name="_AnimatableBody2D_36" parent="Floor" index="32" instance=ExtResource("3_6r6ck")]
+position = Vector2(464, -304)
+
+[node name="_AnimatableBody2D_37" parent="Floor" index="33" instance=ExtResource("3_6r6ck")]
+position = Vector2(496, -304)
+
+[node name="_AnimatableBody2D_38" parent="Floor" index="34" instance=ExtResource("3_6r6ck")]
+position = Vector2(528, -304)
+
+[node name="_AnimatableBody2D_39" parent="Floor" index="35" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -304)
+
+[node name="_AnimatableBody2D_40" parent="Floor" index="36" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -272)
+
+[node name="_AnimatableBody2D_41" parent="Floor" index="37" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -272)
+
+[node name="_AnimatableBody2D_42" parent="Floor" index="38" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -240)
+
+[node name="_AnimatableBody2D_43" parent="Floor" index="39" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -240)
+
+[node name="_AnimatableBody2D_44" parent="Floor" index="40" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -208)
+
+[node name="_AnimatableBody2D_45" parent="Floor" index="41" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -208)
+
+[node name="_AnimatableBody2D_46" parent="Floor" index="42" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -176)
+
+[node name="_AnimatableBody2D_47" parent="Floor" index="43" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -176)
+
+[node name="_AnimatableBody2D_48" parent="Floor" index="44" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -144)
+
+[node name="_AnimatableBody2D_49" parent="Floor" index="45" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -144)
+
+[node name="_AnimatableBody2D_50" parent="Floor" index="46" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -112)
+
+[node name="_AnimatableBody2D_51" parent="Floor" index="47" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -112)
+
+[node name="_AnimatableBody2D_52" parent="Floor" index="48" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -80)
+
+[node name="_AnimatableBody2D_53" parent="Floor" index="49" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -80)
+
+[node name="_AnimatableBody2D_54" parent="Floor" index="50" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -48)
+
+[node name="_AnimatableBody2D_55" parent="Floor" index="51" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -48)
+
+[node name="_AnimatableBody2D_56" parent="Floor" index="52" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, -16)
+
+[node name="_AnimatableBody2D_57" parent="Floor" index="53" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, -16)
+
+[node name="_AnimatableBody2D_58" parent="Floor" index="54" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 16)
+
+[node name="_AnimatableBody2D_59" parent="Floor" index="55" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 16)
+
+[node name="_AnimatableBody2D_60" parent="Floor" index="56" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 48)
+
+[node name="_AnimatableBody2D_61" parent="Floor" index="57" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 48)
+
+[node name="_AnimatableBody2D_62" parent="Floor" index="58" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 80)
+
+[node name="MovableBrick" parent="Floor" index="59" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 80)
+
+[node name="_AnimatableBody2D_63" parent="Floor" index="60" instance=ExtResource("4_yqe3i")]
+position = Vector2(-112, 80)
+
+[node name="_AnimatableBody2D_64" parent="Floor" index="61" instance=ExtResource("4_yqe3i")]
+position = Vector2(-80, 80)
+
+[node name="_AnimatableBody2D_65" parent="Floor" index="62" instance=ExtResource("4_yqe3i")]
+position = Vector2(-48, 80)
+
+[node name="_AnimatableBody2D_66" parent="Floor" index="63" instance=ExtResource("4_yqe3i")]
+position = Vector2(-16, 80)
+
+[node name="_AnimatableBody2D_67" parent="Floor" index="64" instance=ExtResource("4_yqe3i")]
+position = Vector2(16, 80)
+
+[node name="_AnimatableBody2D_68" parent="Floor" index="65" instance=ExtResource("4_yqe3i")]
+position = Vector2(48, 80)
+
+[node name="_AnimatableBody2D_69" parent="Floor" index="66" instance=ExtResource("4_yqe3i")]
+position = Vector2(80, 80)
+
+[node name="_AnimatableBody2D_70" parent="Floor" index="67" instance=ExtResource("4_yqe3i")]
+position = Vector2(112, 80)
+
+[node name="_AnimatableBody2D_71" parent="Floor" index="68" instance=ExtResource("4_yqe3i")]
+position = Vector2(144, 80)
+
+[node name="_AnimatableBody2D_72" parent="Floor" index="69" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 80)
+
+[node name="_AnimatableBody2D_73" parent="Floor" index="70" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 80)
+
+[node name="_AnimatableBody2D_74" parent="Floor" index="71" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 112)
+
+[node name="_AnimatableBody2D_75" parent="Floor" index="72" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 112)
+
+[node name="FilterBrick" parent="Floor" index="73" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 112)
+
+[node name="_Area2D_76" parent="Floor" index="74" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 112)
+
+[node name="_Area2D_77" parent="Floor" index="75" instance=ExtResource("5_pdiin")]
+position = Vector2(-48, 112)
+
+[node name="_Area2D_78" parent="Floor" index="76" instance=ExtResource("5_pdiin")]
+position = Vector2(-16, 112)
+
+[node name="_Area2D_79" parent="Floor" index="77" instance=ExtResource("5_pdiin")]
+position = Vector2(16, 112)
+
+[node name="_Area2D_80" parent="Floor" index="78" instance=ExtResource("5_pdiin")]
+position = Vector2(48, 112)
+
+[node name="_Area2D_81" parent="Floor" index="79" instance=ExtResource("5_pdiin")]
+position = Vector2(80, 112)
+
+[node name="_Area2D_82" parent="Floor" index="80" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 112)
+
+[node name="_Area2D_83" parent="Floor" index="81" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 112)
+
+[node name="_AnimatableBody2D_84" parent="Floor" index="82" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 112)
+
+[node name="_AnimatableBody2D_85" parent="Floor" index="83" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 112)
+
+[node name="_AnimatableBody2D_86" parent="Floor" index="84" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 144)
+
+[node name="_AnimatableBody2D_87" parent="Floor" index="85" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 144)
+
+[node name="_Area2D_88" parent="Floor" index="86" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 144)
+
+[node name="_Area2D_89" parent="Floor" index="87" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 144)
+
+[node name="_Area2D_90" parent="Floor" index="88" instance=ExtResource("5_pdiin")]
+position = Vector2(-48, 144)
+
+[node name="_Area2D_91" parent="Floor" index="89" instance=ExtResource("5_pdiin")]
+position = Vector2(-16, 144)
+
+[node name="_Area2D_92" parent="Floor" index="90" instance=ExtResource("5_pdiin")]
+position = Vector2(16, 144)
+
+[node name="_Area2D_93" parent="Floor" index="91" instance=ExtResource("5_pdiin")]
+position = Vector2(48, 144)
+
+[node name="_Area2D_94" parent="Floor" index="92" instance=ExtResource("5_pdiin")]
+position = Vector2(80, 144)
+
+[node name="_Area2D_95" parent="Floor" index="93" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 144)
+
+[node name="_Area2D_96" parent="Floor" index="94" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 144)
+
+[node name="_AnimatableBody2D_97" parent="Floor" index="95" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 144)
+
+[node name="_AnimatableBody2D_98" parent="Floor" index="96" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 144)
+
+[node name="_AnimatableBody2D_99" parent="Floor" index="97" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 176)
+
+[node name="_AnimatableBody2D_100" parent="Floor" index="98" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 176)
+
+[node name="_Area2D_101" parent="Floor" index="99" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 176)
+
+[node name="_Area2D_102" parent="Floor" index="100" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 176)
+
+[node name="_AnimatableBody2D_103" parent="Floor" index="101" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, 176)
+
+[node name="_AnimatableBody2D_104" parent="Floor" index="102" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, 176)
+
+[node name="_AnimatableBody2D_105" parent="Floor" index="103" instance=ExtResource("3_6r6ck")]
+position = Vector2(16, 176)
+
+[node name="_AnimatableBody2D_106" parent="Floor" index="104" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, 176)
+
+[node name="_AnimatableBody2D_107" parent="Floor" index="105" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, 176)
+
+[node name="_Area2D_108" parent="Floor" index="106" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 176)
+
+[node name="_Area2D_109" parent="Floor" index="107" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 176)
+
+[node name="_AnimatableBody2D_110" parent="Floor" index="108" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 176)
+
+[node name="_AnimatableBody2D_111" parent="Floor" index="109" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 176)
+
+[node name="_AnimatableBody2D_112" parent="Floor" index="110" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 208)
+
+[node name="_AnimatableBody2D_113" parent="Floor" index="111" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 208)
+
+[node name="_Area2D_114" parent="Floor" index="112" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 208)
+
+[node name="_Area2D_115" parent="Floor" index="113" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 208)
+
+[node name="_AnimatableBody2D_116" parent="Floor" index="114" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, 208)
+
+[node name="_AnimatableBody2D_117" parent="Floor" index="115" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, 208)
+
+[node name="_AnimatableBody2D_118" parent="Floor" index="116" instance=ExtResource("3_6r6ck")]
+position = Vector2(16, 208)
+
+[node name="_AnimatableBody2D_119" parent="Floor" index="117" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, 208)
+
+[node name="_AnimatableBody2D_120" parent="Floor" index="118" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, 208)
+
+[node name="_Area2D_121" parent="Floor" index="119" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 208)
+
+[node name="_Area2D_122" parent="Floor" index="120" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 208)
+
+[node name="_AnimatableBody2D_123" parent="Floor" index="121" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 208)
+
+[node name="_AnimatableBody2D_124" parent="Floor" index="122" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 240)
+
+[node name="_AnimatableBody2D_125" parent="Floor" index="123" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 240)
+
+[node name="_Area2D_126" parent="Floor" index="124" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 240)
+
+[node name="_Area2D_127" parent="Floor" index="125" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 240)
+
+[node name="_AnimatableBody2D_128" parent="Floor" index="126" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, 240)
+
+[node name="_AnimatableBody2D_129" parent="Floor" index="127" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, 240)
+
+[node name="_AnimatableBody2D_130" parent="Floor" index="128" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, 240)
+
+[node name="_AnimatableBody2D_131" parent="Floor" index="129" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, 240)
+
+[node name="_Area2D_132" parent="Floor" index="130" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 240)
+
+[node name="_Area2D_133" parent="Floor" index="131" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 240)
+
+[node name="_AnimatableBody2D_134" parent="Floor" index="132" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 240)
+
+[node name="_AnimatableBody2D_135" parent="Floor" index="133" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 272)
+
+[node name="_AnimatableBody2D_136" parent="Floor" index="134" instance=ExtResource("4_yqe3i")]
+position = Vector2(-144, 272)
+
+[node name="_Area2D_137" parent="Floor" index="135" instance=ExtResource("5_pdiin")]
+position = Vector2(-112, 272)
+
+[node name="_Area2D_138" parent="Floor" index="136" instance=ExtResource("5_pdiin")]
+position = Vector2(-80, 272)
+
+[node name="_AnimatableBody2D_139" parent="Floor" index="137" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, 272)
+
+[node name="_AnimatableBody2D_140" parent="Floor" index="138" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, 272)
+
+[node name="Switch" parent="Floor" index="139" instance=ExtResource("6_dn3vw")]
+position = Vector2(16, 272)
+
+[node name="_AnimatableBody2D_141" parent="Floor" index="140" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, 272)
+
+[node name="_AnimatableBody2D_142" parent="Floor" index="141" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, 272)
+
+[node name="_Area2D_143" parent="Floor" index="142" instance=ExtResource("5_pdiin")]
+position = Vector2(112, 272)
+
+[node name="_Area2D_144" parent="Floor" index="143" instance=ExtResource("5_pdiin")]
+position = Vector2(144, 272)
+
+[node name="_AnimatableBody2D_145" parent="Floor" index="144" instance=ExtResource("4_yqe3i")]
+position = Vector2(176, 272)
+
+[node name="_AnimatableBody2D_146" parent="Floor" index="145" instance=ExtResource("3_6r6ck")]
+position = Vector2(-560, 304)
+
+[node name="_AnimatableBody2D_147" parent="Floor" index="146" instance=ExtResource("3_6r6ck")]
+position = Vector2(-528, 304)
+
+[node name="_AnimatableBody2D_148" parent="Floor" index="147" instance=ExtResource("3_6r6ck")]
+position = Vector2(-496, 304)
+
+[node name="_AnimatableBody2D_149" parent="Floor" index="148" instance=ExtResource("3_6r6ck")]
+position = Vector2(-464, 304)
+
+[node name="_AnimatableBody2D_150" parent="Floor" index="149" instance=ExtResource("3_6r6ck")]
+position = Vector2(-432, 304)
+
+[node name="_AnimatableBody2D_151" parent="Floor" index="150" instance=ExtResource("3_6r6ck")]
+position = Vector2(-400, 304)
+
+[node name="_AnimatableBody2D_152" parent="Floor" index="151" instance=ExtResource("3_6r6ck")]
+position = Vector2(-368, 304)
+
+[node name="_AnimatableBody2D_153" parent="Floor" index="152" instance=ExtResource("3_6r6ck")]
+position = Vector2(-336, 304)
+
+[node name="_AnimatableBody2D_154" parent="Floor" index="153" instance=ExtResource("3_6r6ck")]
+position = Vector2(-304, 304)
+
+[node name="_AnimatableBody2D_155" parent="Floor" index="154" instance=ExtResource("3_6r6ck")]
+position = Vector2(-272, 304)
+
+[node name="_AnimatableBody2D_156" parent="Floor" index="155" instance=ExtResource("3_6r6ck")]
+position = Vector2(-240, 304)
+
+[node name="_AnimatableBody2D_157" parent="Floor" index="156" instance=ExtResource("3_6r6ck")]
+position = Vector2(-208, 304)
+
+[node name="_AnimatableBody2D_158" parent="Floor" index="157" instance=ExtResource("3_6r6ck")]
+position = Vector2(-176, 304)
+
+[node name="_AnimatableBody2D_159" parent="Floor" index="158" instance=ExtResource("3_6r6ck")]
+position = Vector2(-144, 304)
+
+[node name="_AnimatableBody2D_160" parent="Floor" index="159" instance=ExtResource("3_6r6ck")]
+position = Vector2(-112, 304)
+
+[node name="_AnimatableBody2D_161" parent="Floor" index="160" instance=ExtResource("3_6r6ck")]
+position = Vector2(-80, 304)
+
+[node name="_AnimatableBody2D_162" parent="Floor" index="161" instance=ExtResource("3_6r6ck")]
+position = Vector2(-48, 304)
+
+[node name="_AnimatableBody2D_163" parent="Floor" index="162" instance=ExtResource("3_6r6ck")]
+position = Vector2(-16, 304)
+
+[node name="_AnimatableBody2D_164" parent="Floor" index="163" instance=ExtResource("3_6r6ck")]
+position = Vector2(16, 304)
+
+[node name="_AnimatableBody2D_165" parent="Floor" index="164" instance=ExtResource("3_6r6ck")]
+position = Vector2(48, 304)
+
+[node name="_AnimatableBody2D_166" parent="Floor" index="165" instance=ExtResource("3_6r6ck")]
+position = Vector2(80, 304)
+
+[node name="_AnimatableBody2D_167" parent="Floor" index="166" instance=ExtResource("3_6r6ck")]
+position = Vector2(112, 304)
+
+[node name="_AnimatableBody2D_168" parent="Floor" index="167" instance=ExtResource("3_6r6ck")]
+position = Vector2(144, 304)
+
+[node name="_AnimatableBody2D_169" parent="Floor" index="168" instance=ExtResource("3_6r6ck")]
+position = Vector2(176, 304)
+
+[node name="_AnimatableBody2D_170" parent="Floor" index="169" instance=ExtResource("3_6r6ck")]
+position = Vector2(208, 304)
+
+[node name="_AnimatableBody2D_171" parent="Floor" index="170" instance=ExtResource("3_6r6ck")]
+position = Vector2(240, 304)
+
+[node name="_AnimatableBody2D_172" parent="Floor" index="171" instance=ExtResource("3_6r6ck")]
+position = Vector2(272, 304)
+
+[node name="_AnimatableBody2D_173" parent="Floor" index="172" instance=ExtResource("3_6r6ck")]
+position = Vector2(304, 304)
+
+[node name="_AnimatableBody2D_174" parent="Floor" index="173" instance=ExtResource("3_6r6ck")]
+position = Vector2(336, 304)
+
+[node name="_AnimatableBody2D_175" parent="Floor" index="174" instance=ExtResource("3_6r6ck")]
+position = Vector2(368, 304)
+
+[node name="_AnimatableBody2D_176" parent="Floor" index="175" instance=ExtResource("3_6r6ck")]
+position = Vector2(400, 304)
+
+[node name="_AnimatableBody2D_177" parent="Floor" index="176" instance=ExtResource("3_6r6ck")]
+position = Vector2(432, 304)
+
+[node name="_AnimatableBody2D_178" parent="Floor" index="177" instance=ExtResource("3_6r6ck")]
+position = Vector2(464, 304)
+
+[node name="_AnimatableBody2D_179" parent="Floor" index="178" instance=ExtResource("3_6r6ck")]
+position = Vector2(496, 304)
+
+[node name="_AnimatableBody2D_180" parent="Floor" index="179" instance=ExtResource("3_6r6ck")]
+position = Vector2(528, 304)
+
+[node name="_AnimatableBody2D_181" parent="Floor" index="180" instance=ExtResource("3_6r6ck")]
+position = Vector2(560, 304)

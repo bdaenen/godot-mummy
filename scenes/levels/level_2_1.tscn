@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dinj6yh0ey6cl"]
+[gd_scene load_steps=6 format=3 uid="uid://dinj6yh0ey6cl"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_y5dy4"]
 [ext_resource type="Script" path="res://scenes/levels/level_2_1.gd" id="2_2auj6"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_xm7ds"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_kc8l2"]
+[ext_resource type="PackedScene" uid="uid://djck0i3twp6rr" path="res://scenes/objects/powerup_telekinesis.tscn" id="5_jsqbn"]
 
 [node name="Level_2_1" instance=ExtResource("1_y5dy4")]
 script = ExtResource("2_2auj6")
@@ -358,5 +359,8 @@ position = Vector2(-80, -80)
 
 [node name="MovableBrick3" parent="Platforms" index="13" instance=ExtResource("4_kc8l2")]
 position = Vector2(-48, -80)
+
+[node name="PowerupTelekinesis" parent="." index="12" instance=ExtResource("5_jsqbn")]
+position = Vector2(-336, 272)
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

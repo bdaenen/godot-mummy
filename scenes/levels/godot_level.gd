@@ -38,9 +38,14 @@ func _clear_overlapping_blocks() -> void:
     children.append_array($Platforms.get_children())
     
     for child in children:
+        # Don't destroy portals / things that interact with the player on movement when they spawn on to pof it
         if player_bounds.has_point(child.global_position) and not child.is_in_group('disable_on_player_spawn'):
+            print('removing child')
             child.queue_free()
             await child.tree_exited
+        else:
+            pass
+            # print('false', child.global_position)
 
 func _bind_block_events() -> void:
     var children: Array[Node] = $Walls.get_children()
@@ -105,8 +110,9 @@ func _physics_process(_delta: float) -> void:
     elif %Player.position.y < (-Globals.LEVEL_HEIGHT_PX / 2):
         if Globals.world_coordinate_exists(Globals.world_coord.x, Globals.world_coord.y+1):
             Globals.world_coord.y += 1
-            Globals.player_spawn_position = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-1))
+            Globals.player_spawn_position = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-2))
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
+            # We also increased the spawn_position_offset to two pixels instead of one, to ensure the correct blocks get cleared on spawn.
             Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
             Globals.player_spawn_scale = %Player/Sprite2D.scale
             Globals.player_crosshair_spawn_position = %Player/Crosshair.position

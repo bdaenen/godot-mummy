@@ -808,7 +808,7 @@ position = Vector2(528, 304)
 [node name="_AnimatableBody2D_264" parent="Floor" index="264" instance=ExtResource("3_8a3hf")]
 position = Vector2(560, 304)
 
-[node name="Walls" parent="." index="2"]
+[node name="Walls" parent="." index="3"]
 position = Vector2(-89, 15)
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

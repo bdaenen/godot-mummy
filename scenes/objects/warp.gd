@@ -32,4 +32,5 @@ func _on_audio_stream_player_2d_finished() -> void:
     Globals.warped_transition = true
     Globals.world_coord = world_coord_target
     Globals.player_spawn_position = level_spawn_position_target
+    Globals.player_spawn_velocity = Vector2(0, 0)
     Globals.load_next_level()

@@ -58,6 +58,7 @@ func play_sound_jump() -> void:
 
 func _ready() -> void:
     dimensions = Vector2($Sprite2D.texture.get_width() * $Sprite2D.scale.x, $Sprite2D.texture.get_height() * $Sprite2D.scale.y)
+    
     if (Globals.warped_transition):
         input_disabled = true
         Globals.warped_transition = false
@@ -89,9 +90,12 @@ func _physics_process(delta: float) -> void:
         velocity.y += gravity * delta
 
     # Handle jump.
-    if Input.is_action_pressed("Jump") and is_on_floor() and is_jump_ready:
+    if Input.is_action_pressed("Jump") and (is_on_floor() or !$CoyoteTime.is_stopped()) and is_jump_ready:
         is_jump_ready = false
+        $CoyoteTime.stop()
+        print('coyote stopped ', is_on_floor(), $CoyoteTime.is_stopped())
         $JumpCooldown.start()
+        print('jumping')
         velocity.y = JUMP_VELOCITY
         play_sound_jump()
 
@@ -145,6 +149,9 @@ func _process(_delta: float) -> void:
     elif not is_on_floor() and prev_is_on_floor:
         $SfxWalkTimer.set_paused(true)
         $WalkAnimationTimer.set_paused(true)
+        if is_jump_ready:
+            print('coyoteeeeee')
+            $CoyoteTime.start()
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:
         #shoot_tk_projectile.emit(global_position.direction_to(get_global_mouse_position()))
@@ -153,6 +160,7 @@ func _process(_delta: float) -> void:
         shoot_link_projectile.emit(global_position.direction_to($Crosshair.global_position))
     if Input.is_action_just_pressed("Clear Link") and skills.can_link and linker_ref:
         linker_ref.clear_bodies()
+    
     prev_is_on_floor = is_on_floor()
 
 func kill() -> void:
