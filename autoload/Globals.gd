@@ -31,7 +31,7 @@ var player_skills: Dictionary = {
     "can_link": false,
     "can_sprint": false
 }
-
+var previous_world_coord: Vector2 = Vector2(-1, -1)
 var current_input_mode: int = KEYBOARD
 
 #var player_skills: Dictionary = {
@@ -48,8 +48,8 @@ func _ready() -> void:
 func has_visited_level(coordinate: Vector2i) -> bool:
     return visited_levels.has(coordinate)
 
-func world_coordinate_exists(x: int, y: int) -> bool:
-    var path: String = scene_template_string.format({"x": x, "y": y})
+func world_coordinate_exists(coord: Vector2) -> bool:
+    var path: String = scene_template_string.format({"x": coord.x, "y": coord.y})
     return ResourceLoader.exists(path)
 
 func load_next_level() -> void:
@@ -59,6 +59,15 @@ func load_next_level() -> void:
     get_tree().change_scene_to_file(path)
     print('dooplicate')
     previous_player_skills = player_skills.duplicate()
+
+func transition_to_level(coord: Vector2, spawn_position: Vector2, spawn_velocity: Vector2, player: Player) -> void:
+    previous_world_coord = Vector2(world_coord)
+    world_coord = coord
+    player_spawn_position = spawn_position
+    player_spawn_velocity = spawn_velocity
+    player_spawn_scale = player.get_node("Sprite2D").scale
+    player_crosshair_spawn_position = player.get_node("Crosshair").position
+    load_next_level()
 
 func reset_level() -> void:
     player_skills = previous_player_skills.duplicate()
@@ -174,6 +183,7 @@ func set_player_skill(skill_name: String, enabled: bool) -> void:
 func dump_state() -> Dictionary:
     return {
         "world_coord": world_coord,
+        "previous_player_skills": previous_player_skills,
         "player_spawn_position": player_spawn_position,
         "player_crosshair_spawn_position": player_crosshair_spawn_position,
         "player_spawn_velocity": player_spawn_velocity,
@@ -186,6 +196,7 @@ func dump_state() -> Dictionary:
 
 func load_state(state: Dictionary) -> void:
     world_coord = state.world_coord
+    previous_player_skills = state.previous_player_skills
     player_spawn_position = state.player_spawn_position
     player_crosshair_spawn_position = state.player_crosshair_spawn_position
     player_spawn_velocity = state.player_spawn_velocity

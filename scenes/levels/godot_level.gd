@@ -6,6 +6,9 @@ var link_projectile: PackedScene = preload("res://scenes/projectiles/link.tscn")
 var tutorial_dismiss_action: String = ''
 var minimap_position: String = 'right'
 
+func _init() -> void:
+    print(Globals.world_coord)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -39,7 +42,7 @@ func _clear_overlapping_blocks() -> void:
     
     for child in children:
         # Don't destroy portals / things that interact with the player on movement when they spawn on to pof it
-        if player_bounds.has_point(child.global_position) and not child.is_in_group('disable_on_player_spawn'):
+        if is_instance_valid(child) and player_bounds.has_point(child.global_position) and not child.is_in_group('disable_on_player_spawn'):
             print('removing child')
             child.queue_free()
             await child.tree_exited
@@ -86,48 +89,40 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
-        if Globals.world_coordinate_exists(Globals.world_coord.x+1, Globals.world_coord.y):
-            Globals.world_coord.x += 1
-            Globals.player_spawn_position = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
-            Globals.player_spawn_velocity = %Player.velocity
-            Globals.player_spawn_scale = %Player/Sprite2D.scale
-            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
-            Globals.load_next_level()
+        var new_world_coord: Vector2 = Vector2(Globals.world_coord.x+1, Globals.world_coord.y)
+        if Globals.world_coordinate_exists(new_world_coord):
+            var player_spawn_position: Vector2 = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
+            var player_spawn_velocity: Vector2 = %Player.velocity
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
         else:
             %Player.velocity.x = -1000
             %Player.move_and_slide()
     elif %Player.position.x < (-Globals.LEVEL_WIDTH_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_coord.x-1, Globals.world_coord.y):
-            Globals.world_coord.x -= 1
-            Globals.player_spawn_position = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
-            Globals.player_spawn_velocity = %Player.velocity
-            Globals.player_spawn_scale = %Player/Sprite2D.scale
-            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
-            Globals.load_next_level()
+        var new_world_coord: Vector2 = Vector2(Globals.world_coord.x-1, Globals.world_coord.y)
+        if Globals.world_coordinate_exists(new_world_coord):
+            var player_spawn_position: Vector2 = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
+            var player_spawn_velocity: Vector2 = %Player.velocity
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
         else:
             %Player.velocity.x = 1000
             %Player.move_and_slide()
     elif %Player.position.y < (-Globals.LEVEL_HEIGHT_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_coord.x, Globals.world_coord.y+1):
-            Globals.world_coord.y += 1
-            Globals.player_spawn_position = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-2))
+        var new_world_coord: Vector2 = Vector2(Globals.world_coord.x, Globals.world_coord.y+1)
+        if Globals.world_coordinate_exists(new_world_coord):
+            var player_spawn_position: Vector2 = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-2))
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             # We also increased the spawn_position_offset to two pixels instead of one, to ensure the correct blocks get cleared on spawn.
-            Globals.player_spawn_velocity = %Player.velocity + Vector2(0, -400)
-            Globals.player_spawn_scale = %Player/Sprite2D.scale
-            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
-            Globals.load_next_level()
+            var player_spawn_velocity: Vector2 = %Player.velocity + Vector2(0, -400)
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
         else:
             %Player.velocity.y = 500
             %Player.move_and_slide()
     elif %Player.position.y > (Globals.LEVEL_HEIGHT_PX / 2):
-        if Globals.world_coordinate_exists(Globals.world_coord.x, Globals.world_coord.y-1):
-            Globals.world_coord.y -= 1
-            Globals.player_spawn_position = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
-            Globals.player_spawn_velocity = %Player.velocity
-            Globals.player_spawn_scale = %Player/Sprite2D.scale
-            Globals.player_crosshair_spawn_position = %Player/Crosshair.position
-            Globals.load_next_level()
+        var new_world_coord: Vector2 = Vector2(Globals.world_coord.x, Globals.world_coord.y-1)
+        if Globals.world_coordinate_exists(new_world_coord):
+            var player_spawn_position: Vector2 = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
+            var player_spawn_velocity: Vector2 = %Player.velocity
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
         else:
             %Player.velocity.y = -500
             %Player.move_and_slide()

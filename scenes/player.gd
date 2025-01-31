@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 signal shoot_tk_projectile(angle: Vector2)
 signal shoot_link_projectile(angle: Vector2)

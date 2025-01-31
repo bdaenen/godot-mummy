@@ -70,6 +70,8 @@ player = NodePath("../../../Camera2D/Player")
 camera = NodePath("../Camera2D")
 metadata/_edit_lock_ = true
 
+[node name="Transition" type="Sprite2D" parent="."]
+
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
 [connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]
 [connection signal="gain_telekinesis" from="Camera2D/Player" to="." method="_on_player_gain_telekinesis"]
