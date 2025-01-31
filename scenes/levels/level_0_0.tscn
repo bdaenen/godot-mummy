@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cd3qbkv1iqre7" path="res://scenes/objects/powerup_link.tscn" id="6_x3dn1"]
 
 [node name="Level_0_0" instance=ExtResource("1_qjeu8")]
+process_mode = 0
 script = ExtResource("2_0faag")
 
 [node name="_AnimatableBody2D_92" parent="Floor" index="0" instance=ExtResource("3_aafex")]
@@ -461,5 +462,8 @@ position = Vector2(-368, 240)
 
 [node name="PowerupLink" parent="Platforms" index="48" instance=ExtResource("6_x3dn1")]
 position = Vector2(-464, 272)
+
+[node name="Transition" parent="." index="12"]
+top_level = false
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

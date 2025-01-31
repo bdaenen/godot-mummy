@@ -19,4 +19,3 @@ func fadeIn(duration: float = .5) -> void:
 func fadeOut(duration: float = .5) -> void:
     var tween: Tween = create_tween()
     tween.tween_property($".", "modulate:a", 0, duration).from(1)
-

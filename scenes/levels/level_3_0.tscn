@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_lcgpq"]
 
 [node name="Level_3_0" instance=ExtResource("1_8wb7e")]
+process_mode = 0
 script = ExtResource("2_xevas")
 
 [node name="_AnimatableBody2D_79" parent="Floor" index="0" instance=ExtResource("3_jwjtl")]
@@ -359,7 +360,7 @@ position = Vector2(464, 240)
 [node name="_AnimatableBody2D_81" parent="Platforms" index="11" instance=ExtResource("4_lcgpq")]
 position = Vector2(464, 272)
 
-[node name="TutorialCanvas" parent="." index="9"]
-visible = false
+[node name="Transition" parent="." index="12"]
+top_level = false
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

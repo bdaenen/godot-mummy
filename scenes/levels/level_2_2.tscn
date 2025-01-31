@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bdvkd68lu1inl" path="res://scenes/objects/switch.tscn" id="6_dn3vw"]
 
 [node name="Level_2_2" instance=ExtResource("1_e77df")]
+process_mode = 0
 script = ExtResource("2_0lq32")
 
 [node name="_AnimatableBody2D_146" parent="Floor" index="0" instance=ExtResource("3_6r6ck")]
@@ -553,7 +554,7 @@ position = Vector2(144, 272)
 [node name="_AnimatableBody2D_145" parent="Platforms" index="75" instance=ExtResource("4_yqe3i")]
 position = Vector2(176, 272)
 
-[node name="MinimapCanvas" parent="." index="10"]
-visible = false
+[node name="Transition" parent="." index="12"]
+top_level = false
 
 [connection signal="switch_press" from="Platforms/Switch" to="." method="_on_switch_switch_press"]

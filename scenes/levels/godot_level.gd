@@ -26,6 +26,41 @@ func _ready() -> void:
         $MinimapCanvas/Control.set_anchors_and_offsets_preset(Control.PRESET_TOP_LEFT, Control.PRESET_MODE_KEEP_SIZE)
     _setup_player()
     SaverLoader.save_current_state()
+    
+    if Globals.previous_level_texture and Globals.previous_world_coord and not Globals.warped_transition:
+        var viewport_width: int = ProjectSettings.get_setting("display/window/size/viewport_width")
+        var viewport_height: int = ProjectSettings.get_setting("display/window/size/viewport_height")
+        
+        $Transition.texture = Globals.previous_level_texture
+        var tween: Tween = create_tween()
+        tween.stop()
+        tween.set_parallel(true)
+        
+        # player moved one level to the left, slide in the view left to right
+        if (Globals.previous_world_coord.x > Globals.world_coord.x):
+            $Transition.position = Vector2(viewport_width, $Transition.position.y)
+            #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 1).from(Vector2(viewport_width, 0))
+        # player moved one level to the left, slide in the view right to left
+        if (Globals.previous_world_coord.x < Globals.world_coord.x):
+            $Transition.position = Vector2(-viewport_width, $Transition.position.y)
+            #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 1).from(Vector2(-viewport_width, 0))
+        # player moved one level to the left, slide in the view bottom to top
+        if (Globals.previous_world_coord.y > Globals.world_coord.y):
+            $Transition.position = Vector2($Transition.position.x, -viewport_height)
+            #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 0.5).from(Vector2(0, -viewport_height))
+        # player moved one level to the left, slide in the view top to bottom
+        if (Globals.previous_world_coord.y < Globals.world_coord.y):
+            $Transition.position = Vector2($Transition.position.x, viewport_height)
+            #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 0.5).from(Vector2(0, viewport_height))
+        tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+        tween.play()
+        get_tree().paused = true
+        await tween.finished
+        get_tree().paused = false
 
 func _setup_world_coords() -> void :
     var regex: RegEx = RegEx.new()
@@ -85,7 +120,6 @@ func _setup_player() -> void:
 func _process(_delta: float) -> void:
     if Input.is_action_just_pressed("Reset Room"):
         Globals.reset_level()
-        # $ScreenShaker.shake(2)
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
@@ -93,7 +127,7 @@ func _physics_process(_delta: float) -> void:
         if Globals.world_coordinate_exists(new_world_coord):
             var player_spawn_position: Vector2 = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
             var player_spawn_velocity: Vector2 = %Player.velocity
-            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player, get_viewport())
         else:
             %Player.velocity.x = -1000
             %Player.move_and_slide()
@@ -102,7 +136,7 @@ func _physics_process(_delta: float) -> void:
         if Globals.world_coordinate_exists(new_world_coord):
             var player_spawn_position: Vector2 = Vector2((Globals.LEVEL_WIDTH_PX/2-1), %Player.position.y)
             var player_spawn_velocity: Vector2 = %Player.velocity
-            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player, get_viewport())
         else:
             %Player.velocity.x = 1000
             %Player.move_and_slide()
@@ -112,8 +146,8 @@ func _physics_process(_delta: float) -> void:
             var player_spawn_position: Vector2 = Vector2(%Player.position.x, (Globals.LEVEL_HEIGHT_PX/2-2))
             # When we move up, make sure we can make the jump into the room by adding some extra upward velocity.
             # We also increased the spawn_position_offset to two pixels instead of one, to ensure the correct blocks get cleared on spawn.
-            var player_spawn_velocity: Vector2 = %Player.velocity + Vector2(0, -400)
-            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
+            var player_spawn_velocity: Vector2 = %Player.velocity + Vector2(0, -300)
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player, get_viewport())
         else:
             %Player.velocity.y = 500
             %Player.move_and_slide()
@@ -122,7 +156,7 @@ func _physics_process(_delta: float) -> void:
         if Globals.world_coordinate_exists(new_world_coord):
             var player_spawn_position: Vector2 = Vector2(%Player.position.x, (-Globals.LEVEL_HEIGHT_PX/2+1))
             var player_spawn_velocity: Vector2 = %Player.velocity
-            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player)
+            Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player, get_viewport())
         else:
             %Player.velocity.y = -500
             %Player.move_and_slide()

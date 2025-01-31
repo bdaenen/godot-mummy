@@ -24,14 +24,18 @@ var progress_flags: Dictionary = {
     "left_button_pressed": false,
     "right_button_pressed": false
 }
-
-var previous_player_skills: Dictionary = {}
+var previous_player_skills: Dictionary = {
+    "can_shoot": false,
+    "can_link": false,
+    "can_sprint": false
+}
 var player_skills: Dictionary = {
     "can_shoot": false,
     "can_link": false,
     "can_sprint": false
 }
 var previous_world_coord: Vector2 = Vector2(-1, -1)
+var previous_level_texture: Texture2D = null
 var current_input_mode: int = KEYBOARD
 
 #var player_skills: Dictionary = {
@@ -57,19 +61,21 @@ func load_next_level() -> void:
     if (!visited_levels.has(world_coord)):
         visited_levels.append(world_coord)
     get_tree().change_scene_to_file(path)
-    print('dooplicate')
     previous_player_skills = player_skills.duplicate()
 
-func transition_to_level(coord: Vector2, spawn_position: Vector2, spawn_velocity: Vector2, player: Player) -> void:
+func transition_to_level(coord: Vector2, spawn_position: Vector2, spawn_velocity: Vector2, player: Player, viewport: Viewport) -> void:
     previous_world_coord = Vector2(world_coord)
     world_coord = coord
     player_spawn_position = spawn_position
     player_spawn_velocity = spawn_velocity
     player_spawn_scale = player.get_node("Sprite2D").scale
     player_crosshair_spawn_position = player.get_node("Crosshair").position
+    previous_level_texture = ImageTexture.create_from_image(viewport.get_texture().get_image())
+    
     load_next_level()
 
 func reset_level() -> void:
+    previous_level_texture = null
     player_skills = previous_player_skills.duplicate()
     load_next_level()
 

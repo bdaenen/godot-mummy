@@ -903,7 +903,4 @@ position = Vector2(144, 272)
 [node name="_Area2D_245" parent="Platforms" index="52" instance=ExtResource("5_57fy6")]
 position = Vector2(80, 272)
 
-[node name="Linker" parent="." index="7"]
-visible = false
-
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

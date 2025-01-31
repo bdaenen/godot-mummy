@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="5_bdf4e"]
 
 [node name="Level_3_3" instance=ExtResource("1_e4n8o")]
+process_mode = 0
 script = ExtResource("2_t81xf")
 
 [node name="Brick" parent="Walls" index="0" instance=ExtResource("4_xl01q")]
@@ -1167,8 +1168,5 @@ position = Vector2(-16, -272)
 [node name="FilterBrick2" parent="Platforms" index="37" instance=ExtResource("5_6m8br")]
 position = Vector2(16, -272)
 
-[node name="TutorialOverlay" parent="TutorialCanvas" index="0"]
-visible = false
-
-[node name="MinimapCanvas" parent="." index="10"]
-visible = false
+[node name="Transition" parent="." index="12"]
+top_level = false

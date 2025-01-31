@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dlcgj3ddcrssp" path="res://autoload/screen_shaker.tscn" id="7_nm33y"]
 
 [node name="GodotLevel" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_scb70")
 
 [node name="bg" type="TileMapLayer" parent="."]
@@ -71,6 +72,7 @@ camera = NodePath("../Camera2D")
 metadata/_edit_lock_ = true
 
 [node name="Transition" type="Sprite2D" parent="."]
+top_level = true
 
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
 [connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]

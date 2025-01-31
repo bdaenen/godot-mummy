@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dl34hgulyjkcv" path="res://scenes/objects/pyramid.tscn" id="5_bcoyg"]
 
 [node name="Level_3_2" instance=ExtResource("1_rw2s2")]
+process_mode = 0
 script = ExtResource("2_0s1gs")
 
 [node name="_AnimatableBody2D_65" parent="Floor" index="0" instance=ExtResource("3_yw5v8")]
@@ -223,8 +224,5 @@ position = Vector2(112, -304)
 position = Vector2(-496, 272)
 should_spawn = false
 
-[node name="TutorialCanvas" parent="." index="9"]
-visible = false
-
-[node name="MinimapCanvas" parent="." index="10"]
-visible = false
+[node name="Transition" parent="." index="12"]
+top_level = false

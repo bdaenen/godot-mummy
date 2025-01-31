@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://autoload/bg_music_player.gd" id="2_a43el"]
 
 [node name="BgMusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_t0r46")
 volume_db = -10.0
 bus = &"Bgm"
