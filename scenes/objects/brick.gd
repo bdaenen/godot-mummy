@@ -36,6 +36,8 @@ var is_linked: bool = false:
 
 func update_shader_param(val: float) -> void:
     $Sprite2D.material.set_shader_parameter("onoff",val)
+    $Sprite2DCracked.material.set_shader_parameter("onoff",val)
+    $WallHardPartiallyCracked.material.set_shader_parameter("onoff",val)
 
 #func _ready() -> void:
     #if cracked:

@@ -1,11 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://bptqxky1x4373"]
+[gd_scene load_steps=10 format=3 uid="uid://bptqxky1x4373"]
 
 [ext_resource type="Texture2D" uid="uid://b7kqnwclvb7pb" path="res://graphics/objects/wall_hard.png" id="1_5yeay"]
 [ext_resource type="Script" path="res://scenes/objects/brick.gd" id="1_yidfk"]
 [ext_resource type="Texture2D" uid="uid://bd4phvr8fddlx" path="res://graphics/objects/wall_hard_cracked.png" id="2_cxd13"]
 [ext_resource type="Material" uid="uid://b4rm2uy33uxdh" path="res://scenes/objects/green-border.tres" id="2_fpcuu"]
+[ext_resource type="Shader" path="res://scenes/objects/cracked_wall_link.gdshader" id="2_nnb8e"]
 [ext_resource type="Script" path="res://scenes/objects/Brick_sprite2d.gd" id="5_qbrr7"]
 [ext_resource type="Texture2D" uid="uid://csnaardv7xd8l" path="res://graphics/objects/wall_hard_partially_cracked.png" id="6_67h44"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibu1j"]
+resource_local_to_scene = true
+shader = ExtResource("2_nnb8e")
+shader_parameter/onoff = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
 size = Vector2(32, 32)
@@ -16,7 +22,7 @@ collision_mask = 2
 script = ExtResource("1_yidfk")
 
 [node name="Sprite2DCracked" type="Sprite2D" parent="."]
-visible = false
+material = SubResource("ShaderMaterial_ibu1j")
 texture = ExtResource("2_cxd13")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,6 +32,7 @@ script = ExtResource("5_qbrr7")
 
 [node name="WallHardPartiallyCracked" type="Sprite2D" parent="."]
 visible = false
+material = ExtResource("2_fpcuu")
 texture = ExtResource("6_67h44")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
