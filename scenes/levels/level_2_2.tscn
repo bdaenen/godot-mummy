@@ -554,7 +554,4 @@ position = Vector2(144, 272)
 [node name="_AnimatableBody2D_145" parent="Platforms" index="75" instance=ExtResource("4_yqe3i")]
 position = Vector2(176, 272)
 
-[node name="Transition" parent="." index="12"]
-top_level = false
-
 [connection signal="switch_press" from="Platforms/Switch" to="." method="_on_switch_switch_press"]

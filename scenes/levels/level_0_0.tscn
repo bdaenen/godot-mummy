@@ -463,7 +463,4 @@ position = Vector2(-368, 240)
 [node name="PowerupLink" parent="Platforms" index="48" instance=ExtResource("6_x3dn1")]
 position = Vector2(-464, 272)
 
-[node name="Transition" parent="." index="12"]
-top_level = false
-
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

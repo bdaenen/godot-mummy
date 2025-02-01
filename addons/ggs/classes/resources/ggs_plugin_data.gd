@@ -26,50 +26,50 @@ const SPLIT_OFFSET_1_DEFAULT: int = 615
 
 
 func set_property(property: String, value: Variant) -> void:
-	set(property, value)
-	save()
+    set(property, value)
+    save()
 
 
 func save() -> void:
-	ResourceSaver.save(self)
+    ResourceSaver.save(self)
 
 
 func reset() -> void:
-	recent_settings.clear()
-	apply_on_changed_all = APPLY_ON_CHANGED_ALL_DEFAULT
-	grab_focus_on_mouse_over_all = GRAB_FOCUS_ON_MOUSE_OVER_ALL
-	dir_settings = DIR_SETTINGS_DEFAULT
-	dir_templates = DIR_TEMPLATES_DEFAULT
-	dir_components = DIR_COMPONENTS_DEFAULT
-	dir_save_file = DIR_SAVE_FILE_DEFAULT
-	split_offset_0 = SPLIT_OFFSET_0_DEFAULT
-	split_offset_1 = SPLIT_OFFSET_1_DEFAULT
-	
-	save()
+    recent_settings.clear()
+    apply_on_changed_all = APPLY_ON_CHANGED_ALL_DEFAULT
+    grab_focus_on_mouse_over_all = GRAB_FOCUS_ON_MOUSE_OVER_ALL
+    dir_settings = DIR_SETTINGS_DEFAULT
+    dir_templates = DIR_TEMPLATES_DEFAULT
+    dir_components = DIR_COMPONENTS_DEFAULT
+    dir_save_file = DIR_SAVE_FILE_DEFAULT
+    split_offset_0 = SPLIT_OFFSET_0_DEFAULT
+    split_offset_1 = SPLIT_OFFSET_1_DEFAULT
+    
+    save()
 
 
 ### Recent Settings
 
 func add_recent_setting(setting: String) -> void:
-	if recent_settings.has(setting):
-		_bring_to_front(setting)
-	else:
-		recent_settings.push_front(setting)
-	
-	_limit_size()
-	save()
+    if recent_settings.has(setting):
+        _bring_to_front(setting)
+    else:
+        recent_settings.push_front(setting)
+    
+    _limit_size()
+    save()
 
 
 func _bring_to_front(element: String) -> void:
-	recent_settings.erase(element)
-	recent_settings.push_front(element)
+    recent_settings.erase(element)
+    recent_settings.push_front(element)
 
 
 func _limit_size() -> void:
-	if recent_settings.size() > 10:
-		recent_settings.pop_back()
+    if recent_settings.size() > 10:
+        recent_settings.pop_back()
 
 
 func clear_recent_settings() -> void:
-	recent_settings.clear()
-	save()
+    recent_settings.clear()
+    save()

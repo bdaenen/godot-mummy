@@ -223,6 +223,3 @@ position = Vector2(112, -304)
 [node name="Pyramid" parent="Platforms" index="0" instance=ExtResource("5_bcoyg")]
 position = Vector2(-496, 272)
 should_spawn = false
-
-[node name="Transition" parent="." index="12"]
-top_level = false

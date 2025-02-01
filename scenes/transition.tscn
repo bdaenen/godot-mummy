@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs4exxqtdhqlk"]
+
+[ext_resource type="Script" path="res://scenes/transition.gd" id="1_ner8b"]
+
+[node name="Transition" type="Sprite2D"]
+top_level = true
+script = ExtResource("1_ner8b")

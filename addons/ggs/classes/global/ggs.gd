@@ -197,6 +197,7 @@ func _apply_settings() -> void:
     for setting_path in all_settings:
         var setting: ggsSetting = load(setting_path)
         var value: Variant = ggsSaveFile.new().get_value(setting.category, setting.name)
+        print(setting.name, ' ', value)
         setting.apply(value)
 
 

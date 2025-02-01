@@ -12,6 +12,7 @@ var viewport_bounds: Vector2 = Vector2(ProjectSettings.get_setting("display/wind
 var world_coord: Vector2i = Vector2i(2, 0)
 var scene_template_string: String = "res://scenes/levels/level_{x}_{y}.tscn"
 var player_spawn_position: Vector2 = Vector2(-304, -144)
+var transition_speed: int = 0
 var player_crosshair_spawn_position: Vector2 = Vector2(100, 0)
 #var player_spawn_position: Vector2 = Vector2(100, 80)
 var player_spawn_velocity: Vector2 = Vector2.ZERO

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bpldv8ok6acoa"]
+
+[ext_resource type="Script" path="res://game_settings/settings/video/transition_speed.gd" id="1_2wdp2"]
+
+[resource]
+resource_name = "transition_speed"
+script = ExtResource("1_2wdp2")
+current = 0
+default = null
+name = "transition_speed"
+category = "video"
+value_type = 2
+value_hint = 0
+value_hint_string = ""

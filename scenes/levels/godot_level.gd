@@ -30,6 +30,9 @@ func _ready() -> void:
     if Globals.previous_level_texture and Globals.previous_world_coord and not Globals.warped_transition:
         var viewport_width: int = ProjectSettings.get_setting("display/window/size/viewport_width")
         var viewport_height: int = ProjectSettings.get_setting("display/window/size/viewport_height")
+        var transition_node: LevelTransition = $Transition
+        var transition_duration_y: float = transition_node.TRANSITION_DURATION_Y[Globals.transition_speed]
+        var transition_duration_x: float = transition_node.TRANSITION_DURATION_X[Globals.transition_speed]
         
         $Transition.texture = Globals.previous_level_texture
         var tween: Tween = create_tween()
@@ -40,22 +43,22 @@ func _ready() -> void:
         if (Globals.previous_world_coord.x > Globals.world_coord.x):
             $Transition.position = Vector2(viewport_width, $Transition.position.y)
             #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
-            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 1).from(Vector2(viewport_width, 0))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), transition_duration_x).from(Vector2(viewport_width, 0))
         # player moved one level to the left, slide in the view right to left
         if (Globals.previous_world_coord.x < Globals.world_coord.x):
             $Transition.position = Vector2(-viewport_width, $Transition.position.y)
             #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
-            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 1).from(Vector2(-viewport_width, 0))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), transition_duration_x).from(Vector2(-viewport_width, 0))
         # player moved one level to the left, slide in the view bottom to top
         if (Globals.previous_world_coord.y > Globals.world_coord.y):
             $Transition.position = Vector2($Transition.position.x, -viewport_height)
             #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
-            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 0.5).from(Vector2(0, -viewport_height))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), transition_duration_y).from(Vector2(0, -viewport_height))
         # player moved one level to the left, slide in the view top to bottom
         if (Globals.previous_world_coord.y < Globals.world_coord.y):
             $Transition.position = Vector2($Transition.position.x, viewport_height)
             #tween.tween_property($Transition, "position", Vector2(viewport_width, $Transition.position.y), 5).from(Vector2(0, $Transition.position.y))
-            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), 0.5).from(Vector2(0, viewport_height))
+            tween.tween_property($"Camera2D", "offset", Vector2(0, 0), transition_duration_y).from(Vector2(0, viewport_height))
         tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
         tween.play()
         get_tree().paused = true
