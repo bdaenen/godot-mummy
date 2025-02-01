@@ -128,5 +128,6 @@ _controller_Aim_Down={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 textures/lossless_compression/force_png=true
 2d/snap/snap_2d_transforms_to_pixel=true
