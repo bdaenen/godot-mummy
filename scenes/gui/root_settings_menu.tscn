@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d163trrwkea16"]
+[gd_scene load_steps=11 format=3 uid="uid://d163trrwkea16"]
 
 [ext_resource type="PackedScene" uid="uid://mmburhckr52e" path="res://scenes/gui/slider_control.tscn" id="1_kabji"]
 [ext_resource type="Script" path="res://scenes/gui/root_settings_menu.gd" id="1_pg6kv"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://game_settings/components/checkbox/checkbox.tscn" id="6_tdc66"]
 [ext_resource type="Resource" uid="uid://dhofbfllfodcy" path="res://game_settings/settings/video/window_mode.tres" id="7_02ody"]
 [ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://game_settings/components/option_list/option_list.tscn" id="9_agdp3"]
-[ext_resource type="Script" path="res://game_settings/components/option_list/option_list.gd" id="10_2vdu2"]
 [ext_resource type="Resource" uid="uid://bpldv8ok6acoa" path="res://game_settings/settings/video/transition_speed.tres" id="11_rirli"]
 
 [node name="RootSettingsMenu" type="Control"]
@@ -117,20 +116,19 @@ grab_focus_on_mouse_over = true
 
 [node name="LevelTransition" parent="SettingsMarginContainer/VBoxContainer" instance=ExtResource("1_kabji")]
 layout_mode = 2
+label = "Transition speed"
 
 [node name="Label" parent="SettingsMarginContainer/VBoxContainer/LevelTransition/LabelMarginContainer" index="0"]
-text = "Level transition"
+text = "Transition speed"
 
 [node name="OptionList" parent="SettingsMarginContainer/VBoxContainer/LevelTransition/ControlMarginContainer" index="0" instance=ExtResource("9_agdp3")]
 layout_mode = 2
-script = ExtResource("10_2vdu2")
 use_ids = true
 setting = ExtResource("11_rirli")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
 [node name="Btn" parent="SettingsMarginContainer/VBoxContainer/LevelTransition/ControlMarginContainer/OptionList" index="0"]
-layout_mode = 2
 selected = 0
 allow_reselect = true
 item_count = 3

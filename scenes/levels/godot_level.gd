@@ -6,9 +6,6 @@ var link_projectile: PackedScene = preload("res://scenes/projectiles/link.tscn")
 var tutorial_dismiss_action: String = ''
 var minimap_position: String = 'right'
 
-func _init() -> void:
-    print(Globals.world_coord)
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -64,7 +61,8 @@ func _ready() -> void:
         get_tree().paused = true
         await tween.finished
         get_tree().paused = false
-
+    $MinimapCanvas.visible = true
+    
 func _setup_world_coords() -> void :
     var regex: RegEx = RegEx.new()
     regex.compile("^Level_(\\d)_(\\d)$")
@@ -121,15 +119,20 @@ func _setup_player() -> void:
     
 
 func _process(_delta: float) -> void:
-    if Input.is_action_just_pressed("Reset Room"):
+    if Input.is_action_just_pressed("Reset Room") and not get_tree().paused:
         Globals.reset_level()
+    if Input.is_action_just_pressed("Pause"):
+        if not get_tree().paused:
+            pause_game()
+        else:
+            resume_game()
 
 func _physics_process(_delta: float) -> void:
     if %Player.position.x > Globals.LEVEL_WIDTH_PX / 2:
         var new_world_coord: Vector2 = Vector2(Globals.world_coord.x+1, Globals.world_coord.y)
         if Globals.world_coordinate_exists(new_world_coord):
             var player_spawn_position: Vector2 = Vector2((-Globals.LEVEL_WIDTH_PX/2+1), %Player.position.y)
-            var player_spawn_velocity: Vector2 = %Player.velocity
+            var player_spawn_velocity: Vector2 = %Player.velocity            
             Globals.transition_to_level(new_world_coord, player_spawn_position, player_spawn_velocity, %Player, get_viewport())
         else:
             %Player.velocity.x = -1000
@@ -230,3 +233,24 @@ func check_if_two_linked(_body: AnimatableBody2D) -> void:
         $TutorialCanvas/TutorialOverlay.fadeIn(.5)
         tutorial_dismiss_action = 'Clear Link'
         $Linker.disconnect('body_linked', check_if_two_linked)
+
+func pause_game() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+    $PauseMenuCanvas.visible = true
+    get_tree().paused = true
+    
+func resume_game() -> void:
+    Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+    $PauseMenuCanvas.visible = false
+    get_tree().paused = false
+
+func _on_pause_menu_reset_click() -> void:
+    get_tree().paused = false
+    Globals.reset_level()
+
+func _on_pause_menu_resume_click() -> void:
+    resume_game()
+
+func _on_pause_menu_save_quit_click() -> void:
+    get_tree().paused = false
+    get_tree().change_scene_to_file('res://scenes/main_menu.tscn')

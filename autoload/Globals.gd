@@ -46,6 +46,7 @@ var current_input_mode: int = KEYBOARD
 #}
 
 func _ready() -> void:
+    SaverLoader.save_initial_state(dump_state())
     load_input_config('user://input.cfg', KEYBOARD)
     load_input_config('user://input_controller.cfg', JOYPAD)
 
@@ -183,7 +184,6 @@ func map_square_to_circle( xy :Vector2 ) -> Vector2:
 
 ### SET PLAYER SKILL
 func set_player_skill(skill_name: String, enabled: bool) -> void:
-    
     player_skills[skill_name] = enabled
 
 ## SAVE/LOAD
@@ -198,7 +198,8 @@ func dump_state() -> Dictionary:
         "visited_levels": visited_levels,
         "warped_transition": warped_transition,
         "progress_flags": progress_flags,
-        "player_skills": player_skills
+        "player_skills": player_skills,
+        "previous_world_coord": previous_world_coord,
     }
 
 func load_state(state: Dictionary) -> void:
@@ -212,3 +213,5 @@ func load_state(state: Dictionary) -> void:
     warped_transition = state.warped_transition
     progress_flags = state.progress_flags
     player_skills = state.player_skills
+    previous_world_coord = state.previous_world_coord
+    previous_level_texture = null

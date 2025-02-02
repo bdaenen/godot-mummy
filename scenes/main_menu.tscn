@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bt7s1xjkhff68" path="res://scenes/gui/main_menu.tscn" id="3_co6a1"]
 
 [node name="MainMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_34h0c")
 
 [node name="Background" type="Sprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://ch78wtnj4trnx"]
+[gd_scene load_steps=10 format=4 uid="uid://ch78wtnj4trnx"]
 
 [ext_resource type="Script" path="res://scenes/levels/godot_level.gd" id="1_scb70"]
 [ext_resource type="TileSet" uid="uid://cm56c1q4xohp" path="res://tilesets/level.tres" id="2_xttr1"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://do4wixgs8kjnw" path="res://scenes/gui/minimap.tscn" id="6_c657l"]
 [ext_resource type="PackedScene" uid="uid://dlcgj3ddcrssp" path="res://autoload/screen_shaker.tscn" id="7_nm33y"]
 [ext_resource type="PackedScene" uid="uid://cs4exxqtdhqlk" path="res://scenes/transition.tscn" id="8_0ftc1"]
+[ext_resource type="PackedScene" uid="uid://b36rc3j7qvys1" path="res://scenes/gui/pause_menu.tscn" id="9_ew0cm"]
 
 [node name="GodotLevel" type="Node2D"]
 process_mode = 3
@@ -53,6 +54,7 @@ linker_ref = NodePath("../../Linker")
 size_flags_vertical = 4
 
 [node name="MinimapCanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="MarginContainer" parent="MinimapCanvas"]
 offset_right = 317.0
@@ -74,8 +76,38 @@ metadata/_edit_lock_ = true
 
 [node name="Transition" parent="." instance=ExtResource("8_0ftc1")]
 
+[node name="PauseMenuCanvas" type="CanvasLayer" parent="."]
+process_mode = 2
+visible = false
+follow_viewport_enabled = true
+
+[node name="Container" type="Control" parent="PauseMenuCanvas"]
+layout_mode = 3
+anchor_left = -0.133
+anchor_top = -0.158
+anchor_right = 0.135
+anchor_bottom = 0.203
+offset_left = 0.216003
+offset_top = 0.120003
+offset_right = -5.52
+offset_bottom = 0.0799866
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="PauseMenuCanvas/Container" instance=ExtResource("9_ew0cm")]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -125.5
+offset_bottom = 94.5
+
 [connection signal="gain_link" from="Camera2D/Player" to="." method="_on_player_gain_link"]
 [connection signal="gain_sprint" from="Camera2D/Player" to="." method="_on_player_gain_sprint"]
 [connection signal="gain_telekinesis" from="Camera2D/Player" to="." method="_on_player_gain_telekinesis"]
 [connection signal="shoot_link_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_link_projectile"]
 [connection signal="shoot_tk_projectile" from="Camera2D/Player" to="." method="_on_player_shoot_tk_projectile"]
+[connection signal="reset_click" from="PauseMenuCanvas/Container/PauseMenu" to="." method="_on_pause_menu_reset_click"]
+[connection signal="resume_click" from="PauseMenuCanvas/Container/PauseMenu" to="." method="_on_pause_menu_resume_click"]
+[connection signal="save_quit_click" from="PauseMenuCanvas/Container/PauseMenu" to="." method="_on_pause_menu_save_quit_click"]

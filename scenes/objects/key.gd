@@ -6,4 +6,7 @@ func _init() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
     Globals.progress_flags.obtained_upper_floor_key = true
+    $AudioStreamPlayer.play()
+    visible = false
+    await $AudioStreamPlayer.finished
     queue_free()

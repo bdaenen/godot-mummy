@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d163trrwkea16" path="res://scenes/gui/root_settings_menu.tscn" id="2_7wleh"]
 
 [node name="MainSettingsMenu" instance=ExtResource("1_tstq4")]
+process_mode = 3
 script = ExtResource("2_3gbh1")
 
 [node name="RootSettingsMenu" parent="MarginContainer/ColorRect" index="0" instance=ExtResource("2_7wleh")]

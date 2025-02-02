@@ -323,9 +323,6 @@ position = Vector2(560, 112)
 [node name="_AnimatableBody2D_98" parent="Walls" index="67" instance=ExtResource("3_6r6ck")]
 position = Vector2(560, 144)
 
-[node name="_AnimatableBody2D_111" parent="Walls" index="68" instance=ExtResource("3_6r6ck")]
-position = Vector2(560, 176)
-
 [node name="MovableBrick" parent="Platforms" index="0" instance=ExtResource("4_yqe3i")]
 position = Vector2(-144, 80)
 

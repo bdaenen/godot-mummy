@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://b36rc3j7qvys1"]
+
+[ext_resource type="Script" path="res://scenes/gui/pause_menu.gd" id="1_avheg"]
+
+[node name="PauseMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_avheg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.741176, 0.639216, 0, 0.156863)
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="ResumeButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="ResetRoomButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reset Room"
+
+[node name="SaveAndQuitButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save & Quit"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ResetRoomButton" to="." method="_on_reset_room_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/SaveAndQuitButton" to="." method="_on_save_and_quit_button_pressed"]
