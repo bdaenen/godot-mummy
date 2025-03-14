@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnn0ty3ycej63"]
+[gd_scene load_steps=8 format=3 uid="uid://bnn0ty3ycej63"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/telekinesis.gd" id="1_1po4d"]
 [ext_resource type="Texture2D" uid="uid://1qgk2rqyu6pw" path="res://graphics/abilities/push.png" id="1_mceth"]
 [ext_resource type="AudioStream" uid="uid://cidtqpio5qgvx" path="res://audio/shoot.wav" id="3_klnwu"]
 [ext_resource type="AudioStream" uid="uid://6svtfspgtbft" path="res://audio/hit.wav" id="4_4llme"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="5_6oenn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i5m04"]
 radius = 8.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_si4x0"]
+light_mode = 1
 
 [node name="Telekinesis" type="Area2D"]
 collision_layer = 2
@@ -17,6 +21,7 @@ script = ExtResource("1_1po4d")
 shape = SubResource("CircleShape2D_i5m04")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_si4x0")
 texture = ExtResource("1_mceth")
 
 [node name="DespawnTimer" type="Timer" parent="."]
@@ -31,6 +36,15 @@ bus = &"Sfx"
 [node name="SfxBlockHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_4llme")
 bus = &"Sfx"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 7
+color = Color(1, 0.681128, 0.984986, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.576471)
+shadow_item_cull_mask = 7
+texture = ExtResource("5_6oenn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

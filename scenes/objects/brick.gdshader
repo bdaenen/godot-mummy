@@ -17,7 +17,7 @@ void fragment() {
 	}
 	if(UV.y > 0.9) {
 		COLOR = mix(COLOR, vec4(0, 1, 0, 1.0), onoff);
-	}	 
+	}
 }
 
 //void light() {

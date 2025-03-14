@@ -7,5 +7,10 @@ func _init() -> void:
     value_hint_string = "0"
     default = 0
 
-func apply(value: int) -> void:
-    Globals.transition_speed = value
+func apply(value: int = 0) -> void:
+    if value == null:
+        Globals.transition_speed = 0
+    else:
+        Globals.transition_speed = value
+
+    

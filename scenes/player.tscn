@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://biic2547l5toc"]
+[gd_scene load_steps=12 format=3 uid="uid://biic2547l5toc"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_icu13"]
 [ext_resource type="Texture2D" uid="uid://cy2rpsm14wp2l" path="res://graphics/igor.png" id="2_athis"]
@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b1ne0cl3db0db" path="res://audio/warp_reverse.wav" id="6_4qd5i"]
 [ext_resource type="Shader" path="res://scenes/crosshair.gdshader" id="7_tl36k"]
 [ext_resource type="Texture2D" uid="uid://c723n33s6oush" path="res://graphics/crosshair.png" id="8_m363k"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jk0l7"]
+light_mode = 1
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oj8eo"]
 radius = 3.0
@@ -23,6 +26,7 @@ platform_wall_layers = 7
 script = ExtResource("1_icu13")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_jk0l7")
 position = Vector2(-1, -1)
 texture = ExtResource("2_athis")
 

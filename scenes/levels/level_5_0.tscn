@@ -427,4 +427,7 @@ position = Vector2(-240, 240)
 [node name="_AnimatableBody2D_932" parent="Platforms" index="34" instance=ExtResource("6_kx7m8")]
 position = Vector2(-240, 272)
 
+[node name="Transition" parent="." index="12"]
+light_mask = 1
+
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

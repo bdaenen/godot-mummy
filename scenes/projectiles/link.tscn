@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1vcl7o65apv"]
+[gd_scene load_steps=7 format=3 uid="uid://bl1vcl7o65apv"]
 
 [ext_resource type="Texture2D" uid="uid://bk2t6mghwbf07" path="res://graphics/abilities/link.png" id="1_fvv1s"]
 [ext_resource type="Script" path="res://scenes/projectiles/link.gd" id="1_yhupv"]
 [ext_resource type="AudioStream" uid="uid://d1kpv12mfc5fu" path="res://audio/link.wav" id="3_j46xd"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="4_78fbv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t84aj"]
 radius = 8.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j44yx"]
+light_mode = 1
 
 [node name="Link" type="Area2D"]
 collision_layer = 2
@@ -17,6 +21,7 @@ script = ExtResource("1_yhupv")
 shape = SubResource("CircleShape2D_t84aj")
 
 [node name="Link" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_j44yx")
 texture = ExtResource("1_fvv1s")
 
 [node name="DespawnTimer" type="Timer" parent="."]
@@ -27,6 +32,12 @@ autostart = true
 stream = ExtResource("3_j46xd")
 autoplay = true
 bus = &"Sfx"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.0156863, 0.862745, 0.152941, 1)
+energy = 4.0
+texture = ExtResource("4_78fbv")
+texture_scale = 0.25
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

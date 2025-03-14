@@ -10,3 +10,5 @@ func _on_picked_up(body: Node2D) -> void:
     if (body.is_in_group('Player') and !Globals.player_skills.can_link):
         body.set_can_link(true)
         $AudioStreamPlayer.play()
+        var tween: Tween = create_tween()
+        tween.tween_property($PointLight2D, "energy", 0, $AudioStreamPlayer.stream.get_length())

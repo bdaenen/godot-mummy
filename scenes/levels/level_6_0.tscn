@@ -332,4 +332,7 @@ position = Vector2(496, 272)
 world_coord_target = Vector2i(2, 1)
 level_spawn_position_target = Vector2(-280, -16)
 
+[node name="Transition" parent="." index="13"]
+light_mask = 1
+
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

@@ -313,3 +313,6 @@ position = Vector2(528, 304)
 
 [node name="_AnimatableBody2D_102" parent="Floor" index="101" instance=ExtResource("3_3oof1")]
 position = Vector2(560, 304)
+
+[node name="Transition" parent="." index="12"]
+light_mask = 1

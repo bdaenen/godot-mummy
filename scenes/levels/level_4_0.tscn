@@ -334,4 +334,7 @@ position = Vector2(16, 272)
 [node name="MovableBrick" parent="Platforms" index="3" instance=ExtResource("5_gu0i5")]
 position = Vector2(-304, 240)
 
+[node name="Transition" parent="." index="12"]
+light_mask = 1
+
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

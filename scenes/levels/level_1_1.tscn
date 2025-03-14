@@ -811,4 +811,7 @@ position = Vector2(560, 304)
 [node name="Walls" parent="." index="3"]
 position = Vector2(-89, 15)
 
+[node name="Transition" parent="." index="12"]
+light_mask = 1
+
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

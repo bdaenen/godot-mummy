@@ -6,7 +6,7 @@
 resource_name = "transition_speed"
 script = ExtResource("1_2wdp2")
 current = 0
-default = null
+default = 0
 name = "transition_speed"
 category = "video"
 value_type = 2

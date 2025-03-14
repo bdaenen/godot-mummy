@@ -1167,3 +1167,6 @@ position = Vector2(-16, -272)
 
 [node name="FilterBrick2" parent="Platforms" index="37" instance=ExtResource("5_6m8br")]
 position = Vector2(16, -272)
+
+[node name="Transition" parent="." index="12"]
+light_mask = 1
