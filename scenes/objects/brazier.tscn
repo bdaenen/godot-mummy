@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://yivfsh54by03"]
+
+[ext_resource type="Texture2D" uid="uid://dni6w5ngnayjl" path="res://graphics/objects/brazier/brazier_0.png" id="1_isuxq"]
+[ext_resource type="Script" path="res://scenes/objects/torch.gd" id="1_jq02o"]
+[ext_resource type="Texture2D" uid="uid://bt2xohvdlsd54" path="res://graphics/objects/brazier/brazier_1.png" id="2_23jal"]
+[ext_resource type="Texture2D" uid="uid://dvtayhypyjtvl" path="res://graphics/objects/brazier/brazier_2.png" id="3_7e5mp"]
+[ext_resource type="Texture2D" uid="uid://cnjy1bc3uodh4" path="res://graphics/objects/brazier/brazier_3.png" id="4_xy3by"]
+[ext_resource type="Texture2D" uid="uid://14qgj0fj58w8" path="res://graphics/objects/brazier/brazier_4.png" id="5_t010o"]
+[ext_resource type="Texture2D" uid="uid://bvnsyoge764be" path="res://graphics/objects/brazier/brazier_5.png" id="6_s46qa"]
+[ext_resource type="Texture2D" uid="uid://dlqk0hvxj5fdy" path="res://graphics/objects/brazier/brazier_6.png" id="7_0ioey"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="8_ilxwy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ni2mq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_isuxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_23jal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7e5mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xy3by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_t010o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s46qa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0ioey")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Brazier" type="Node2D"]
+script = ExtResource("1_jq02o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_ni2mq")
+frame_progress = 0.0119836
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -24)
+color = Color(1, 0.821113, 0.542166, 0.698039)
+energy = 2.0
+texture = ExtResource("8_ilxwy")
+
+[node name="FlickerTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true

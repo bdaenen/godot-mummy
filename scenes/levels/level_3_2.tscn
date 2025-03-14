@@ -224,5 +224,5 @@ position = Vector2(112, -304)
 position = Vector2(-496, 272)
 should_spawn = false
 
-[node name="Transition" parent="." index="12"]
+[node name="Transition" parent="." index="13"]
 light_mask = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://s4kn4gpivjwh"]
+[gd_scene load_steps=6 format=3 uid="uid://s4kn4gpivjwh"]
 
 [ext_resource type="Texture2D" uid="uid://c7p1hdfssgrpv" path="res://graphics/objects/wall.png" id="1_5pbda"]
 [ext_resource type="Script" path="res://scenes/objects/movable_brick.gd" id="1_aqaw8"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7goc7"]
 size = Vector2(32, 32)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1rall"]
+polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [node name="MovableBrick" type="AnimatableBody2D"]
 collision_layer = 4
@@ -18,3 +21,8 @@ texture = ExtResource("1_5pbda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7goc7")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+light_mask = 7
+occluder = SubResource("OccluderPolygon2D_1rall")
+occluder_light_mask = 3

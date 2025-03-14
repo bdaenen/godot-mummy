@@ -368,10 +368,10 @@ position = Vector2(528, 304)
 [node name="_AnimatableBody2D_1937" parent="Floor" index="117" instance=ExtResource("3_npcxu")]
 position = Vector2(560, 304)
 
-[node name="Walls" parent="." index="3"]
+[node name="Walls" parent="." index="4"]
 position = Vector2(-89, 15)
 
-[node name="Transition" parent="." index="12"]
+[node name="Transition" parent="." index="13"]
 light_mask = 1
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

@@ -4,6 +4,13 @@ enum BRICK_STATE { NORMAL, PARTIAL_CRACK, BROKEN }
 
 @export var brick_state: BRICK_STATE = BRICK_STATE.NORMAL;
 @export var is_active: bool = true : set = _set_is_active
+@export var direction: AutoBlock.BLOCK_DIRECTION = AutoBlock.BLOCK_DIRECTION.BOTTOM : set = _set_direction, get = _get_direction
+
+func _set_direction(dir: AutoBlock.BLOCK_DIRECTION) -> void:
+    $AutoBlock.direction = dir
+    
+func _get_direction() -> AutoBlock.BLOCK_DIRECTION:
+    return $AutoBlock.direction
 
 func _init() -> void:
     visible = is_active
@@ -14,6 +21,7 @@ func _ready() -> void:
     
     $CollisionPolygon2D.set_deferred('disabled', !poly_collider_active)
     $CollisionShape2D.set_deferred('disabled', !rect_collider_active)
+    $AutoBlock.direction = direction
     visible = is_active
 
 func _set_is_active(value: bool) -> void:
@@ -38,6 +46,7 @@ func update_shader_param(val: float) -> void:
     $Sprite2D.material.set_shader_parameter("onoff",val)
     $Sprite2DCracked.material.set_shader_parameter("onoff",val)
     $WallHardPartiallyCracked.material.set_shader_parameter("onoff",val)
+    $AutoBlock.material.set_shader_parameter("onoff",val)
 
 #func _ready() -> void:
     #if cracked:

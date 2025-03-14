@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bptqxky1x4373"]
+[gd_scene load_steps=24 format=3 uid="uid://bptqxky1x4373"]
 
 [ext_resource type="Texture2D" uid="uid://b7kqnwclvb7pb" path="res://graphics/objects/wall_hard.png" id="1_5yeay"]
 [ext_resource type="Script" path="res://scenes/objects/brick.gd" id="1_yidfk"]
@@ -7,11 +7,28 @@
 [ext_resource type="Shader" path="res://scenes/objects/cracked_wall_link.gdshader" id="2_nnb8e"]
 [ext_resource type="Script" path="res://scenes/objects/Brick_sprite2d.gd" id="5_qbrr7"]
 [ext_resource type="Texture2D" uid="uid://csnaardv7xd8l" path="res://graphics/objects/wall_hard_partially_cracked.png" id="6_67h44"]
+[ext_resource type="PackedScene" uid="uid://cgtua1sgivjqy" path="res://scenes/objects/auto_block.tscn" id="7_pgbdx"]
+[ext_resource type="Texture2D" uid="uid://bi83yty57kq7p" path="res://graphics/brick/brick_horiz_t.png" id="8_6qolr"]
+[ext_resource type="Shader" path="res://scenes/objects/brick.gdshader" id="8_jop7g"]
+[ext_resource type="Texture2D" uid="uid://b6org45jp513f" path="res://graphics/brick/brick_vert_r.png" id="9_4kyul"]
+[ext_resource type="Texture2D" uid="uid://udaam8t0ktyb" path="res://graphics/brick/brick_horiz_b.png" id="10_6a4jm"]
+[ext_resource type="Texture2D" uid="uid://b146vj3eqdnmc" path="res://graphics/brick/brick_vert_l.png" id="11_xag2j"]
+[ext_resource type="Texture2D" uid="uid://b8ug8bn1egse4" path="res://graphics/brick/brick_corner_t_l.png" id="12_bip08"]
+[ext_resource type="Texture2D" uid="uid://cfufsqbkx7pwa" path="res://graphics/brick/brick_corner_t_r.png" id="13_504mu"]
+[ext_resource type="Texture2D" uid="uid://c4cyknkytgggo" path="res://graphics/brick/brick_corner_b_l.png" id="14_pufqm"]
+[ext_resource type="Texture2D" uid="uid://d4co33fy8rnc7" path="res://graphics/brick/brick_corner_b_r.png" id="15_53xxv"]
+[ext_resource type="Texture2D" uid="uid://chb07x0du7pa" path="res://graphics/brick/brick_vert_middle.png" id="16_n0pnm"]
+[ext_resource type="Texture2D" uid="uid://l2wr8gp70xtd" path="res://graphics/brick/brick_solid.png" id="18_ws7on"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ibu1j"]
 resource_local_to_scene = true
 shader = ExtResource("2_nnb8e")
 shader_parameter/onoff = null
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fhyl"]
+resource_local_to_scene = true
+shader = ExtResource("8_jop7g")
+shader_parameter/onoff = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
 size = Vector2(32, 32)
@@ -33,6 +50,20 @@ texture = ExtResource("2_cxd13")
 material = ExtResource("2_fpcuu")
 texture = ExtResource("1_5yeay")
 script = ExtResource("5_qbrr7")
+
+[node name="AutoBlock" parent="." instance=ExtResource("7_pgbdx")]
+material = SubResource("ShaderMaterial_8fhyl")
+texture = ExtResource("10_6a4jm")
+texture_top = ExtResource("8_6qolr")
+texture_right = ExtResource("9_4kyul")
+texture_bottom = ExtResource("10_6a4jm")
+texture_left = ExtResource("11_xag2j")
+texture_corner_t_l = ExtResource("12_bip08")
+texture_corner_t_r = ExtResource("13_504mu")
+texture_corner_b_l = ExtResource("14_pufqm")
+texture_corner_b_r = ExtResource("15_53xxv")
+texture_vertical = ExtResource("16_n0pnm")
+texture_center = ExtResource("18_ws7on")
 
 [node name="WallHardPartiallyCracked" type="Sprite2D" parent="."]
 visible = false

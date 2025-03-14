@@ -13,5 +13,5 @@ func _ready() -> void:
 func _on_flicker_timer_timeout() -> void:
     var random_energy_delta: float = randf_range(-flicker_range, flicker_range)
     var tween: Tween = create_tween()
-    tween.tween_property(light, "energy", base_energy + random_energy_delta, 0.1)
+    tween.tween_property(light, "energy", base_energy + random_energy_delta, 0.2)
     tween.play()

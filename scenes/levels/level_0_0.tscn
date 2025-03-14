@@ -1,18 +1,20 @@
-[gd_scene load_steps=7 format=4 uid="uid://dy15cfrh6jhhx"]
+[gd_scene load_steps=12 format=3 uid="uid://dy15cfrh6jhhx"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_qjeu8"]
 [ext_resource type="Script" path="res://scenes/levels/level_5_0.gd" id="2_0faag"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_aafex"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_5nudh"]
+[ext_resource type="PackedScene" uid="uid://yivfsh54by03" path="res://scenes/objects/brazier.tscn" id="4_ra25k"]
 [ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="6_ptqrg"]
-[ext_resource type="PackedScene" uid="uid://cd3qbkv1iqre7" path="res://scenes/objects/powerup_link.tscn" id="6_x3dn1"]
+[ext_resource type="PackedScene" uid="uid://djmqs1xnyakel" path="res://scenes/objects/chest_link.tscn" id="8_gnkkx"]
+[ext_resource type="Texture2D" uid="uid://cvjbflte8wtjb" path="res://graphics/objects/pillar_tall.png" id="8_sho5j"]
+[ext_resource type="Texture2D" uid="uid://q45do3olc3pi" path="res://graphics/objects/vase.png" id="9_ng2ca"]
+[ext_resource type="Texture2D" uid="uid://ckhbx3lt4nprg" path="res://graphics/objects/pillar_broken_wide.png" id="10_ls5ra"]
+[ext_resource type="Texture2D" uid="uid://c781umqhxac1d" path="res://graphics/objects/hieroglyphs.png" id="11_uunk4"]
 
 [node name="Level_0_0" instance=ExtResource("1_qjeu8")]
 process_mode = 0
 script = ExtResource("2_0faag")
-
-[node name="bg" parent="." index="0"]
-tile_map_data = PackedByteArray("AADu//n/AwAAAAAAAADu//r/AwAAAAAAAADu//z/AwAAAAAAAADu//3/AwAAAAAAAADu//7/AwAAAAAAAADu////AwAAAAAAAADu/wAAAwAAAAAAAADu/wEAAwAAAAAAAADu/wIAAwAAAAAAAADu/wMAAwAAAAAAAADu/wQAAwAAAAAAAADu/wUAAwAAAAAAAADu/wYAAwAAAAAAAADu/wcAAwAAAAAAAADu/wgAAwAAAAAAAADu/wkAAwAAAAAAAADv/wkAAwAAAAAAAADw/wkAAwAAAAAAAADx//b/AwAAAAAAAADx/wkAAwAAAAAAAADy//b/AwAAAAAAAADy/wkAAwAAAAAAAADz//b/AwAAAAAAAADz/wkAAwAAAAAAAAD0//b/AwAAAAAAAAD0/wkAAwAAAAAAAAD1//b/AwAAAAAAAAD1/wkAAwAAAAAAAAD2//b/AwAAAAAAAAD2/wkAAwAAAAAAAAD3//b/AwAAAAAAAAD3/wkAAwAAAAAAAAD4//b/AwAAAAAAAAD4/wkAAwAAAAAAAAD5//b/AwAAAAAAAAD5/wkAAwAAAAAAAAD6//b/AwAAAAAAAAD6/wkAAwAAAAAAAAD7//b/AwAAAAAAAAD7/wkAAwAAAAAAAAD8//b/AwAAAAAAAAD8/wkAAwAAAAAAAAD9//b/AwAAAAAAAAD9/wkAAwAAAAAAAAD+//b/AwAAAAAAAAD+/wkAAwAAAAAAAAD///b/AwAAAAAAAAD//wkAAwAAAAAAAAAAAPb/AwAAAAAAAAAAAAkAAwAAAAAAAAABAPb/AwAAAAAAAAABAAkAAwAAAAAAAAACAPb/AwAAAAAAAAACAAkAAwAAAAAAAAADAPb/AwAAAAAAAAADAAkAAwAAAAAAAAAEAPb/AwAAAAAAAAAEAAkAAwAAAAAAAAAFAPb/AwAAAAAAAAAFAAkAAwAAAAAAAAAGAPb/AwAAAAAAAAAGAAkAAwAAAAAAAAAHAPb/AwAAAAAAAAAHAAkAAwAAAAAAAAAIAPb/AwAAAAAAAAAIAAkAAwAAAAAAAAAJAPb/AwAAAAAAAAAJAAkAAwAAAAAAAAAKAPb/AwAAAAAAAAAKAAkAAwAAAAAAAAALAPb/AwAAAAAAAAALAAkAAwAAAAAAAAAMAPb/AwAAAAAAAAAMAAkAAwAAAAAAAAANAPb/AwAAAAAAAAANAAkAAwAAAAAAAAAOAPb/AwAAAAAAAAAOAAkAAwAAAAAAAAAPAPb/AwAAAAAAAAAPAAkAAwAAAAAAAAAQAPb/AwAAAAAAAAAQAAkAAwAAAAAAAAARAPb/AwAAAAAAAAARAPf/AwAAAAAAAAARAPj/AwAAAAAAAAARAPn/AwAAAAAAAAARAPr/AwAAAAAAAAARAPz/AwAAAAAAAAARAP3/AwAAAAAAAAARAP7/AwAAAAAAAAARAP//AwAAAAAAAAARAAAAAwAAAAAAAAARAAEAAwAAAAAAAAARAAIAAwAAAAAAAAARAAMAAwAAAAAAAAARAAQAAwAAAAAAAAARAAUAAwAAAAAAAAARAAYAAwAAAAAAAAARAAcAAwAAAAAAAAARAAgAAwAAAAAAAAARAAkAAwAAAAAAAADu//b/AwAAAAAAAADu//f/AwAAAAAAAADu//j/AwAAAAAAAADv//b/AwAAAAAAAADw//b/AwAAAAAAAADy//3/AwAAAAAAAADy//z/AwAAAAAAAADy//r/AwAAAAAAAADy//n/AwAAAAAAAADy//j/AwAAAAAAAADy//f/AwAAAAAAAADx//f/AwAAAAAAAADw//f/AwAAAAAAAADv//f/AwAAAAAAAADv//j/AwAAAAAAAADv//n/AwAAAAAAAADv//r/AwAAAAAAAADv//z/AwAAAAAAAADv//3/AwAAAAAAAADv//7/AwAAAAAAAADv////AwAAAAAAAADv/wAAAwAAAAAAAADv/wEAAwAAAAAAAADv/wIAAwAAAAAAAADv/wMAAwAAAAAAAADv/wQAAwAAAAAAAADv/wUAAwAAAAAAAADv/wYAAwAAAAAAAADv/wcAAwAAAAAAAADv/wgAAwAAAAAAAADw/wgAAwAAAAAAAADw/wcAAwAAAAAAAADw/wYAAwAAAAAAAADw/wUAAwAAAAAAAADw/wQAAwAAAAAAAADw/wMAAwAAAAAAAADw/wIAAwAAAAAAAADw/wEAAwAAAAAAAADw/wAAAwAAAAAAAADw////AwAAAAAAAADw//7/AwAAAAAAAADw//3/AwAAAAAAAADw//z/AwAAAAAAAADw//r/AwAAAAAAAADw//n/AwAAAAAAAADw//j/AwAAAAAAAADx//j/AwAAAAAAAADx//n/AwAAAAAAAADx//r/AwAAAAAAAADx//z/AwAAAAAAAADx//3/AwAAAAAAAADx//7/AwAAAAAAAADx////AwAAAAAAAADx/wAAAwAAAAAAAADx/wEAAwAAAAAAAADx/wIAAwAAAAAAAADx/wMAAwAAAAAAAADx/wQAAwAAAAAAAADx/wUAAwAAAAAAAADx/wYAAwAAAAAAAADx/wcAAwAAAAAAAADx/wgAAwAAAAAAAADy/wgAAwAAAAAAAADy/wcAAwAAAAAAAADy/wYAAwAAAAAAAADy/wUAAwAAAAAAAADy/wQAAwAAAAAAAADy/wMAAwAAAAAAAADy/wIAAwAAAAAAAADy/wEAAwAAAAAAAADy/wAAAwAAAAAAAADy////AwAAAAAAAADy//7/AwAAAAAAAADz//7/AwAAAAAAAADz//3/AwAAAAAAAADz//z/AwAAAAAAAADz//r/AwAAAAAAAADz//n/AwAAAAAAAADz//j/AwAAAAAAAADz//f/AwAAAAAAAAD0//f/AwAAAAAAAAD0//j/AwAAAAAAAAD0//n/AwAAAAAAAAD0//r/AwAAAAAAAAD0//z/AwAAAAAAAAD0//3/AwAAAAAAAAD0//7/AwAAAAAAAAD0////AwAAAAAAAADz////AwAAAAAAAADz/wAAAwAAAAAAAADz/wEAAwAAAAAAAADz/wIAAwAAAAAAAADz/wMAAwAAAAAAAADz/wQAAwAAAAAAAADz/wUAAwAAAAAAAADz/wYAAwAAAAAAAADz/wcAAwAAAAAAAADz/wgAAwAAAAAAAAD0/wgAAwAAAAAAAAD0/wcAAwAAAAAAAAD0/wYAAwAAAAAAAAD0/wUAAwAAAAAAAAD0/wQAAwAAAAAAAAD0/wMAAwAAAAAAAAD0/wIAAwAAAAAAAAD0/wEAAwAAAAAAAAD0/wAAAwAAAAAAAAD1/wAAAwAAAAAAAAD1////AwAAAAAAAAD1//7/AwAAAAAAAAD1//3/AwAAAAAAAAD1//z/AwAAAAAAAAD1//r/AwAAAAAAAAD1//n/AwAAAAAAAAD1//j/AwAAAAAAAAD1//f/AwAAAAAAAAD2//f/AwAAAAAAAAD2//j/AwAAAAAAAAD2//n/AwAAAAAAAAD2//r/AwAAAAAAAAD2//z/AwAAAAAAAAD2//3/AwAAAAAAAAD2//7/AwAAAAAAAAD2////AwAAAAAAAAD2/wAAAwAAAAAAAAD2/wEAAwAAAAAAAAD1/wEAAwAAAAAAAAD1/wIAAwAAAAAAAAD1/wMAAwAAAAAAAAD1/wQAAwAAAAAAAAD1/wUAAwAAAAAAAAD1/wYAAwAAAAAAAAD1/wcAAwAAAAAAAAD1/wgAAwAAAAAAAAD2/wgAAwAAAAAAAAD2/wcAAwAAAAAAAAD2/wYAAwAAAAAAAAD2/wUAAwAAAAAAAAD2/wQAAwAAAAAAAAD2/wMAAwAAAAAAAAD2/wIAAwAAAAAAAAD3/wIAAwAAAAAAAAD3/wEAAwAAAAAAAAD3/wAAAwAAAAAAAAD3////AwAAAAAAAAD3//7/AwAAAAAAAAD3//3/AwAAAAAAAAD3//z/AwAAAAAAAAD3//r/AwAAAAAAAAD3//n/AwAAAAAAAAD3//j/AwAAAAAAAAD3//f/AwAAAAAAAAD4//f/AwAAAAAAAAD4//j/AwAAAAAAAAD4//n/AwAAAAAAAAD4//r/AwAAAAAAAAD4//z/AwAAAAAAAAD4//3/AwAAAAAAAAD4//7/AwAAAAAAAAD4////AwAAAAAAAAD4/wAAAwAAAAAAAAD4/wEAAwAAAAAAAAD4/wIAAwAAAAAAAAD4/wMAAwAAAAAAAAD3/wMAAwAAAAAAAAD3/wQAAwAAAAAAAAD3/wUAAwAAAAAAAAD3/wYAAwAAAAAAAAD3/wcAAwAAAAAAAAD3/wgAAwAAAAAAAAD4/wgAAwAAAAAAAAD4/wcAAwAAAAAAAAD4/wYAAwAAAAAAAAD4/wUAAwAAAAAAAAD4/wQAAwAAAAAAAAD5/wQAAwAAAAAAAAD5/wMAAwAAAAAAAAD5/wIAAwAAAAAAAAD5/wEAAwAAAAAAAAD5/wAAAwAAAAAAAAD5////AwAAAAAAAAD5//7/AwAAAAAAAAD5//3/AwAAAAAAAAD5//z/AwAAAAAAAAD5//r/AwAAAAAAAAD5//n/AwAAAAAAAAD5//j/AwAAAAAAAAD5//f/AwAAAAAAAAD6//f/AwAAAAAAAAD6//j/AwAAAAAAAAD6//n/AwAAAAAAAAD6//r/AwAAAAAAAAD6//z/AwAAAAAAAAD6//3/AwAAAAAAAAD6//7/AwAAAAAAAAD6////AwAAAAAAAAD6/wAAAwAAAAAAAAD6/wEAAwAAAAAAAAD6/wIAAwAAAAAAAAD6/wMAAwAAAAAAAAD6/wQAAwAAAAAAAAD6/wUAAwAAAAAAAAD5/wUAAwAAAAAAAAD5/wYAAwAAAAAAAAD5/wcAAwAAAAAAAAD5/wgAAwAAAAAAAAD6/wgAAwAAAAAAAAD6/wcAAwAAAAAAAAD6/wYAAwAAAAAAAAD7/wYAAwAAAAAAAAD7/wUAAwAAAAAAAAD7/wQAAwAAAAAAAAD7/wMAAwAAAAAAAAD7/wIAAwAAAAAAAAD7/wEAAwAAAAAAAAD7/wAAAwAAAAAAAAD7////AwAAAAAAAAD7//7/AwAAAAAAAAD7//3/AwAAAAAAAAD7//z/AwAAAAAAAAD7//r/AwAAAAAAAAD7//n/AwAAAAAAAAD7//j/AwAAAAAAAAD7//f/AwAAAAAAAAD8//f/AwAAAAAAAAD8//j/AwAAAAAAAAD8//n/AwAAAAAAAAD8//r/AwAAAAAAAAD8//z/AwAAAAAAAAD8//3/AwAAAAAAAAD8//7/AwAAAAAAAAD8////AwAAAAAAAAD8/wAAAwAAAAAAAAD8/wEAAwAAAAAAAAD8/wIAAwAAAAAAAAD8/wMAAwAAAAAAAAD8/wQAAwAAAAAAAAD8/wUAAwAAAAAAAAD8/wYAAwAAAAAAAAD8/wcAAwAAAAAAAAD7/wcAAwAAAAAAAAD7/wgAAwAAAAAAAAD8/wgAAwAAAAAAAAD9/wgAAwAAAAAAAAD9/wcAAwAAAAAAAAD9/wYAAwAAAAAAAAD9/wUAAwAAAAAAAAD9/wQAAwAAAAAAAAD9/wMAAwAAAAAAAAD9/wIAAwAAAAAAAAD9/wEAAwAAAAAAAAD9/wAAAwAAAAAAAAD9////AwAAAAAAAAD9//7/AwAAAAAAAAD9//3/AwAAAAAAAAD9//z/AwAAAAAAAAD9//r/AwAAAAAAAAD9//n/AwAAAAAAAAD9//j/AwAAAAAAAAD9//f/AwAAAAAAAAD+//f/AwAAAAAAAAD+//j/AwAAAAAAAAD+//n/AwAAAAAAAAD+//r/AwAAAAAAAAD+//z/AwAAAAAAAAD+//3/AwAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD+/wAAAwAAAAAAAAD+/wEAAwAAAAAAAAD+/wIAAwAAAAAAAAD+/wMAAwAAAAAAAAD+/wQAAwAAAAAAAAD+/wUAAwAAAAAAAAD+/wYAAwAAAAAAAAD+/wcAAwAAAAAAAAD+/wgAAwAAAAAAAAD//wgAAwAAAAAAAAD//wcAAwAAAAAAAAD//wYAAwAAAAAAAAD//wUAAwAAAAAAAAD//wQAAwAAAAAAAAD//wMAAwAAAAAAAAD//wIAAwAAAAAAAAD//wEAAwAAAAAAAAD//wAAAwAAAAAAAAD/////AwAAAAAAAAD///7/AwAAAAAAAAD///3/AwAAAAAAAAD///z/AwAAAAAAAAD///r/AwAAAAAAAAD///n/AwAAAAAAAAD///j/AwAAAAAAAAD///f/AwAAAAAAAAAAAPf/AwAAAAAAAAAAAPj/AwAAAAAAAAAAAPn/AwAAAAAAAAAAAPr/AwAAAAAAAAAAAPz/AwAAAAAAAAAAAP3/AwAAAAAAAAAAAP7/AwAAAAAAAAAAAP//AwAAAAAAAAAAAAAAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAYAAwAAAAAAAAAAAAcAAwAAAAAAAAAAAAgAAwAAAAAAAAABAAgAAwAAAAAAAAABAAcAAwAAAAAAAAABAAYAAwAAAAAAAAABAAUAAwAAAAAAAAABAAQAAwAAAAAAAAABAAMAAwAAAAAAAAABAAIAAwAAAAAAAAABAAEAAwAAAAAAAAABAAAAAwAAAAAAAAABAP//AwAAAAAAAAABAP7/AwAAAAAAAAABAP3/AwAAAAAAAAABAPz/AwAAAAAAAAABAPr/AwAAAAAAAAABAPn/AwAAAAAAAAABAPj/AwAAAAAAAAABAPf/AwAAAAAAAAACAPf/AwAAAAAAAAACAPj/AwAAAAAAAAACAPn/AwAAAAAAAAACAPr/AwAAAAAAAAACAPz/AwAAAAAAAAACAP3/AwAAAAAAAAACAP7/AwAAAAAAAAACAP//AwAAAAAAAAACAAAAAwAAAAAAAAACAAEAAwAAAAAAAAACAAIAAwAAAAAAAAACAAMAAwAAAAAAAAACAAQAAwAAAAAAAAACAAUAAwAAAAAAAAACAAYAAwAAAAAAAAACAAcAAwAAAAAAAAACAAgAAwAAAAAAAAADAAgAAwAAAAAAAAADAAcAAwAAAAAAAAADAAYAAwAAAAAAAAADAAUAAwAAAAAAAAADAAQAAwAAAAAAAAADAAMAAwAAAAAAAAADAAIAAwAAAAAAAAADAAEAAwAAAAAAAAADAAAAAwAAAAAAAAADAP//AwAAAAAAAAADAP7/AwAAAAAAAAADAP3/AwAAAAAAAAADAPz/AwAAAAAAAAADAPr/AwAAAAAAAAADAPn/AwAAAAAAAAADAPj/AwAAAAAAAAADAPf/AwAAAAAAAAAEAPf/AwAAAAAAAAAEAPj/AwAAAAAAAAAEAPn/AwAAAAAAAAAEAPr/AwAAAAAAAAAEAPz/AwAAAAAAAAAEAP3/AwAAAAAAAAAEAP7/AwAAAAAAAAAEAP//AwAAAAAAAAAEAAAAAwAAAAAAAAAEAAEAAwAAAAAAAAAEAAIAAwAAAAAAAAAEAAMAAwAAAAAAAAAEAAQAAwAAAAAAAAAEAAUAAwAAAAAAAAAEAAYAAwAAAAAAAAAEAAcAAwAAAAAAAAAEAAgAAwAAAAAAAAAFAAgAAwAAAAAAAAAFAAcAAwAAAAAAAAAFAAYAAwAAAAAAAAAFAAUAAwAAAAAAAAAFAAQAAwAAAAAAAAAFAAMAAwAAAAAAAAAFAAIAAwAAAAAAAAAFAAEAAwAAAAAAAAAFAAAAAwAAAAAAAAAFAP//AwAAAAAAAAAFAP7/AwAAAAAAAAAFAP3/AwAAAAAAAAAFAPz/AwAAAAAAAAAFAPr/AwAAAAAAAAAFAPn/AwAAAAAAAAAFAPj/AwAAAAAAAAAFAPf/AwAAAAAAAAAGAPf/AwAAAAAAAAAGAPj/AwAAAAAAAAAGAPn/AwAAAAAAAAAGAPr/AwAAAAAAAAAGAPz/AwAAAAAAAAAGAP3/AwAAAAAAAAAGAP7/AwAAAAAAAAAGAP//AwAAAAAAAAAGAAAAAwAAAAAAAAAGAAEAAwAAAAAAAAAGAAIAAwAAAAAAAAAGAAMAAwAAAAAAAAAGAAQAAwAAAAAAAAAGAAUAAwAAAAAAAAAGAAYAAwAAAAAAAAAGAAcAAwAAAAAAAAAGAAgAAwAAAAAAAAAHAAgAAwAAAAAAAAAHAAcAAwAAAAAAAAAHAAYAAwAAAAAAAAAHAAUAAwAAAAAAAAAHAAQAAwAAAAAAAAAHAAMAAwAAAAAAAAAHAAIAAwAAAAAAAAAHAAEAAwAAAAAAAAAHAAAAAwAAAAAAAAAHAP//AwAAAAAAAAAHAP7/AwAAAAAAAAAHAP3/AwAAAAAAAAAHAPz/AwAAAAAAAAAHAPr/AwAAAAAAAAAHAPn/AwAAAAAAAAAHAPj/AwAAAAAAAAAHAPf/AwAAAAAAAAAIAPf/AwAAAAAAAAAIAPj/AwAAAAAAAAAIAPn/AwAAAAAAAAAIAPr/AwAAAAAAAAAIAPz/AwAAAAAAAAAIAP3/AwAAAAAAAAAIAP7/AwAAAAAAAAAIAP//AwAAAAAAAAAIAAAAAwAAAAAAAAAIAAEAAwAAAAAAAAAIAAIAAwAAAAAAAAAIAAMAAwAAAAAAAAAIAAQAAwAAAAAAAAAIAAUAAwAAAAAAAAAIAAYAAwAAAAAAAAAIAAcAAwAAAAAAAAAIAAgAAwAAAAAAAAAJAAgAAwAAAAAAAAAJAAcAAwAAAAAAAAAJAAYAAwAAAAAAAAAJAAUAAwAAAAAAAAAJAAQAAwAAAAAAAAAJAAMAAwAAAAAAAAAJAAIAAwAAAAAAAAAJAAEAAwAAAAAAAAAJAAAAAwAAAAAAAAAJAP//AwAAAAAAAAAJAP7/AwAAAAAAAAAJAP3/AwAAAAAAAAAJAPz/AwAAAAAAAAAJAPr/AwAAAAAAAAAJAPn/AwAAAAAAAAAJAPj/AwAAAAAAAAAJAPf/AwAAAAAAAAAKAPf/AwAAAAAAAAAKAPj/AwAAAAAAAAAKAPn/AwAAAAAAAAAKAPr/AwAAAAAAAAAKAPz/AwAAAAAAAAAKAP3/AwAAAAAAAAAKAP7/AwAAAAAAAAAKAP//AwAAAAAAAAAKAAAAAwAAAAAAAAAKAAEAAwAAAAAAAAAKAAIAAwAAAAAAAAAKAAMAAwAAAAAAAAAKAAQAAwAAAAAAAAAKAAUAAwAAAAAAAAAKAAYAAwAAAAAAAAAKAAcAAwAAAAAAAAAKAAgAAwAAAAAAAAALAAgAAwAAAAAAAAALAAcAAwAAAAAAAAALAAYAAwAAAAAAAAALAAUAAwAAAAAAAAALAAQAAwAAAAAAAAALAAMAAwAAAAAAAAALAAIAAwAAAAAAAAALAAEAAwAAAAAAAAALAAAAAwAAAAAAAAALAP//AwAAAAAAAAALAP7/AwAAAAAAAAALAP3/AwAAAAAAAAALAPz/AwAAAAAAAAALAPr/AwAAAAAAAAALAPn/AwAAAAAAAAALAPj/AwAAAAAAAAALAPf/AwAAAAAAAAAMAPf/AwAAAAAAAAAMAPj/AwAAAAAAAAAMAPn/AwAAAAAAAAAMAPr/AwAAAAAAAAAMAPz/AwAAAAAAAAAMAP3/AwAAAAAAAAAMAP7/AwAAAAAAAAAMAP//AwAAAAAAAAAMAAAAAwAAAAAAAAAMAAEAAwAAAAAAAAAMAAIAAwAAAAAAAAAMAAMAAwAAAAAAAAAMAAQAAwAAAAAAAAAMAAUAAwAAAAAAAAAMAAYAAwAAAAAAAAAMAAcAAwAAAAAAAAAMAAgAAwAAAAAAAAANAAgAAwAAAAAAAAANAAcAAwAAAAAAAAANAAYAAwAAAAAAAAANAAUAAwAAAAAAAAANAAQAAwAAAAAAAAANAAMAAwAAAAAAAAANAAIAAwAAAAAAAAANAAEAAwAAAAAAAAANAAAAAwAAAAAAAAANAP//AwAAAAAAAAANAP7/AwAAAAAAAAANAP3/AwAAAAAAAAANAPz/AwAAAAAAAAANAPr/AwAAAAAAAAANAPn/AwAAAAAAAAANAPj/AwAAAAAAAAANAPf/AwAAAAAAAAAOAPf/AwAAAAAAAAAOAPj/AwAAAAAAAAAOAPn/AwAAAAAAAAAOAPr/AwAAAAAAAAAOAPz/AwAAAAAAAAAOAP3/AwAAAAAAAAAOAP7/AwAAAAAAAAAOAP//AwAAAAAAAAAOAAAAAwAAAAAAAAAOAAEAAwAAAAAAAAAOAAIAAwAAAAAAAAAOAAMAAwAAAAAAAAAOAAQAAwAAAAAAAAAOAAUAAwAAAAAAAAAOAAYAAwAAAAAAAAAOAAcAAwAAAAAAAAAOAAgAAwAAAAAAAAAPAAgAAwAAAAAAAAAPAAcAAwAAAAAAAAAPAAYAAwAAAAAAAAAPAAUAAwAAAAAAAAAPAAQAAwAAAAAAAAAPAAMAAwAAAAAAAAAPAAIAAwAAAAAAAAAPAAEAAwAAAAAAAAAPAAAAAwAAAAAAAAAPAP//AwAAAAAAAAAPAP7/AwAAAAAAAAAPAP3/AwAAAAAAAAAPAPz/AwAAAAAAAAAPAPr/AwAAAAAAAAAPAPn/AwAAAAAAAAAPAPj/AwAAAAAAAAAPAPf/AwAAAAAAAAAQAPf/AwAAAAAAAAAQAPj/AwAAAAAAAAAQAPn/AwAAAAAAAAAQAPr/AwAAAAAAAAAQAPz/AwAAAAAAAAAQAP3/AwAAAAAAAAAQAP7/AwAAAAAAAAAQAP//AwAAAAAAAAAQAAAAAwAAAAAAAAAQAAEAAwAAAAAAAAAQAAIAAwAAAAAAAAAQAAMAAwAAAAAAAAAQAAQAAwAAAAAAAAAQAAUAAwAAAAAAAAAQAAYAAwAAAAAAAAAQAAcAAwAAAAAAAAAQAAgAAwAAAAAAAADu//v/AwAAAAAAAADv//v/AwAAAAAAAADw//v/AwAAAAAAAADx//v/AwAAAAAAAADy//v/AwAAAAAAAADz//v/AwAAAAAAAAD0//v/AwAAAAAAAAD1//v/AwAAAAAAAAD2//v/AwAAAAAAAAD3//v/AwAAAAAAAAD4//v/AwAAAAAAAAD5//v/AwAAAAAAAAD6//v/AwAAAAAAAAD7//v/AwAAAAAAAAD8//v/AwAAAAAAAAD9//v/AwAAAAAAAAD+//v/AwAAAAAAAAD///v/AwAAAAAAAAAAAPv/AwAAAAAAAAABAPv/AwAAAAAAAAACAPv/AwAAAAAAAAADAPv/AwAAAAAAAAAEAPv/AwAAAAAAAAAFAPv/AwAAAAAAAAAGAPv/AwAAAAAAAAAHAPv/AwAAAAAAAAAIAPv/AwAAAAAAAAAJAPv/AwAAAAAAAAAKAPv/AwAAAAAAAAALAPv/AwAAAAAAAAAMAPv/AwAAAAAAAAANAPv/AwAAAAAAAAAOAPv/AwAAAAAAAAAPAPv/AwAAAAAAAAAQAPv/AwAAAAAAAAARAPv/AwAAAAAAAAA=")
 
 [node name="Torch" parent="Lights" index="0" instance=ExtResource("6_ptqrg")]
 position = Vector2(-240, -240)
@@ -21,13 +23,17 @@ position = Vector2(-240, -240)
 position = Vector2(304, -240)
 
 [node name="Torch4" parent="Lights" index="2" instance=ExtResource("6_ptqrg")]
-position = Vector2(336, 80)
+visible = false
+position = Vector2(176, 80)
 
-[node name="Torch5" parent="Lights" index="3" instance=ExtResource("6_ptqrg")]
-position = Vector2(-112, 80)
-
-[node name="Torch3" parent="Lights" index="4" instance=ExtResource("6_ptqrg")]
+[node name="Torch3" parent="Lights" index="3" instance=ExtResource("6_ptqrg")]
 position = Vector2(-432, 80)
+
+[node name="Brazier" parent="Lights" index="4" instance=ExtResource("4_ra25k")]
+position = Vector2(-80, 272)
+
+[node name="Brazier2" parent="Lights" index="5" instance=ExtResource("4_ra25k")]
+position = Vector2(240, 272)
 
 [node name="_AnimatableBody2D_92" parent="Floor" index="0" instance=ExtResource("3_aafex")]
 position = Vector2(-560, 304)
@@ -329,160 +335,197 @@ position = Vector2(-560, 176)
 [node name="_AnimatableBody2D_75" parent="Walls" index="63" instance=ExtResource("3_aafex")]
 position = Vector2(-560, 208)
 
-[node name="_AnimatableBody2D_81" parent="Walls" index="64" instance=ExtResource("3_aafex")]
-position = Vector2(-560, 240)
-
-[node name="_AnimatableBody2D_87" parent="Walls" index="65" instance=ExtResource("3_aafex")]
-position = Vector2(-560, 272)
-
-[node name="_AnimatableBody2D_50" parent="Platforms" index="0" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_50" parent="Walls" index="64" instance=ExtResource("3_aafex")]
 position = Vector2(560, -48)
 
-[node name="MovableBrick" parent="Platforms" index="1" instance=ExtResource("4_5nudh")]
+[node name="_AnimatableBody2D_81" parent="Walls" index="65" instance=ExtResource("3_aafex")]
+position = Vector2(-560, 240)
+
+[node name="_AnimatableBody2D_87" parent="Walls" index="66" instance=ExtResource("3_aafex")]
+position = Vector2(-560, 272)
+
+[node name="MovableBrick" parent="Platforms" index="0" instance=ExtResource("4_5nudh")]
 position = Vector2(496, -112)
 
-[node name="MovableBrick2" parent="Platforms" index="2" instance=ExtResource("4_5nudh")]
+[node name="MovableBrick2" parent="Platforms" index="1" instance=ExtResource("4_5nudh")]
 position = Vector2(464, 112)
 
-[node name="_AnimatableBody2D_82" parent="Platforms" index="3" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_82" parent="Platforms" index="2" instance=ExtResource("3_aafex")]
 position = Vector2(496, 112)
 
-[node name="_AnimatableBody2D_84" parent="Platforms" index="4" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_84" parent="Platforms" index="3" instance=ExtResource("3_aafex")]
 position = Vector2(464, 240)
 
-[node name="_AnimatableBody2D_83" parent="Platforms" index="5" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_83" parent="Platforms" index="4" instance=ExtResource("3_aafex")]
 position = Vector2(528, -112)
 
-[node name="_AnimatableBody2D_86" parent="Platforms" index="6" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_86" parent="Platforms" index="5" instance=ExtResource("3_aafex")]
 position = Vector2(464, -112)
 
-[node name="_AnimatableBody2D_87" parent="Platforms" index="7" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_87" parent="Platforms" index="6" instance=ExtResource("3_aafex")]
 position = Vector2(432, -112)
 
-[node name="_AnimatableBody2D_89" parent="Platforms" index="8" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_89" parent="Platforms" index="7" instance=ExtResource("3_aafex")]
 position = Vector2(400, -112)
 
-[node name="_AnimatableBody2D_91" parent="Platforms" index="9" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_91" parent="Platforms" index="8" instance=ExtResource("3_aafex")]
 position = Vector2(368, -112)
 
-[node name="_AnimatableBody2D_92" parent="Platforms" index="10" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_92" parent="Platforms" index="9" instance=ExtResource("3_aafex")]
 position = Vector2(336, -112)
 
-[node name="_AnimatableBody2D_93" parent="Platforms" index="11" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_93" parent="Platforms" index="10" instance=ExtResource("3_aafex")]
 position = Vector2(304, -112)
 
-[node name="_AnimatableBody2D_94" parent="Platforms" index="12" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_94" parent="Platforms" index="11" instance=ExtResource("3_aafex")]
 position = Vector2(272, -112)
 
-[node name="_AnimatableBody2D_95" parent="Platforms" index="13" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_95" parent="Platforms" index="12" instance=ExtResource("3_aafex")]
 position = Vector2(240, -112)
 
-[node name="_AnimatableBody2D_96" parent="Platforms" index="14" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_96" parent="Platforms" index="13" instance=ExtResource("3_aafex")]
 position = Vector2(208, -112)
 
-[node name="_AnimatableBody2D_97" parent="Platforms" index="15" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_97" parent="Platforms" index="14" instance=ExtResource("3_aafex")]
 position = Vector2(176, -112)
 
-[node name="_AnimatableBody2D_98" parent="Platforms" index="16" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_98" parent="Platforms" index="15" instance=ExtResource("3_aafex")]
 position = Vector2(144, -112)
 
-[node name="_AnimatableBody2D_99" parent="Platforms" index="17" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_99" parent="Platforms" index="16" instance=ExtResource("3_aafex")]
 position = Vector2(112, -112)
 
-[node name="_AnimatableBody2D_100" parent="Platforms" index="18" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_100" parent="Platforms" index="17" instance=ExtResource("3_aafex")]
 position = Vector2(80, -112)
 
-[node name="_AnimatableBody2D_101" parent="Platforms" index="19" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_101" parent="Platforms" index="18" instance=ExtResource("3_aafex")]
 position = Vector2(48, -112)
 
-[node name="_AnimatableBody2D_102" parent="Platforms" index="20" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_102" parent="Platforms" index="19" instance=ExtResource("3_aafex")]
 position = Vector2(16, -112)
 
-[node name="_AnimatableBody2D_103" parent="Platforms" index="21" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_103" parent="Platforms" index="20" instance=ExtResource("3_aafex")]
 position = Vector2(-16, -112)
 
-[node name="_AnimatableBody2D_104" parent="Platforms" index="22" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_104" parent="Platforms" index="21" instance=ExtResource("3_aafex")]
 position = Vector2(-48, -112)
 
-[node name="_AnimatableBody2D_105" parent="Platforms" index="23" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_105" parent="Platforms" index="22" instance=ExtResource("3_aafex")]
 position = Vector2(-80, -112)
 
-[node name="_AnimatableBody2D_106" parent="Platforms" index="24" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_106" parent="Platforms" index="23" instance=ExtResource("3_aafex")]
 position = Vector2(-112, -112)
 
-[node name="_AnimatableBody2D_107" parent="Platforms" index="25" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_107" parent="Platforms" index="24" instance=ExtResource("3_aafex")]
 position = Vector2(-144, -112)
 
-[node name="_AnimatableBody2D_108" parent="Platforms" index="26" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_108" parent="Platforms" index="25" instance=ExtResource("3_aafex")]
 position = Vector2(-176, -112)
 
-[node name="_AnimatableBody2D_109" parent="Platforms" index="27" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_109" parent="Platforms" index="26" instance=ExtResource("3_aafex")]
 position = Vector2(-208, -112)
 
-[node name="_AnimatableBody2D_110" parent="Platforms" index="28" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_110" parent="Platforms" index="27" instance=ExtResource("3_aafex")]
 position = Vector2(-240, -112)
 
-[node name="_AnimatableBody2D_111" parent="Platforms" index="29" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_111" parent="Platforms" index="28" instance=ExtResource("3_aafex")]
 position = Vector2(-272, -112)
 
-[node name="_AnimatableBody2D_112" parent="Platforms" index="30" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_112" parent="Platforms" index="29" instance=ExtResource("3_aafex")]
 position = Vector2(-304, -112)
 
-[node name="_AnimatableBody2D_113" parent="Platforms" index="31" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_113" parent="Platforms" index="30" instance=ExtResource("3_aafex")]
 position = Vector2(-336, -112)
 
-[node name="_AnimatableBody2D_114" parent="Platforms" index="32" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_114" parent="Platforms" index="31" instance=ExtResource("3_aafex")]
 position = Vector2(-368, -112)
 
-[node name="_AnimatableBody2D_115" parent="Platforms" index="33" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_115" parent="Platforms" index="32" instance=ExtResource("3_aafex")]
 position = Vector2(-400, -112)
 
-[node name="_AnimatableBody2D_116" parent="Platforms" index="34" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_116" parent="Platforms" index="33" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 272)
+direction = 8
 
-[node name="_AnimatableBody2D_117" parent="Platforms" index="35" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_117" parent="Platforms" index="34" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 240)
+direction = 8
 
-[node name="_AnimatableBody2D_118" parent="Platforms" index="36" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_118" parent="Platforms" index="35" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 208)
+direction = 8
 
-[node name="_AnimatableBody2D_119" parent="Platforms" index="37" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_119" parent="Platforms" index="36" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 176)
+direction = 8
 
-[node name="_AnimatableBody2D_120" parent="Platforms" index="38" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_120" parent="Platforms" index="37" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 144)
+direction = 8
 
-[node name="_AnimatableBody2D_121" parent="Platforms" index="39" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_121" parent="Platforms" index="38" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 112)
+direction = 8
 
-[node name="_AnimatableBody2D_122" parent="Platforms" index="40" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_122" parent="Platforms" index="39" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 80)
+direction = 8
 
-[node name="_AnimatableBody2D_123" parent="Platforms" index="41" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_123" parent="Platforms" index="40" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 48)
+direction = 8
 
-[node name="_AnimatableBody2D_124" parent="Platforms" index="42" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_124" parent="Platforms" index="41" instance=ExtResource("3_aafex")]
 position = Vector2(-272, 16)
+direction = 8
 
-[node name="_AnimatableBody2D_125" parent="Platforms" index="43" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_125" parent="Platforms" index="42" instance=ExtResource("3_aafex")]
 position = Vector2(-272, -16)
+direction = 8
 
-[node name="_AnimatableBody2D_126" parent="Platforms" index="44" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_126" parent="Platforms" index="43" instance=ExtResource("3_aafex")]
 position = Vector2(-272, -48)
+direction = 8
 
-[node name="_AnimatableBody2D_127" parent="Platforms" index="45" instance=ExtResource("3_aafex")]
+[node name="_AnimatableBody2D_127" parent="Platforms" index="44" instance=ExtResource("3_aafex")]
 position = Vector2(-272, -80)
+direction = 8
 
-[node name="_AnimatableBody2D_90" parent="Platforms" index="46" instance=ExtResource("4_5nudh")]
+[node name="_AnimatableBody2D_90" parent="Platforms" index="45" instance=ExtResource("4_5nudh")]
 position = Vector2(-368, 272)
 
-[node name="_AnimatableBody2D_128" parent="Platforms" index="47" instance=ExtResource("4_5nudh")]
+[node name="_AnimatableBody2D_128" parent="Platforms" index="46" instance=ExtResource("4_5nudh")]
 position = Vector2(-368, 240)
 
-[node name="PowerupLink" parent="Platforms" index="48" instance=ExtResource("6_x3dn1")]
+[node name="ChestLink" parent="Platforms" index="47" instance=ExtResource("8_gnkkx")]
 position = Vector2(-464, 272)
 
-[node name="Transition" parent="." index="13"]
+[node name="PillarTall" type="Sprite2D" parent="Decorations" index="0"]
+position = Vector2(-528, 240)
+texture = ExtResource("8_sho5j")
+
+[node name="PillarTall2" type="Sprite2D" parent="Decorations" index="1"]
+position = Vector2(-400, 240)
+texture = ExtResource("8_sho5j")
+
+[node name="Vase" type="Sprite2D" parent="Decorations" index="2"]
+position = Vector2(-176, 256)
+texture = ExtResource("9_ng2ca")
+
+[node name="PillarBrokenWide" type="Sprite2D" parent="Decorations" index="3"]
+position = Vector2(371, 256)
+texture = ExtResource("10_ls5ra")
+
+[node name="Hieroglyphs" type="Sprite2D" parent="Decorations" index="4"]
+position = Vector2(112, -176)
+texture = ExtResource("11_uunk4")
+
+[node name="MinimapCanvas" parent="." index="12"]
+visible = true
+
+[node name="Transition" parent="." index="14"]
 light_mask = 1
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]
+
+[editable path="Platforms/ChestLink"]

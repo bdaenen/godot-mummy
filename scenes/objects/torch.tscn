@@ -51,12 +51,11 @@ sprite_frames = SubResource("SpriteFrames_ssk67")
 frame_progress = 0.932664
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 0.701961, 0, 1)
-shadow_enabled = true
+color = Color(1, 0.821113, 0.542166, 0.698039)
 texture = ExtResource("8_cbqsi")
 
 [node name="FlickerTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.3
 autostart = true
 
 [connection signal="timeout" from="FlickerTimer" to="." method="_on_flicker_timer_timeout"]

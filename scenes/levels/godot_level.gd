@@ -12,6 +12,7 @@ func _ready() -> void:
     _setup_world_coords()
     await _clear_overlapping_blocks()
     _bind_block_events()
+    _calculate_block_directions()
     if !$"/root/BgMusicPlayer".is_playing():
         $"/root/BgMusicPlayer".play()
 
@@ -24,7 +25,7 @@ func _ready() -> void:
     _setup_player()
     SaverLoader.save_current_state()
     
-    if Globals.previous_level_texture and Globals.previous_world_coord and not Globals.warped_transition:
+    if Globals.previous_level_texture and (Globals.previous_world_coord > Vector2(-1, -1)) and not Globals.warped_transition:
         var viewport_width: int = ProjectSettings.get_setting("display/window/size/viewport_width")
         var viewport_height: int = ProjectSettings.get_setting("display/window/size/viewport_height")
         var transition_node: LevelTransition = $Transition
@@ -110,6 +111,71 @@ func _bind_block_events() -> void:
                 warp_child.connect('body_exited', func enable(_body: CharacterBody2D) -> void:
                     warp_child.is_active = true
                 )
+
+func _calculate_block_directions() -> void:
+    var children: Array[Node] = $Walls.get_children()
+    children.append_array($Floor.get_children())
+    var children_grid: Array = []
+    children_grid.resize(Globals.LEVEL_HEIGHT * Globals.LEVEL_WIDTH)
+    children_grid.fill(null);
+    for child in children:
+        if "direction" in child:
+            children_grid[Globals.px_position_to_grid_index(child.global_position)] = child
+    
+    for i in children_grid.size():
+        var child: Node2D = children_grid[i]
+        if (child != null):
+            var left_sibling_index: int = i - 1 if (i % Globals.LEVEL_WIDTH) > 0 else -1;
+            var left_sibling: Node2D = children_grid[left_sibling_index] if left_sibling_index >= 0 else null
+            var right_sibling_index: int = i + 1 if (i % Globals.LEVEL_WIDTH) < Globals.LEVEL_WIDTH-1 else -1;
+            var right_sibling: Node2D = children_grid[right_sibling_index] if right_sibling_index >= 0 else null
+            var top_sibling_index: int = i - Globals.LEVEL_WIDTH if i > Globals.LEVEL_WIDTH else -1
+            var top_sibling: Node2D = children_grid[top_sibling_index] if top_sibling_index >= 0 else null
+            var bot_sibling_index: int = i + Globals.LEVEL_WIDTH if i < (children_grid.size() - Globals.LEVEL_WIDTH) else -1
+            var bot_sibling: Node2D = children_grid[bot_sibling_index] if bot_sibling_index >= 0 else null
+
+            if top_sibling and right_sibling:
+                child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_L
+            elif top_sibling and left_sibling:
+                child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_R
+            elif bot_sibling and right_sibling:
+                child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_T_L
+            elif bot_sibling and left_sibling:
+                child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_T_R
+            # free-standing horizontal blocks
+            elif left_sibling or right_sibling and not (top_sibling or bot_sibling):
+                if i < Globals.LEVEL_WIDTH:
+                    child.direction = AutoBlock.BLOCK_DIRECTION.TOP
+                else:
+                    child.direction = AutoBlock.BLOCK_DIRECTION.BOTTOM
+            # free-standing vertical blocks
+            elif top_sibling or bot_sibling and not (left_sibling or right_sibling):
+                if i % Globals.LEVEL_WIDTH == 0:
+                    child.direction = AutoBlock.BLOCK_DIRECTION.LEFT
+                elif i % Globals.LEVEL_WIDTH == Globals.LEVEL_WIDTH-1:
+                    child.direction = AutoBlock.BLOCK_DIRECTION.RIGHT
+            #elif not left_sibling and not right_sibling and (top_sibling or bot_sibling):
+                #if i % Globals.LEVEL_WIDTH == 0:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.LEFT
+                #elif i % Globals.LEVEL_WIDTH == Globals.LEVEL_WIDTH-1:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.RIGHT
+            #elif not left_sibling:
+                #if right_sibling and bot_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_T_L
+                #elif right_sibling and top_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_L
+                #elif right_sibling or top_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_L
+            #elif not right_sibling:
+                #if left_sibling and bot_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_T_R
+                #elif right_sibling and top_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_R
+                #elif left_sibling or top_sibling:
+                    #child.direction = AutoBlock.BLOCK_DIRECTION.CORNER_B_R
+            #else:
+                #child.direction = AutoBlock.BLOCK_DIRECTION.BOTTOM
+        
 
 func _setup_player() -> void:
     %Player.position = Globals.player_spawn_position

@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://djmqs1xnyakel"]
+
+[ext_resource type="PackedScene" uid="uid://cd3qbkv1iqre7" path="res://scenes/objects/powerup_link.tscn" id="1_6rc7w"]
+[ext_resource type="Script" path="res://scenes/objects/chest_link.gd" id="1_v0ncj"]
+[ext_resource type="Texture2D" uid="uid://icbt75u5x1nh" path="res://graphics/objects/chest_opened.png" id="2_545jw"]
+[ext_resource type="Texture2D" uid="uid://bjrdk0b4l1v28" path="res://graphics/objects/chest.png" id="3_poae7"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="5_0mhhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7ccg"]
+size = Vector2(83, 26)
+
+[node name="ChestLink" type="Node2D"]
+script = ExtResource("1_v0ncj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_p7ccg")
+
+[node name="PowerupLink" parent="." instance=ExtResource("1_6rc7w")]
+visible = false
+position = Vector2(0, -7)
+scale = Vector2(0.5, 0.5)
+
+[node name="SpriteOpened" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_545jw")
+
+[node name="SpriteClosed" type="Sprite2D" parent="."]
+texture = ExtResource("3_poae7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("5_0mhhk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -2,6 +2,7 @@ extends Node2D
 
 const LEVEL_WIDTH: int = 36
 const LEVEL_HEIGHT: int = 20
+const LEVEL_DIMENSIONS: Vector2i = Vector2i(LEVEL_WIDTH, LEVEL_HEIGHT)
 const TILE_SIZE: int = 32
 const LEVEL_WIDTH_PX: int = LEVEL_WIDTH * TILE_SIZE
 const LEVEL_HEIGHT_PX: int = LEVEL_HEIGHT * TILE_SIZE
@@ -185,6 +186,13 @@ func map_square_to_circle( xy :Vector2 ) -> Vector2:
 ### SET PLAYER SKILL
 func set_player_skill(skill_name: String, enabled: bool) -> void:
     player_skills[skill_name] = enabled
+
+func px_position_to_grid(pos: Vector2) -> Vector2i:
+    return Vector2i(floor(pos.x/TILE_SIZE), floor(pos.y/TILE_SIZE)) + floor((LEVEL_DIMENSIONS/2))
+
+func px_position_to_grid_index(pos: Vector2) -> int:
+    var grid_position: Vector2i = px_position_to_grid(pos)
+    return (grid_position.y * LEVEL_WIDTH) + (grid_position.x % LEVEL_WIDTH)
 
 ## SAVE/LOAD
 func dump_state() -> Dictionary:

@@ -1,5 +1,7 @@
+@tool
 extends AnimatableBody2D
-var is_movable: bool = true
+@export var vertical: bool = false;
+var is_movable: bool = true;
 var is_linked: bool = false:
     set(value):
         var tween: Tween = create_tween()
@@ -14,4 +16,5 @@ func update_shader_param(val: float) -> void:
 
 
 func _process(_delta: float) -> void:
-    pass
+    if vertical:
+        $Sprite2D.rotation_degrees = 90
