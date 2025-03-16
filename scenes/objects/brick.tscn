@@ -20,18 +20,18 @@
 [ext_resource type="Texture2D" uid="uid://chb07x0du7pa" path="res://graphics/brick/brick_vert_middle.png" id="16_n0pnm"]
 [ext_resource type="Texture2D" uid="uid://l2wr8gp70xtd" path="res://graphics/brick/brick_solid.png" id="18_ws7on"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
+size = Vector2(32, 32)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ibu1j"]
 resource_local_to_scene = true
 shader = ExtResource("2_nnb8e")
 shader_parameter/onoff = null
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8fhyl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1dce"]
 resource_local_to_scene = true
 shader = ExtResource("8_jop7g")
 shader_parameter/onoff = 0.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
-size = Vector2(32, 32)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xxu1i"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -40,6 +40,9 @@ polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_yidfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cixri")
 
 [node name="Sprite2DCracked" type="Sprite2D" parent="."]
 visible = false
@@ -52,7 +55,7 @@ texture = ExtResource("1_5yeay")
 script = ExtResource("5_qbrr7")
 
 [node name="AutoBlock" parent="." instance=ExtResource("7_pgbdx")]
-material = SubResource("ShaderMaterial_8fhyl")
+material = SubResource("ShaderMaterial_s1dce")
 texture = ExtResource("10_6a4jm")
 texture_top = ExtResource("8_6qolr")
 texture_right = ExtResource("9_4kyul")
@@ -70,14 +73,12 @@ visible = false
 material = ExtResource("2_fpcuu")
 texture = ExtResource("6_67h44")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cixri")
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 1, 9, -4, 3, -5, 1, -8, -1, -11, -5, -15, -7, -15, -7, -16)
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 light_mask = 7
 occluder = SubResource("OccluderPolygon2D_xxu1i")
 occluder_light_mask = 3

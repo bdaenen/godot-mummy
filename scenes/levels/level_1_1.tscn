@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlad4wnqnbypq"]
+[gd_scene load_steps=11 format=3 uid="uid://dlad4wnqnbypq"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_rfbi8"]
 [ext_resource type="Script" path="res://scenes/levels/level_1_1.gd" id="2_sfu23"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_qsgcs"]
 [ext_resource type="PackedScene" uid="uid://dn7iorresd00i" path="res://scenes/objects/warp.tscn" id="5_6ta5b"]
 [ext_resource type="PackedScene" uid="uid://bwwuq1aly2w4r" path="res://scenes/objects/spikes.tscn" id="6_n52pe"]
+[ext_resource type="PackedScene" uid="uid://bsbo65spicqd4" path="res://scenes/objects/moving_platform.tscn" id="9_45dgn"]
+
+[sub_resource type="Curve2D" id="Curve2D_asih3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -200, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
 
 [node name="Level_1_1" instance=ExtResource("1_rfbi8")]
 position = Vector2(0, -2)
@@ -965,10 +972,13 @@ direction = 9
 [node name="_AnimatableBody2D_189" parent="Platforms" index="156" instance=ExtResource("4_qsgcs")]
 position = Vector2(528, 176)
 
-[node name="TutorialCanvas" parent="." index="11"]
-visible = false
+[node name="MovingPlatform" parent="Platforms" index="157" instance=ExtResource("9_45dgn")]
+position = Vector2(-272, 18)
+curve = SubResource("Curve2D_asih3")
+platform_path = SubResource("Curve2D_asih3")
+speed = 0.1
 
-[node name="MinimapCanvas" parent="." index="12"]
+[node name="TutorialCanvas" parent="." index="11"]
 visible = false
 
 [node name="Transition" parent="." index="14"]

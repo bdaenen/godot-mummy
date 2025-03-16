@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c246ri0lvmq2o"]
+
+[ext_resource type="PackedScene" uid="uid://de27dkellnlie" path="res://scenes/objects/chest.tscn" id="1_4eo2j"]
+[ext_resource type="PackedScene" uid="uid://bj2gca6a5a6mm" path="res://scenes/objects/key.tscn" id="2_ngr2v"]
+
+[node name="ChestKey" instance=ExtResource("1_4eo2j")]
+
+[node name="Key" parent="Powerup" index="0" instance=ExtResource("2_ngr2v")]
+position = Vector2(-1, -10)
+rotation = 4.71239

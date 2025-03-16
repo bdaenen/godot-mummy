@@ -527,5 +527,3 @@ visible = true
 light_mask = 1
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]
-
-[editable path="Platforms/ChestLink"]

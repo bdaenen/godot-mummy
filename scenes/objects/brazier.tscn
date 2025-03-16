@@ -51,6 +51,7 @@ frame_progress = 0.0119836
 position = Vector2(0, -24)
 color = Color(1, 0.821113, 0.542166, 0.698039)
 energy = 2.0
+shadow_enabled = true
 texture = ExtResource("8_ilxwy")
 
 [node name="FlickerTimer" type="Timer" parent="."]

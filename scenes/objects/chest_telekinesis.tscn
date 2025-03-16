@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnyr6gtaiaj6x"]
+
+[ext_resource type="PackedScene" uid="uid://de27dkellnlie" path="res://scenes/objects/chest.tscn" id="1_wx0jq"]
+[ext_resource type="PackedScene" uid="uid://djck0i3twp6rr" path="res://scenes/objects/powerup_telekinesis.tscn" id="2_7y1i1"]
+
+[node name="ChestTelekinesis" instance=ExtResource("1_wx0jq")]
+
+[node name="PowerupTelekinesis" parent="Powerup" index="0" instance=ExtResource("2_7y1i1")]
+position = Vector2(0, -6)
+
+[node name="SpriteOpened" parent="." index="2"]
+visible = true

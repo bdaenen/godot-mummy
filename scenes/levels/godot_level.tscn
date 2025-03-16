@@ -72,6 +72,7 @@ metadata/_edit_lock_ = true
 size_flags_vertical = 4
 
 [node name="MinimapCanvas" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="MarginContainer" parent="MinimapCanvas"]
 offset_right = 317.0

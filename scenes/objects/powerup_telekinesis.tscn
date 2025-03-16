@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://djck0i3twp6rr"]
+[gd_scene load_steps=5 format=3 uid="uid://djck0i3twp6rr"]
 
 [ext_resource type="Script" path="res://scenes/objects/powerup_telekinesis.gd" id="1_3mwbn"]
 [ext_resource type="PackedScene" uid="uid://dhctq50kb5xqg" path="res://scenes/objects/powerup.tscn" id="1_5luyf"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="3_7n8g2"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_w18ja"]
+light_mode = 1
 
 [node name="PowerupTelekinesis" instance=ExtResource("1_5luyf")]
 script = ExtResource("1_3mwbn")
+
+[node name="Sprite2D" parent="." index="0"]
+material = SubResource("CanvasItemMaterial_w18ja")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="3"]
+color = Color(0.513726, 0.2, 0.682353, 1)
+energy = 4.0
+texture = ExtResource("3_7n8g2")
+texture_scale = 0.25
 
 [connection signal="picked_up" from="." to="." method="_on_picked_up"]

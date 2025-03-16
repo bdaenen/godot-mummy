@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_xk72m"]
 [ext_resource type="Script" path="res://scenes/levels/level_4_1.gd" id="2_5nbif"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_3oof1"]
-[ext_resource type="PackedScene" uid="uid://bj2gca6a5a6mm" path="res://scenes/objects/key.tscn" id="4_ijmu2"]
+[ext_resource type="PackedScene" uid="uid://c246ri0lvmq2o" path="res://scenes/objects/chest_key.tscn" id="4_12nf2"]
 
 [node name="Level_4_1" instance=ExtResource("1_xk72m")]
 script = ExtResource("2_5nbif")
@@ -203,116 +203,119 @@ position = Vector2(560, 144)
 [node name="_AnimatableBody2D_66" parent="Floor" index="64" instance=ExtResource("3_3oof1")]
 position = Vector2(560, 176)
 
-[node name="Key" parent="Floor" index="65" instance=ExtResource("4_ijmu2")]
-position = Vector2(16, 272)
-
-[node name="_AnimatableBody2D_67" parent="Floor" index="66" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_67" parent="Floor" index="65" instance=ExtResource("3_3oof1")]
 position = Vector2(-560, 304)
 
-[node name="_AnimatableBody2D_68" parent="Floor" index="67" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_68" parent="Floor" index="66" instance=ExtResource("3_3oof1")]
 position = Vector2(-528, 304)
 
-[node name="_AnimatableBody2D_69" parent="Floor" index="68" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_69" parent="Floor" index="67" instance=ExtResource("3_3oof1")]
 position = Vector2(-496, 304)
 
-[node name="_AnimatableBody2D_70" parent="Floor" index="69" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_70" parent="Floor" index="68" instance=ExtResource("3_3oof1")]
 position = Vector2(-464, 304)
 
-[node name="_AnimatableBody2D_71" parent="Floor" index="70" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_71" parent="Floor" index="69" instance=ExtResource("3_3oof1")]
 position = Vector2(-432, 304)
 
-[node name="_AnimatableBody2D_72" parent="Floor" index="71" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_72" parent="Floor" index="70" instance=ExtResource("3_3oof1")]
 position = Vector2(-400, 304)
 
-[node name="_AnimatableBody2D_73" parent="Floor" index="72" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_73" parent="Floor" index="71" instance=ExtResource("3_3oof1")]
 position = Vector2(-368, 304)
 
-[node name="_AnimatableBody2D_74" parent="Floor" index="73" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_74" parent="Floor" index="72" instance=ExtResource("3_3oof1")]
 position = Vector2(-336, 304)
 
-[node name="_AnimatableBody2D_75" parent="Floor" index="74" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_75" parent="Floor" index="73" instance=ExtResource("3_3oof1")]
 position = Vector2(-304, 304)
 
-[node name="_AnimatableBody2D_76" parent="Floor" index="75" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_76" parent="Floor" index="74" instance=ExtResource("3_3oof1")]
 position = Vector2(-272, 304)
 
-[node name="_AnimatableBody2D_77" parent="Floor" index="76" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_77" parent="Floor" index="75" instance=ExtResource("3_3oof1")]
 position = Vector2(-240, 304)
 
-[node name="_AnimatableBody2D_78" parent="Floor" index="77" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_78" parent="Floor" index="76" instance=ExtResource("3_3oof1")]
 position = Vector2(-208, 304)
 
-[node name="_AnimatableBody2D_79" parent="Floor" index="78" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_79" parent="Floor" index="77" instance=ExtResource("3_3oof1")]
 position = Vector2(-176, 304)
 
-[node name="_AnimatableBody2D_80" parent="Floor" index="79" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_80" parent="Floor" index="78" instance=ExtResource("3_3oof1")]
 position = Vector2(-144, 304)
 
-[node name="_AnimatableBody2D_81" parent="Floor" index="80" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_81" parent="Floor" index="79" instance=ExtResource("3_3oof1")]
 position = Vector2(-112, 304)
 
-[node name="_AnimatableBody2D_82" parent="Floor" index="81" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_82" parent="Floor" index="80" instance=ExtResource("3_3oof1")]
 position = Vector2(-80, 304)
 
-[node name="_AnimatableBody2D_83" parent="Floor" index="82" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_83" parent="Floor" index="81" instance=ExtResource("3_3oof1")]
 position = Vector2(-48, 304)
 
-[node name="_AnimatableBody2D_84" parent="Floor" index="83" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_84" parent="Floor" index="82" instance=ExtResource("3_3oof1")]
 position = Vector2(-16, 304)
 
-[node name="_AnimatableBody2D_85" parent="Floor" index="84" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_85" parent="Floor" index="83" instance=ExtResource("3_3oof1")]
 position = Vector2(16, 304)
 
-[node name="_AnimatableBody2D_86" parent="Floor" index="85" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_86" parent="Floor" index="84" instance=ExtResource("3_3oof1")]
 position = Vector2(48, 304)
 
-[node name="_AnimatableBody2D_87" parent="Floor" index="86" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_87" parent="Floor" index="85" instance=ExtResource("3_3oof1")]
 position = Vector2(80, 304)
 
-[node name="_AnimatableBody2D_88" parent="Floor" index="87" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_88" parent="Floor" index="86" instance=ExtResource("3_3oof1")]
 position = Vector2(112, 304)
 
-[node name="_AnimatableBody2D_89" parent="Floor" index="88" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_89" parent="Floor" index="87" instance=ExtResource("3_3oof1")]
 position = Vector2(144, 304)
 
-[node name="_AnimatableBody2D_90" parent="Floor" index="89" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_90" parent="Floor" index="88" instance=ExtResource("3_3oof1")]
 position = Vector2(176, 304)
 
-[node name="_AnimatableBody2D_91" parent="Floor" index="90" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_91" parent="Floor" index="89" instance=ExtResource("3_3oof1")]
 position = Vector2(208, 304)
 
-[node name="_AnimatableBody2D_92" parent="Floor" index="91" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_92" parent="Floor" index="90" instance=ExtResource("3_3oof1")]
 position = Vector2(240, 304)
 
-[node name="_AnimatableBody2D_93" parent="Floor" index="92" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_93" parent="Floor" index="91" instance=ExtResource("3_3oof1")]
 position = Vector2(272, 304)
 
-[node name="_AnimatableBody2D_94" parent="Floor" index="93" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_94" parent="Floor" index="92" instance=ExtResource("3_3oof1")]
 position = Vector2(304, 304)
 
-[node name="_AnimatableBody2D_95" parent="Floor" index="94" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_95" parent="Floor" index="93" instance=ExtResource("3_3oof1")]
 position = Vector2(336, 304)
 
-[node name="_AnimatableBody2D_96" parent="Floor" index="95" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_96" parent="Floor" index="94" instance=ExtResource("3_3oof1")]
 position = Vector2(368, 304)
 
-[node name="_AnimatableBody2D_97" parent="Floor" index="96" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_97" parent="Floor" index="95" instance=ExtResource("3_3oof1")]
 position = Vector2(400, 304)
 
-[node name="_AnimatableBody2D_98" parent="Floor" index="97" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_98" parent="Floor" index="96" instance=ExtResource("3_3oof1")]
 position = Vector2(432, 304)
 
-[node name="_AnimatableBody2D_99" parent="Floor" index="98" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_99" parent="Floor" index="97" instance=ExtResource("3_3oof1")]
 position = Vector2(464, 304)
 
-[node name="_AnimatableBody2D_100" parent="Floor" index="99" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_100" parent="Floor" index="98" instance=ExtResource("3_3oof1")]
 position = Vector2(496, 304)
 
-[node name="_AnimatableBody2D_101" parent="Floor" index="100" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_101" parent="Floor" index="99" instance=ExtResource("3_3oof1")]
 position = Vector2(528, 304)
 
-[node name="_AnimatableBody2D_102" parent="Floor" index="101" instance=ExtResource("3_3oof1")]
+[node name="_AnimatableBody2D_102" parent="Floor" index="100" instance=ExtResource("3_3oof1")]
 position = Vector2(560, 304)
 
-[node name="Transition" parent="." index="12"]
+[node name="ChestKey" parent="Platforms" index="0" instance=ExtResource("4_12nf2")]
+position = Vector2(16, 272)
+
+[node name="MinimapCanvas" parent="." index="12"]
+visible = true
+
+[node name="Transition" parent="." index="14"]
 light_mask = 1

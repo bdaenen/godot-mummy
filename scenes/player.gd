@@ -94,9 +94,7 @@ func _physics_process(delta: float) -> void:
     if Input.is_action_pressed("Jump") and (is_on_floor() or !$CoyoteTime.is_stopped()) and is_jump_ready:
         is_jump_ready = false
         $CoyoteTime.stop()
-        print('coyote stopped ', is_on_floor(), $CoyoteTime.is_stopped())
         $JumpCooldown.start()
-        print('jumping')
         velocity.y = JUMP_VELOCITY
         play_sound_jump()
 
@@ -151,7 +149,6 @@ func _process(_delta: float) -> void:
         $SfxWalkTimer.set_paused(true)
         $WalkAnimationTimer.set_paused(true)
         if is_jump_ready:
-            print('coyoteeeeee')
             $CoyoteTime.start()
 
     if Input.is_action_just_pressed("Shoot") and skills.can_shoot:

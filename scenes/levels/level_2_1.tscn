@@ -4,16 +4,16 @@
 [ext_resource type="Script" path="res://scenes/levels/level_2_1.gd" id="2_2auj6"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_xm7ds"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_kc8l2"]
-[ext_resource type="PackedScene" uid="uid://djck0i3twp6rr" path="res://scenes/objects/powerup_telekinesis.tscn" id="5_jsqbn"]
+[ext_resource type="PackedScene" uid="uid://dnyr6gtaiaj6x" path="res://scenes/objects/chest_telekinesis.tscn" id="5_u16na"]
 
 [node name="Level_2_1" instance=ExtResource("1_y5dy4")]
 script = ExtResource("2_2auj6")
 
 [node name="_AnimatableBody2D_84" parent="Floor" index="0" instance=ExtResource("3_xm7ds")]
-position = Vector2(-240, 272)
+position = Vector2(-176, 272)
 
 [node name="_AnimatableBody2D_85" parent="Floor" index="1" instance=ExtResource("3_xm7ds")]
-position = Vector2(-208, 272)
+position = Vector2(-144, 272)
 
 [node name="_AnimatableBody2D_86" parent="Floor" index="2" instance=ExtResource("3_xm7ds")]
 position = Vector2(-560, 304)
@@ -334,25 +334,25 @@ position = Vector2(-144, 16)
 position = Vector2(-368, 176)
 
 [node name="_AnimatableBody2D_73" parent="Platforms" index="5" instance=ExtResource("4_kc8l2")]
-position = Vector2(-304, 176)
+position = Vector2(-240, 176)
 
 [node name="_AnimatableBody2D_76" parent="Platforms" index="6" instance=ExtResource("4_kc8l2")]
 position = Vector2(-368, 208)
 
 [node name="_AnimatableBody2D_77" parent="Platforms" index="7" instance=ExtResource("4_kc8l2")]
-position = Vector2(-304, 208)
+position = Vector2(-240, 208)
 
 [node name="_AnimatableBody2D_79" parent="Platforms" index="8" instance=ExtResource("4_kc8l2")]
 position = Vector2(-368, 240)
 
 [node name="_AnimatableBody2D_80" parent="Platforms" index="9" instance=ExtResource("4_kc8l2")]
-position = Vector2(-304, 240)
+position = Vector2(-240, 240)
 
 [node name="_AnimatableBody2D_82" parent="Platforms" index="10" instance=ExtResource("4_kc8l2")]
 position = Vector2(-368, 272)
 
 [node name="_AnimatableBody2D_83" parent="Platforms" index="11" instance=ExtResource("4_kc8l2")]
-position = Vector2(-304, 272)
+position = Vector2(-240, 272)
 
 [node name="MovableBrick2" parent="Platforms" index="12" instance=ExtResource("4_kc8l2")]
 position = Vector2(-80, -80)
@@ -360,10 +360,10 @@ position = Vector2(-80, -80)
 [node name="MovableBrick3" parent="Platforms" index="13" instance=ExtResource("4_kc8l2")]
 position = Vector2(-48, -80)
 
-[node name="PowerupTelekinesis" parent="." index="12" instance=ExtResource("5_jsqbn")]
-position = Vector2(-336, 272)
+[node name="ChestTelekinesis" parent="Platforms" index="14" instance=ExtResource("5_u16na")]
+position = Vector2(-304, 272)
 
-[node name="Transition" parent="." index="13"]
+[node name="Transition" parent="." index="14"]
 light_mask = 1
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

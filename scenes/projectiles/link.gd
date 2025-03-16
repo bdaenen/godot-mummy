@@ -17,7 +17,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
     if (!has_collided):
-        print(body)
         on_hit.emit(body)
         has_collided = true;
     _despawn()

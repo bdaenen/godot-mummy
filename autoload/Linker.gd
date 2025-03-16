@@ -64,7 +64,6 @@ func _physics_process(_delta: float) -> void:
         var prev_pos: Vector2 = linked_bodies_previous_positions[shared_velocity_body_idx]
         # Movement since last frame
         move_diff = prev_pos - shared_velocity_body.global_position
-        
         if move_diff.is_zero_approx():
             # Stop the sync
             shared_velocity_body = null
@@ -72,7 +71,7 @@ func _physics_process(_delta: float) -> void:
             # Sync movement between shared_velocity_body and linked_bodies
             for i in linked_bodies.size():
                 var body: AnimatableBody2D = linked_bodies[i]
-                if body != shared_velocity_body:
+                if body != shared_velocity_body and not body.is_in_group('is_movable_platform'):
                     body.global_position = body.global_position - move_diff
                 link_line.points[i] = body.global_position
     else:
@@ -86,6 +85,7 @@ func _physics_process(_delta: float) -> void:
                 break
 
     # Keep track of the previous position, and cull offscreen bodies
+    # This probably belongs in the GodotLevel, not here?
     var bodies_to_remove: Array[AnimatableBody2D] = []
     var viewport_bounds: Vector2 = Globals.viewport_bounds
     for i in linked_bodies.size():

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnn0ty3ycej63"]
 
 [ext_resource type="Script" path="res://scenes/projectiles/telekinesis.gd" id="1_1po4d"]
-[ext_resource type="Texture2D" uid="uid://1qgk2rqyu6pw" path="res://graphics/abilities/push.png" id="1_mceth"]
+[ext_resource type="Texture2D" uid="uid://1qgk2rqyu6pw" path="res://abilities/push.png" id="1_mceth"]
 [ext_resource type="AudioStream" uid="uid://cidtqpio5qgvx" path="res://audio/shoot.wav" id="3_klnwu"]
 [ext_resource type="AudioStream" uid="uid://6svtfspgtbft" path="res://audio/hit.wav" id="4_4llme"]
 [ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="5_6oenn"]
@@ -45,6 +45,7 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.576471)
 shadow_item_cull_mask = 7
 texture = ExtResource("5_6oenn")
+texture_scale = 0.25
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

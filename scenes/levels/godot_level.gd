@@ -80,7 +80,6 @@ func _clear_overlapping_blocks() -> void:
     for child in children:
         # Don't destroy portals / things that interact with the player on movement when they spawn on to pof it
         if is_instance_valid(child) and player_bounds.has_point(child.global_position) and not child.is_in_group('disable_on_player_spawn'):
-            print('removing child')
             child.queue_free()
             await child.tree_exited
         else:
@@ -265,7 +264,7 @@ func _on_player_shoot_link_projectile(angle: Vector2) -> void:
     if size == 0:
         $Projectiles.add_child(projectile)
 
-func _on_link_hit(body: AnimatableBody2D) -> void:
+func _on_link_hit(body: Node2D) -> void:
     # This enables the shader for the green borders
     $Linker.add_body(body)
 

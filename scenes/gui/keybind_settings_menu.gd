@@ -37,7 +37,6 @@ func disable_buttons() -> void:
         btn.disabled = true
 
 func enable_buttons() -> void:
-    print('reenabling buttons')
     for btn in %KeybindContainer.get_children():
         btn.disabled = false
 

@@ -15,14 +15,15 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_aqaw8")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7goc7")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_c4rev")
 texture = ExtResource("1_5pbda")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7goc7")
-
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 light_mask = 7
 occluder = SubResource("OccluderPolygon2D_1rall")
 occluder_light_mask = 3

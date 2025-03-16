@@ -41,6 +41,7 @@ enabled=PackedStringArray("res://addons/ggs/plugin.cfg")
 [global_group]
 
 disable_on_player_spawn="Disable if the player spawns on top of this node."
+is_movable_platform=""
 
 [gui]
 

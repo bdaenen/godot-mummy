@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsbo65spicqd4"]
+
+[ext_resource type="Script" path="res://scenes/objects/moving_platform.gd" id="1_n5y5y"]
+[ext_resource type="Texture2D" uid="uid://l2wr8gp70xtd" path="res://graphics/brick/brick_solid.png" id="1_tqhkx"]
+[ext_resource type="Material" uid="uid://b4rm2uy33uxdh" path="res://scenes/objects/green-border.tres" id="2_ydphy"]
+[ext_resource type="Script" path="res://scenes/objects/moving_platform_animatable_body_2d.gd" id="4_qqvy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mya0t"]
+size = Vector2(32, 32)
+
+[node name="MovingPlatform" type="Path2D"]
+script = ExtResource("1_n5y5y")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D"]
+material = ExtResource("2_ydphy")
+texture = ExtResource("1_tqhkx")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="PathFollow2D" groups=["is_movable_platform"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("4_qqvy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_mya0t")
+
+[node name="PauseTimer" type="Timer" parent="."]
+one_shot = true
