@@ -1,3 +1,4 @@
+@tool
 class_name Brick
 extends AnimatableBody2D
 enum BRICK_STATE { NORMAL, PARTIAL_CRACK, BROKEN }
@@ -5,12 +6,26 @@ enum BRICK_STATE { NORMAL, PARTIAL_CRACK, BROKEN }
 @export var brick_state: BRICK_STATE = BRICK_STATE.NORMAL;
 @export var is_active: bool = true : set = _set_is_active
 @export var direction: AutoBlock.BLOCK_DIRECTION = AutoBlock.BLOCK_DIRECTION.BOTTOM : set = _set_direction, get = _get_direction
+@export var flip_h: bool = false : set = _set_flip_h, get = _get_flip_h
+@export var flip_v: bool = false : set = _set_flip_v, get = _get_flip_v
 
 func _set_direction(dir: AutoBlock.BLOCK_DIRECTION) -> void:
     $AutoBlock.direction = dir
     
 func _get_direction() -> AutoBlock.BLOCK_DIRECTION:
     return $AutoBlock.direction
+    
+func _set_flip_h(value: bool) -> void:
+    $AutoBlock.flip_h = value
+
+func _set_flip_v(value: bool) -> void:
+    $AutoBlock.flip_v = value
+    
+func _get_flip_h() -> bool:
+    return $AutoBlock.flip_h
+
+func _get_flip_v() -> bool:
+    return $AutoBlock.flip_v
 
 func _init() -> void:
     visible = is_active

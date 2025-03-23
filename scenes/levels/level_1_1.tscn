@@ -17,8 +17,8 @@ _data = {
 point_count = 3
 
 [node name="Level_1_1" instance=ExtResource("1_rfbi8")]
-position = Vector2(0, -2)
 script = ExtResource("2_sfu23")
+metadata/_edit_lock_ = true
 
 [node name="Torch" parent="Lights" index="0" instance=ExtResource("3_j1n58")]
 position = Vector2(-368, -238)
@@ -305,6 +305,7 @@ position = Vector2(-80, 304)
 
 [node name="_AnimatableBody2D_246" parent="Floor" index="88" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 304)
+direction = 7
 
 [node name="_AnimatableBody2D_247" parent="Floor" index="89" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 304)
@@ -364,615 +365,626 @@ position = Vector2(528, 304)
 [node name="_AnimatableBody2D_264" parent="Floor" index="107" instance=ExtResource("3_8a3hf")]
 position = Vector2(560, 304)
 
-[node name="Walls" parent="." index="4"]
-position = Vector2(-89, 15)
-
 [node name="_AnimatableBody2D_44" parent="Platforms" index="0" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, -272)
-direction = 8
+direction = 1
 
 [node name="_AnimatableBody2D_47" parent="Platforms" index="1" instance=ExtResource("3_8a3hf")]
+position = Vector2(400, -240)
+direction = 10
+
+[node name="_AnimatableBody2D_48" parent="Platforms" index="2" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, -240)
-direction = 8
+direction = 7
 
-[node name="_AnimatableBody2D_50" parent="Platforms" index="2" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_50" parent="Platforms" index="3" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, -208)
-direction = 3
+direction = 1
 
-[node name="MovableBrick" parent="Platforms" index="3" instance=ExtResource("4_qsgcs")]
+[node name="MovableBrick" parent="Platforms" index="4" instance=ExtResource("4_qsgcs")]
 position = Vector2(464, -208)
 
-[node name="_AnimatableBody2D_51" parent="Platforms" index="4" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_51" parent="Platforms" index="5" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -208)
 direction = 8
 
-[node name="_AnimatableBody2D_54" parent="Platforms" index="5" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_54" parent="Platforms" index="6" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, -176)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_55" parent="Platforms" index="6" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_55" parent="Platforms" index="7" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -176)
 direction = 8
 
-[node name="_AnimatableBody2D_58" parent="Platforms" index="7" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_58" parent="Platforms" index="8" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, -144)
-direction = 4
+direction = 10
 
-[node name="_AnimatableBody2D_59" parent="Platforms" index="8" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_59" parent="Platforms" index="9" instance=ExtResource("3_8a3hf")]
 position = Vector2(240, -144)
-direction = 5
+direction = 11
 
-[node name="_AnimatableBody2D_60" parent="Platforms" index="9" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_60" parent="Platforms" index="10" instance=ExtResource("3_8a3hf")]
 position = Vector2(272, -144)
-direction = 0
 
-[node name="_AnimatableBody2D_61" parent="Platforms" index="10" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_61" parent="Platforms" index="11" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, -144)
-direction = 0
 
-[node name="_AnimatableBody2D_62" parent="Platforms" index="11" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_62" parent="Platforms" index="12" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, -144)
-direction = 0
 
-[node name="_AnimatableBody2D_63" parent="Platforms" index="12" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_63" parent="Platforms" index="13" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, -144)
-direction = 0
 
-[node name="_AnimatableBody2D_64" parent="Platforms" index="13" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_64" parent="Platforms" index="14" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, -144)
-direction = 6
+direction = 7
 
-[node name="_AnimatableBody2D_65" parent="Platforms" index="14" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_65" parent="Platforms" index="15" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, -144)
 direction = 5
 
-[node name="_AnimatableBody2D_66" parent="Platforms" index="15" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_66" parent="Platforms" index="16" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -144)
 direction = 8
 
-[node name="_AnimatableBody2D_69" parent="Platforms" index="16" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_69" parent="Platforms" index="17" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, -112)
-direction = 3
-
-[node name="_AnimatableBody2D_70" parent="Platforms" index="17" instance=ExtResource("3_8a3hf")]
-position = Vector2(240, -112)
 direction = 1
 
-[node name="_AnimatableBody2D_71" parent="Platforms" index="18" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_70" parent="Platforms" index="18" instance=ExtResource("3_8a3hf")]
+position = Vector2(240, -112)
+direction = 3
+
+[node name="_AnimatableBody2D_71" parent="Platforms" index="19" instance=ExtResource("3_8a3hf")]
 position = Vector2(272, -112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_72" parent="Platforms" index="19" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_72" parent="Platforms" index="20" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, -112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_73" parent="Platforms" index="20" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_73" parent="Platforms" index="21" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, -112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_74" parent="Platforms" index="21" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_74" parent="Platforms" index="22" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, -112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_75" parent="Platforms" index="22" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_75" parent="Platforms" index="23" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, -112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_76" parent="Platforms" index="23" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_76" parent="Platforms" index="24" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, -112)
 direction = 1
 
-[node name="_AnimatableBody2D_77" parent="Platforms" index="24" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_77" parent="Platforms" index="25" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -112)
 direction = 8
 
-[node name="_AnimatableBody2D_80" parent="Platforms" index="25" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_80" parent="Platforms" index="26" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, -80)
-direction = 3
-
-[node name="_AnimatableBody2D_81" parent="Platforms" index="26" instance=ExtResource("3_8a3hf")]
-position = Vector2(240, -80)
 direction = 1
 
-[node name="_AnimatableBody2D_82" parent="Platforms" index="27" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_81" parent="Platforms" index="27" instance=ExtResource("3_8a3hf")]
+position = Vector2(240, -80)
+direction = 3
+
+[node name="_AnimatableBody2D_82" parent="Platforms" index="28" instance=ExtResource("3_8a3hf")]
 position = Vector2(272, -80)
 
-[node name="_AnimatableBody2D_83" parent="Platforms" index="28" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_83" parent="Platforms" index="29" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, -80)
 
-[node name="_AnimatableBody2D_84" parent="Platforms" index="29" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_84" parent="Platforms" index="30" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, -80)
 
-[node name="_AnimatableBody2D_85" parent="Platforms" index="30" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_85" parent="Platforms" index="31" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, -80)
 
-[node name="_AnimatableBody2D_86" parent="Platforms" index="31" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_86" parent="Platforms" index="32" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, -80)
-direction = 4
+direction = 10
 
-[node name="_AnimatableBody2D_87" parent="Platforms" index="32" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_87" parent="Platforms" index="33" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, -80)
 direction = 7
 
-[node name="_AnimatableBody2D_88" parent="Platforms" index="33" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_88" parent="Platforms" index="34" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -80)
 direction = 8
 
-[node name="_AnimatableBody2D_91" parent="Platforms" index="34" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_91" parent="Platforms" index="35" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, -48)
-direction = 3
-
-[node name="_AnimatableBody2D_92" parent="Platforms" index="35" instance=ExtResource("3_8a3hf")]
-position = Vector2(240, -48)
 direction = 1
 
-[node name="_AnimatableBody2D_93" parent="Platforms" index="36" instance=ExtResource("3_8a3hf")]
-position = Vector2(400, -48)
+[node name="_AnimatableBody2D_92" parent="Platforms" index="36" instance=ExtResource("3_8a3hf")]
+position = Vector2(240, -48)
 direction = 3
 
-[node name="_AnimatableBody2D_94" parent="Platforms" index="37" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_93" parent="Platforms" index="37" instance=ExtResource("3_8a3hf")]
+position = Vector2(400, -48)
+direction = 1
+
+[node name="_AnimatableBody2D_94" parent="Platforms" index="38" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -48)
 direction = 8
 
-[node name="_AnimatableBody2D_97" parent="Platforms" index="38" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_97" parent="Platforms" index="39" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, -16)
-direction = 3
-
-[node name="_AnimatableBody2D_98" parent="Platforms" index="39" instance=ExtResource("3_8a3hf")]
-position = Vector2(240, -16)
 direction = 1
 
-[node name="_AnimatableBody2D_99" parent="Platforms" index="40" instance=ExtResource("3_8a3hf")]
-position = Vector2(400, -16)
+[node name="_AnimatableBody2D_98" parent="Platforms" index="40" instance=ExtResource("3_8a3hf")]
+position = Vector2(240, -16)
 direction = 3
 
-[node name="_AnimatableBody2D_100" parent="Platforms" index="41" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_99" parent="Platforms" index="41" instance=ExtResource("3_8a3hf")]
+position = Vector2(400, -16)
+direction = 1
+
+[node name="_AnimatableBody2D_100" parent="Platforms" index="42" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, -16)
 direction = 8
 
-[node name="_AnimatableBody2D_103" parent="Platforms" index="42" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_103" parent="Platforms" index="43" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 16)
-direction = 4
+direction = 10
 
-[node name="_AnimatableBody2D_113" parent="Platforms" index="43" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_113" parent="Platforms" index="44" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 16)
 direction = 4
 
-[node name="_AnimatableBody2D_114" parent="Platforms" index="44" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_114" parent="Platforms" index="45" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 16)
 direction = 0
 
-[node name="_AnimatableBody2D_115" parent="Platforms" index="45" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_115" parent="Platforms" index="46" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 16)
 direction = 0
 
-[node name="_AnimatableBody2D_116" parent="Platforms" index="46" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_116" parent="Platforms" index="47" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 16)
 direction = 0
 
-[node name="_AnimatableBody2D_117" parent="Platforms" index="47" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_117" parent="Platforms" index="48" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 16)
 direction = 5
 
-[node name="_AnimatableBody2D_118" parent="Platforms" index="48" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_118" parent="Platforms" index="49" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 16)
 direction = 8
 
-[node name="_AnimatableBody2D_121" parent="Platforms" index="49" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_121" parent="Platforms" index="50" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 48)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_126" parent="Platforms" index="50" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_126" parent="Platforms" index="51" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 48)
 direction = 3
 
-[node name="_AnimatableBody2D_127" parent="Platforms" index="51" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_127" parent="Platforms" index="52" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 48)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_128" parent="Platforms" index="52" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_128" parent="Platforms" index="53" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 48)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_129" parent="Platforms" index="53" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_129" parent="Platforms" index="54" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 48)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_130" parent="Platforms" index="54" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_130" parent="Platforms" index="55" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 48)
 direction = 1
 
-[node name="_AnimatableBody2D_131" parent="Platforms" index="55" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_131" parent="Platforms" index="56" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 48)
 direction = 8
 
-[node name="_AnimatableBody2D_134" parent="Platforms" index="56" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_134" parent="Platforms" index="57" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 80)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_135" parent="Platforms" index="57" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_135" parent="Platforms" index="58" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 80)
 direction = 3
 
-[node name="_AnimatableBody2D_136" parent="Platforms" index="58" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_136" parent="Platforms" index="59" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 80)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_137" parent="Platforms" index="59" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_137" parent="Platforms" index="60" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 80)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_138" parent="Platforms" index="60" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_138" parent="Platforms" index="61" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 80)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_139" parent="Platforms" index="61" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_139" parent="Platforms" index="62" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 80)
 direction = 1
 
-[node name="_AnimatableBody2D_140" parent="Platforms" index="62" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_140" parent="Platforms" index="63" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 80)
 direction = 8
 
-[node name="_AnimatableBody2D_143" parent="Platforms" index="63" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_143" parent="Platforms" index="64" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 112)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_151" parent="Platforms" index="64" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_151" parent="Platforms" index="65" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 112)
 direction = 3
 
-[node name="_AnimatableBody2D_152" parent="Platforms" index="65" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_152" parent="Platforms" index="66" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_153" parent="Platforms" index="66" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_153" parent="Platforms" index="67" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_154" parent="Platforms" index="67" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_154" parent="Platforms" index="68" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 112)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_155" parent="Platforms" index="68" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_155" parent="Platforms" index="69" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 112)
 direction = 1
 
-[node name="_AnimatableBody2D_156" parent="Platforms" index="69" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_156" parent="Platforms" index="70" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 112)
 direction = 8
 
-[node name="_AnimatableBody2D_159" parent="Platforms" index="70" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_159" parent="Platforms" index="71" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 144)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_167" parent="Platforms" index="71" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_167" parent="Platforms" index="72" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 144)
 direction = 3
 
-[node name="_AnimatableBody2D_168" parent="Platforms" index="72" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_168" parent="Platforms" index="73" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 144)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_169" parent="Platforms" index="73" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_169" parent="Platforms" index="74" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 144)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_170" parent="Platforms" index="74" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_170" parent="Platforms" index="75" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 144)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_171" parent="Platforms" index="75" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_171" parent="Platforms" index="76" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 144)
 direction = 1
 
-[node name="_AnimatableBody2D_172" parent="Platforms" index="76" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_172" parent="Platforms" index="77" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 144)
 direction = 8
 
-[node name="_AnimatableBody2D_175" parent="Platforms" index="77" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_175" parent="Platforms" index="78" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 176)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_176" parent="Platforms" index="78" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_176" parent="Platforms" index="79" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_177" parent="Platforms" index="79" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_177" parent="Platforms" index="80" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_178" parent="Platforms" index="80" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_178" parent="Platforms" index="81" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_179" parent="Platforms" index="81" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_179" parent="Platforms" index="82" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_180" parent="Platforms" index="82" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_180" parent="Platforms" index="83" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_181" parent="Platforms" index="83" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_181" parent="Platforms" index="84" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 176)
 direction = 9
 
-[node name="_AnimatableBody2D_182" parent="Platforms" index="84" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_182" parent="Platforms" index="85" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 176)
-direction = 9
+direction = 1
 
-[node name="_AnimatableBody2D_183" parent="Platforms" index="85" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_183" parent="Platforms" index="86" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 176)
 direction = 3
 
-[node name="_AnimatableBody2D_184" parent="Platforms" index="86" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_184" parent="Platforms" index="87" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 176)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_185" parent="Platforms" index="87" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_185" parent="Platforms" index="88" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 176)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_186" parent="Platforms" index="88" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_186" parent="Platforms" index="89" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 176)
-direction = 9
+direction = 14
 
-[node name="_AnimatableBody2D_187" parent="Platforms" index="89" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_187" parent="Platforms" index="90" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 176)
 direction = 1
 
-[node name="_AnimatableBody2D_188" parent="Platforms" index="90" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_188" parent="Platforms" index="91" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 176)
 direction = 8
 
-[node name="_AnimatableBody2D_192" parent="Platforms" index="91" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_192" parent="Platforms" index="92" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 208)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_193" parent="Platforms" index="92" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_193" parent="Platforms" index="93" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 208)
 direction = 9
 
-[node name="_AnimatableBody2D_194" parent="Platforms" index="93" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_194" parent="Platforms" index="94" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 208)
 direction = 9
 
-[node name="MovableBrick2" parent="Platforms" index="94" instance=ExtResource("4_qsgcs")]
-position = Vector2(-112, 274)
+[node name="MovableBrick2" parent="Platforms" index="95" instance=ExtResource("4_qsgcs")]
+position = Vector2(-112, 272)
 
-[node name="MovableBrick3" parent="Platforms" index="95" instance=ExtResource("4_qsgcs")]
-position = Vector2(-80, 274)
+[node name="MovableBrick3" parent="Platforms" index="96" instance=ExtResource("4_qsgcs")]
+position = Vector2(-80, 272)
 
-[node name="MovableBrick4" parent="Platforms" index="96" instance=ExtResource("4_qsgcs")]
-position = Vector2(-80, 242)
+[node name="MovableBrick4" parent="Platforms" index="97" instance=ExtResource("4_qsgcs")]
+position = Vector2(-80, 240)
 
-[node name="_AnimatableBody2D_195" parent="Platforms" index="97" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_195" parent="Platforms" index="98" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 208)
 direction = 9
 
-[node name="_AnimatableBody2D_196" parent="Platforms" index="98" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_196" parent="Platforms" index="99" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 208)
 direction = 9
 
-[node name="_AnimatableBody2D_197" parent="Platforms" index="99" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_197" parent="Platforms" index="100" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 208)
 direction = 9
 
-[node name="_AnimatableBody2D_198" parent="Platforms" index="100" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_198" parent="Platforms" index="101" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 208)
 direction = 9
 
-[node name="_AnimatableBody2D_199" parent="Platforms" index="101" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_199" parent="Platforms" index="102" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 208)
-direction = 4
+direction = 10
 
-[node name="_AnimatableBody2D_200" parent="Platforms" index="102" instance=ExtResource("4_qsgcs")]
+[node name="_AnimatableBody2D_200" parent="Platforms" index="103" instance=ExtResource("4_qsgcs")]
 position = Vector2(208, 208)
 
-[node name="_AnimatableBody2D_201" parent="Platforms" index="103" instance=ExtResource("4_qsgcs")]
+[node name="_AnimatableBody2D_201" parent="Platforms" index="104" instance=ExtResource("4_qsgcs")]
 position = Vector2(240, 208)
 
-[node name="_AnimatableBody2D_202" parent="Platforms" index="104" instance=ExtResource("4_qsgcs")]
+[node name="_AnimatableBody2D_202" parent="Platforms" index="105" instance=ExtResource("4_qsgcs")]
 position = Vector2(272, 208)
 
-[node name="_AnimatableBody2D_203" parent="Platforms" index="105" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_203" parent="Platforms" index="106" instance=ExtResource("3_8a3hf")]
 position = Vector2(304, 208)
 direction = 6
 
-[node name="_AnimatableBody2D_204" parent="Platforms" index="106" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_204" parent="Platforms" index="107" instance=ExtResource("3_8a3hf")]
 position = Vector2(336, 208)
 
-[node name="_AnimatableBody2D_205" parent="Platforms" index="107" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_205" parent="Platforms" index="108" instance=ExtResource("3_8a3hf")]
 position = Vector2(368, 208)
 
-[node name="_AnimatableBody2D_206" parent="Platforms" index="108" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_206" parent="Platforms" index="109" instance=ExtResource("3_8a3hf")]
 position = Vector2(400, 208)
 
-[node name="_AnimatableBody2D_207" parent="Platforms" index="109" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_207" parent="Platforms" index="110" instance=ExtResource("3_8a3hf")]
 position = Vector2(432, 208)
 direction = 7
 
-[node name="_AnimatableBody2D_208" parent="Platforms" index="110" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_208" parent="Platforms" index="111" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 208)
 direction = 8
 
-[node name="_AnimatableBody2D_211" parent="Platforms" index="111" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_211" parent="Platforms" index="112" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 240)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_212" parent="Platforms" index="112" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_212" parent="Platforms" index="113" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_213" parent="Platforms" index="113" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_213" parent="Platforms" index="114" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_214" parent="Platforms" index="114" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_214" parent="Platforms" index="115" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_215" parent="Platforms" index="115" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_215" parent="Platforms" index="116" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_216" parent="Platforms" index="116" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_216" parent="Platforms" index="117" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_217" parent="Platforms" index="117" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_217" parent="Platforms" index="118" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 240)
 direction = 9
 
-[node name="_AnimatableBody2D_218" parent="Platforms" index="118" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_218" parent="Platforms" index="119" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 240)
-direction = 8
+direction = 1
 
-[node name="_AnimatableBody2D_219" parent="Platforms" index="119" instance=ExtResource("4_qsgcs")]
+[node name="_AnimatableBody2D_219" parent="Platforms" index="120" instance=ExtResource("4_qsgcs")]
 position = Vector2(400, 240)
 
-[node name="_AnimatableBody2D_220" parent="Platforms" index="120" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_220" parent="Platforms" index="121" instance=ExtResource("3_8a3hf")]
 position = Vector2(496, 240)
 direction = 8
 
-[node name="_AnimatableBody2D_222" parent="Platforms" index="121" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_222" parent="Platforms" index="122" instance=ExtResource("3_8a3hf")]
 position = Vector2(-48, 272)
-direction = 3
+direction = 1
 
-[node name="_AnimatableBody2D_223" parent="Platforms" index="122" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_223" parent="Platforms" index="123" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_224" parent="Platforms" index="123" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_224" parent="Platforms" index="124" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_225" parent="Platforms" index="124" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_225" parent="Platforms" index="125" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_226" parent="Platforms" index="125" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_226" parent="Platforms" index="126" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_227" parent="Platforms" index="126" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_227" parent="Platforms" index="127" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_228" parent="Platforms" index="127" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_228" parent="Platforms" index="128" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 272)
 direction = 9
 
-[node name="_AnimatableBody2D_229" parent="Platforms" index="128" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_229" parent="Platforms" index="129" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 272)
-direction = 8
+direction = 1
 
-[node name="_AnimatableBody2D_104" parent="Platforms" index="129" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_104" parent="Platforms" index="130" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_105" parent="Platforms" index="130" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_105" parent="Platforms" index="131" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_106" parent="Platforms" index="131" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_106" parent="Platforms" index="132" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_107" parent="Platforms" index="132" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_107" parent="Platforms" index="133" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_108" parent="Platforms" index="133" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_108" parent="Platforms" index="134" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_109" parent="Platforms" index="134" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_109" parent="Platforms" index="135" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_110" parent="Platforms" index="135" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_110" parent="Platforms" index="136" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 16)
+direction = 0
+flip_v = true
 
-[node name="_AnimatableBody2D_111" parent="Platforms" index="136" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_111" parent="Platforms" index="137" instance=ExtResource("3_8a3hf")]
 position = Vector2(208, 16)
-direction = 6
+direction = 12
 
-[node name="_AnimatableBody2D_112" parent="Platforms" index="137" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_112" parent="Platforms" index="138" instance=ExtResource("3_8a3hf")]
 position = Vector2(240, 16)
-direction = 7
+direction = 13
 
-[node name="_AnimatableBody2D_122" parent="Platforms" index="138" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_122" parent="Platforms" index="139" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 48)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_123" parent="Platforms" index="139" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_123" parent="Platforms" index="140" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 48)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_124" parent="Platforms" index="140" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_124" parent="Platforms" index="141" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 48)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_125" parent="Platforms" index="141" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_125" parent="Platforms" index="142" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 48)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_144" parent="Platforms" index="142" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_144" parent="Platforms" index="143" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_145" parent="Platforms" index="143" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_145" parent="Platforms" index="144" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_146" parent="Platforms" index="144" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_146" parent="Platforms" index="145" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_147" parent="Platforms" index="145" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_147" parent="Platforms" index="146" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_148" parent="Platforms" index="146" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_148" parent="Platforms" index="147" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_149" parent="Platforms" index="147" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_149" parent="Platforms" index="148" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 112)
-direction = 9
+direction = 0
 
-[node name="_AnimatableBody2D_150" parent="Platforms" index="148" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_150" parent="Platforms" index="149" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 112)
-direction = 9
+direction = 5
 
-[node name="_AnimatableBody2D_160" parent="Platforms" index="149" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_160" parent="Platforms" index="150" instance=ExtResource("3_8a3hf")]
 position = Vector2(-16, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_161" parent="Platforms" index="150" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_161" parent="Platforms" index="151" instance=ExtResource("3_8a3hf")]
 position = Vector2(16, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_162" parent="Platforms" index="151" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_162" parent="Platforms" index="152" instance=ExtResource("3_8a3hf")]
 position = Vector2(48, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_163" parent="Platforms" index="152" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_163" parent="Platforms" index="153" instance=ExtResource("3_8a3hf")]
 position = Vector2(80, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_164" parent="Platforms" index="153" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_164" parent="Platforms" index="154" instance=ExtResource("3_8a3hf")]
 position = Vector2(112, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_165" parent="Platforms" index="154" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_165" parent="Platforms" index="155" instance=ExtResource("3_8a3hf")]
 position = Vector2(144, 144)
 direction = 9
 
-[node name="_AnimatableBody2D_166" parent="Platforms" index="155" instance=ExtResource("3_8a3hf")]
+[node name="_AnimatableBody2D_166" parent="Platforms" index="156" instance=ExtResource("3_8a3hf")]
 position = Vector2(176, 144)
-direction = 9
+direction = 1
 
-[node name="_AnimatableBody2D_189" parent="Platforms" index="156" instance=ExtResource("4_qsgcs")]
+[node name="_AnimatableBody2D_189" parent="Platforms" index="157" instance=ExtResource("4_qsgcs")]
 position = Vector2(528, 176)
 
-[node name="MovingPlatform" parent="Platforms" index="157" instance=ExtResource("9_45dgn")]
+[node name="MovingPlatform" parent="Platforms" index="158" instance=ExtResource("9_45dgn")]
 position = Vector2(-272, 18)
 curve = SubResource("Curve2D_asih3")
 platform_path = SubResource("Curve2D_asih3")

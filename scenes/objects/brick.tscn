@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bptqxky1x4373"]
+[gd_scene load_steps=29 format=3 uid="uid://bptqxky1x4373"]
 
 [ext_resource type="Texture2D" uid="uid://b7kqnwclvb7pb" path="res://graphics/objects/wall_hard.png" id="1_5yeay"]
 [ext_resource type="Script" path="res://scenes/objects/brick.gd" id="1_yidfk"]
@@ -19,6 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://d4co33fy8rnc7" path="res://graphics/brick/brick_corner_b_r.png" id="15_53xxv"]
 [ext_resource type="Texture2D" uid="uid://chb07x0du7pa" path="res://graphics/brick/brick_vert_middle.png" id="16_n0pnm"]
 [ext_resource type="Texture2D" uid="uid://l2wr8gp70xtd" path="res://graphics/brick/brick_solid.png" id="18_ws7on"]
+[ext_resource type="Texture2D" uid="uid://82nejmuiivc3" path="res://graphics/brick/brick_corner_t_l_inner.png" id="19_oxapy"]
+[ext_resource type="Texture2D" uid="uid://dwplg7s7st6t1" path="res://graphics/brick/brick_corner_t_r_inner.png" id="20_ps004"]
+[ext_resource type="Texture2D" uid="uid://cb83x7yf6oh10" path="res://graphics/brick/brick_corner_b_l_inner.png" id="21_ohjwu"]
+[ext_resource type="Texture2D" uid="uid://3p8yesd11i13" path="res://graphics/brick/brick_corner_b_r_inner.png" id="22_fo6ox"]
+[ext_resource type="Texture2D" uid="uid://3tedte6v35do" path="res://graphics/brick/brick_center_inner.png" id="23_hlldw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cixri"]
 size = Vector2(32, 32)
@@ -28,7 +33,7 @@ resource_local_to_scene = true
 shader = ExtResource("2_nnb8e")
 shader_parameter/onoff = null
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1dce"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrc0r"]
 resource_local_to_scene = true
 shader = ExtResource("8_jop7g")
 shader_parameter/onoff = 0.0
@@ -55,7 +60,7 @@ texture = ExtResource("1_5yeay")
 script = ExtResource("5_qbrr7")
 
 [node name="AutoBlock" parent="." instance=ExtResource("7_pgbdx")]
-material = SubResource("ShaderMaterial_s1dce")
+material = SubResource("ShaderMaterial_rrc0r")
 texture = ExtResource("10_6a4jm")
 texture_top = ExtResource("8_6qolr")
 texture_right = ExtResource("9_4kyul")
@@ -67,6 +72,11 @@ texture_corner_b_l = ExtResource("14_pufqm")
 texture_corner_b_r = ExtResource("15_53xxv")
 texture_vertical = ExtResource("16_n0pnm")
 texture_center = ExtResource("18_ws7on")
+texture_corner_t_l_inner = ExtResource("19_oxapy")
+texture_corner_t_r_inner = ExtResource("20_ps004")
+texture_corner_b_l_inner = ExtResource("21_ohjwu")
+texture_corner_b_r_inner = ExtResource("22_fo6ox")
+texture_center_inner = ExtResource("23_hlldw")
 
 [node name="WallHardPartiallyCracked" type="Sprite2D" parent="."]
 visible = false
@@ -76,6 +86,7 @@ texture = ExtResource("6_67h44")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PackedVector2Array(-16, -16, -16, 16, 16, 16, 16, 1, 9, -4, 3, -5, 1, -8, -1, -11, -5, -15, -7, -15, -7, -16)
+disabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 visible = false
