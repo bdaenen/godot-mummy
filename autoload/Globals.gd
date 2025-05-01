@@ -33,7 +33,7 @@ var previous_player_skills: Dictionary = {
 }
 var player_skills: Dictionary = {
     "can_shoot": false,
-    "can_link": true,
+    "can_link": false,
     "can_sprint": false
 }
 var previous_world_coord: Vector2 = Vector2(-1, -1)

@@ -32,6 +32,7 @@ gdscript/warnings/integer_division=0
 window/size/viewport_height=640
 window/size/transparent=true
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="res://graphics/cursor.png"
 
 [editor_plugins]

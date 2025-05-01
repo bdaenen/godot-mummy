@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5yf4vi475vwe"]
+[gd_scene load_steps=7 format=3 uid="uid://c5yf4vi475vwe"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_rw2s2"]
 [ext_resource type="Script" path="res://scenes/levels/level_3_2.gd" id="2_0s1gs"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="3_760s4"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_yw5v8"]
 [ext_resource type="PackedScene" uid="uid://dg2js1xs77gi6" path="res://scenes/objects/block_next_level.tscn" id="4_nxud8"]
 [ext_resource type="PackedScene" uid="uid://dl34hgulyjkcv" path="res://scenes/objects/pyramid.tscn" id="5_bcoyg"]
@@ -9,6 +10,18 @@
 [node name="Level_3_2" instance=ExtResource("1_rw2s2")]
 process_mode = 0
 script = ExtResource("2_0s1gs")
+
+[node name="Torch" parent="Lights" index="0" instance=ExtResource("3_760s4")]
+position = Vector2(-368, -240)
+
+[node name="Torch2" parent="Lights" index="1" instance=ExtResource("3_760s4")]
+position = Vector2(368, -240)
+
+[node name="Torch3" parent="Lights" index="2" instance=ExtResource("3_760s4")]
+position = Vector2(-432, 48)
+
+[node name="Torch4" parent="Lights" index="3" instance=ExtResource("3_760s4")]
+position = Vector2(464, 48)
 
 [node name="_AnimatableBody2D_65" parent="Floor" index="0" instance=ExtResource("3_yw5v8")]
 position = Vector2(-560, 304)
@@ -224,5 +237,5 @@ position = Vector2(112, -304)
 position = Vector2(-496, 272)
 should_spawn = false
 
-[node name="Transition" parent="." index="13"]
+[node name="Transition" parent="." index="14"]
 light_mask = 1

@@ -1,13 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dinj6yh0ey6cl"]
+[gd_scene load_steps=8 format=3 uid="uid://dinj6yh0ey6cl"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_y5dy4"]
 [ext_resource type="Script" path="res://scenes/levels/level_2_1.gd" id="2_2auj6"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="3_dmn0e"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_xm7ds"]
+[ext_resource type="PackedScene" uid="uid://yivfsh54by03" path="res://scenes/objects/brazier.tscn" id="4_5djh4"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_kc8l2"]
 [ext_resource type="PackedScene" uid="uid://dnyr6gtaiaj6x" path="res://scenes/objects/chest_telekinesis.tscn" id="5_u16na"]
 
 [node name="Level_2_1" instance=ExtResource("1_y5dy4")]
 script = ExtResource("2_2auj6")
+
+[node name="Torch" parent="Lights" index="0" instance=ExtResource("3_dmn0e")]
+position = Vector2(304, -240)
+
+[node name="Torch2" parent="Lights" index="1" instance=ExtResource("3_dmn0e")]
+position = Vector2(-240, -240)
+
+[node name="Brazier" parent="Lights" index="2" instance=ExtResource("4_5djh4")]
+position = Vector2(208, 272)
 
 [node name="_AnimatableBody2D_84" parent="Floor" index="0" instance=ExtResource("3_xm7ds")]
 position = Vector2(-176, 272)

@@ -62,7 +62,6 @@ func _ready() -> void:
     
     if (Globals.warped_transition):
         input_disabled = true
-        Globals.warped_transition = false
         var tween: Tween = create_tween()
         tween.set_parallel(true)
         tween.set_ease(Tween.EASE_OUT)
@@ -74,6 +73,7 @@ func _ready() -> void:
         play_warp_reverse_sound()
         tween.connect('finished', func finish() -> void:
             input_disabled = false
+            Globals.warped_transition = false
         )
 
 func _physics_process(delta: float) -> void:

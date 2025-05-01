@@ -1,12 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://tp5d56c4i6yb"]
+[gd_scene load_steps=9 format=3 uid="uid://tp5d56c4i6yb"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_xk72m"]
 [ext_resource type="Script" path="res://scenes/levels/level_4_1.gd" id="2_5nbif"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_3oof1"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="3_7py2e"]
 [ext_resource type="PackedScene" uid="uid://c246ri0lvmq2o" path="res://scenes/objects/chest_key.tscn" id="4_12nf2"]
+[ext_resource type="Texture2D" uid="uid://cvjbflte8wtjb" path="res://graphics/objects/pillar_tall.png" id="6_g43mn"]
+[ext_resource type="Texture2D" uid="uid://q45do3olc3pi" path="res://graphics/objects/vase.png" id="7_wbm8l"]
+[ext_resource type="Texture2D" uid="uid://c5eypdgdeb3e" path="res://graphics/objects/pillar_broken.png" id="8_dljdp"]
 
 [node name="Level_4_1" instance=ExtResource("1_xk72m")]
 script = ExtResource("2_5nbif")
+
+[node name="Torch" parent="Lights" index="0" instance=ExtResource("3_7py2e")]
+position = Vector2(-400, -240)
+
+[node name="Torch2" parent="Lights" index="1" instance=ExtResource("3_7py2e")]
+position = Vector2(304, -240)
+
+[node name="Torch3" parent="Lights" index="2" instance=ExtResource("3_7py2e")]
+position = Vector2(-112, 208)
+
+[node name="Torch4" parent="Lights" index="3" instance=ExtResource("3_7py2e")]
+position = Vector2(144, 208)
 
 [node name="Brick" parent="Floor" index="0" instance=ExtResource("3_3oof1")]
 position = Vector2(-560, -304)
@@ -313,6 +329,18 @@ position = Vector2(560, 304)
 
 [node name="ChestKey" parent="Platforms" index="0" instance=ExtResource("4_12nf2")]
 position = Vector2(16, 272)
+
+[node name="PillarTall" type="Sprite2D" parent="Decorations" index="0"]
+position = Vector2(-48, 240)
+texture = ExtResource("6_g43mn")
+
+[node name="Vase" type="Sprite2D" parent="Decorations" index="1"]
+position = Vector2(-176, 256)
+texture = ExtResource("7_wbm8l")
+
+[node name="PillarBrokenWide" type="Sprite2D" parent="Decorations" index="2"]
+position = Vector2(80, 240)
+texture = ExtResource("8_dljdp")
 
 [node name="MinimapCanvas" parent="." index="12"]
 visible = true

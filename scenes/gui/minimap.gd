@@ -9,7 +9,7 @@ func _ready() -> void:
         if Globals.world_coord == coord:
             room.color = Color(0x00497dFF)
         elif Globals.has_visited_level(coord):
-            room.color = Color(0x86660cFF)
+            room.color = Color(0xd38236FF)
         else:
             room.color = Color(0x000000FF)
 

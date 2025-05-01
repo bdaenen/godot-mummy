@@ -1,14 +1,28 @@
-[gd_scene load_steps=6 format=3 uid="uid://chgcgbw1qifgk"]
+[gd_scene load_steps=8 format=3 uid="uid://chgcgbw1qifgk"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_qi5fu"]
 [ext_resource type="Script" path="res://scenes/levels/godot_level.gd" id="2_7otom"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="3_6tllm"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_oyido"]
 [ext_resource type="PackedScene" uid="uid://bwwuq1aly2w4r" path="res://scenes/objects/spikes.tscn" id="4_dhm16"]
+[ext_resource type="PackedScene" uid="uid://yivfsh54by03" path="res://scenes/objects/brazier.tscn" id="4_pqx0b"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="5_gu0i5"]
 
 [node name="Level_4_0" instance=ExtResource("1_qi5fu")]
 process_mode = 0
 script = ExtResource("2_7otom")
+
+[node name="Torch" parent="Lights" index="0" instance=ExtResource("3_6tllm")]
+position = Vector2(-400, -240)
+
+[node name="Torch2" parent="Lights" index="1" instance=ExtResource("3_6tllm")]
+position = Vector2(304, -240)
+
+[node name="Brazier" parent="Lights" index="2" instance=ExtResource("4_pqx0b")]
+position = Vector2(272, 272)
+
+[node name="Torch3" parent="Lights" index="3" instance=ExtResource("3_6tllm")]
+position = Vector2(-16, 176)
 
 [node name="Brick20" parent="Floor" index="0" instance=ExtResource("3_oyido")]
 position = Vector2(-560, 304)
@@ -332,7 +346,7 @@ position = Vector2(-336, 208)
 position = Vector2(16, 272)
 
 [node name="MovableBrick" parent="Platforms" index="3" instance=ExtResource("5_gu0i5")]
-position = Vector2(-304, 240)
+position = Vector2(-304, 176)
 
 [node name="MinimapCanvas" parent="." index="12"]
 visible = true

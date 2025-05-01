@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn7iorresd00i"]
+[gd_scene load_steps=7 format=3 uid="uid://dn7iorresd00i"]
 
 [ext_resource type="Texture2D" uid="uid://duwlcro6gk4g6" path="res://graphics/objects/portal.png" id="1_bfq8a"]
 [ext_resource type="Script" path="res://scenes/objects/warp.gd" id="1_iwu6g"]
 [ext_resource type="AudioStream" uid="uid://cg2sfq8gjig74" path="res://audio/warp.wav" id="3_2kgk3"]
+[ext_resource type="Texture2D" uid="uid://p74ebnemke8e" path="res://graphics/circle.png" id="4_28qyq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2w4s"]
 radius = 16.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_thnv2"]
+light_mode = 1
 
 [node name="Warp" type="Area2D" groups=["disable_on_player_spawn"]]
 collision_layer = 4
@@ -15,12 +19,23 @@ script = ExtResource("1_iwu6g")
 shape = SubResource("CircleShape2D_l2w4s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_thnv2")
 texture = ExtResource("1_bfq8a")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2kgk3")
 pitch_scale = 0.35
 bus = &"Sfx"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+light_mask = 7
+color = Color(1, 0.681128, 0.984986, 1)
+energy = 2.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.576471)
+shadow_item_cull_mask = 7
+texture = ExtResource("4_28qyq")
+texture_scale = 0.25
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

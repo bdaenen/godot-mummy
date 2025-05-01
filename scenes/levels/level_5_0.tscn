@@ -1,14 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://5q2de2e2qd4c"]
+[gd_scene load_steps=9 format=3 uid="uid://5q2de2e2qd4c"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_5q4a2"]
 [ext_resource type="Script" path="res://scenes/levels/level_0_0.gd" id="2_fxo87"]
+[ext_resource type="PackedScene" uid="uid://yivfsh54by03" path="res://scenes/objects/brazier.tscn" id="3_savgm"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_tb5i5"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="4_gxll6"]
 [ext_resource type="PackedScene" uid="uid://bwwuq1aly2w4r" path="res://scenes/objects/spikes.tscn" id="4_nieob"]
 [ext_resource type="PackedScene" uid="uid://d0n2sgl2bltw2" path="res://scenes/objects/powerup_sprint.tscn" id="5_jmcvq"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="6_kx7m8"]
 
 [node name="Level_5_0" instance=ExtResource("1_5q4a2")]
 script = ExtResource("2_fxo87")
+
+[node name="Brazier" parent="Lights" index="0" instance=ExtResource("3_savgm")]
+position = Vector2(464, 272)
+
+[node name="Torch" parent="Lights" index="1" instance=ExtResource("4_gxll6")]
+position = Vector2(112, -176)
+
+[node name="Torch2" parent="Lights" index="2" instance=ExtResource("4_gxll6")]
+position = Vector2(-368, -240)
+
+[node name="Torch3" parent="Lights" index="3" instance=ExtResource("4_gxll6")]
+position = Vector2(432, -240)
 
 [node name="_AnimatableBody2D_933" parent="Floor" index="0" instance=ExtResource("3_tb5i5")]
 position = Vector2(-560, 304)
@@ -328,6 +342,9 @@ position = Vector2(111, -112)
 [node name="_AnimatableBody2D_881" parent="Platforms" index="1" instance=ExtResource("3_tb5i5")]
 position = Vector2(48, -80)
 
+[node name="_AnimatableBody2D_881" parent="Platforms/_AnimatableBody2D_881" index="7" instance=ExtResource("3_tb5i5")]
+position = Vector2(128, 0)
+
 [node name="_AnimatableBody2D_882" parent="Platforms" index="2" instance=ExtResource("3_tb5i5")]
 position = Vector2(80, -80)
 
@@ -403,6 +420,42 @@ position = Vector2(80, 272)
 [node name="_AnimatableBody2D_931" parent="Platforms" index="26" instance=ExtResource("3_tb5i5")]
 position = Vector2(112, 272)
 
+[node name="_AnimatableBody2D_888" parent="Platforms/_AnimatableBody2D_931" index="7" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -320)
+
+[node name="_AnimatableBody2D_892" parent="Platforms/_AnimatableBody2D_931" index="8" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -288)
+
+[node name="_AnimatableBody2D_896" parent="Platforms/_AnimatableBody2D_931" index="9" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -256)
+
+[node name="_AnimatableBody2D_900" parent="Platforms/_AnimatableBody2D_931" index="10" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -224)
+
+[node name="_AnimatableBody2D_904" parent="Platforms/_AnimatableBody2D_931" index="11" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -192)
+
+[node name="_AnimatableBody2D_908" parent="Platforms/_AnimatableBody2D_931" index="12" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -160)
+
+[node name="_AnimatableBody2D_912" parent="Platforms/_AnimatableBody2D_931" index="13" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -128)
+
+[node name="_AnimatableBody2D_916" parent="Platforms/_AnimatableBody2D_931" index="14" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -96)
+
+[node name="_AnimatableBody2D_921" parent="Platforms/_AnimatableBody2D_931" index="15" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -64)
+
+[node name="_AnimatableBody2D_927" parent="Platforms/_AnimatableBody2D_931" index="16" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, -32)
+
+[node name="_AnimatableBody2D_931" parent="Platforms/_AnimatableBody2D_931" index="17" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, 0)
+
+[node name="_AnimatableBody2D_947" parent="Platforms/_AnimatableBody2D_931" index="18" instance=ExtResource("3_tb5i5")]
+position = Vector2(32, 32)
+
 [node name="_AnimatableBody2D_946" parent="Platforms" index="27" instance=ExtResource("3_tb5i5")]
 position = Vector2(80, 304)
 
@@ -427,7 +480,7 @@ position = Vector2(-240, 240)
 [node name="_AnimatableBody2D_932" parent="Platforms" index="34" instance=ExtResource("6_kx7m8")]
 position = Vector2(-240, 272)
 
-[node name="Transition" parent="." index="12"]
+[node name="Transition" parent="." index="14"]
 light_mask = 1
 
 [connection signal="cleared_links" from="Linker" to="." method="_on_linker_cleared_links"]

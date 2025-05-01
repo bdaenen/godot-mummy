@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwf41i60o541"]
+[gd_scene load_steps=8 format=3 uid="uid://dwf41i60o541"]
 
 [ext_resource type="PackedScene" uid="uid://blykkvqfss58k" path="res://scenes/levels/legacy_level.tscn" id="1_e77df"]
 [ext_resource type="Script" path="res://scenes/levels/level_2_2.gd" id="2_0lq32"]
 [ext_resource type="PackedScene" uid="uid://bptqxky1x4373" path="res://scenes/objects/brick.tscn" id="3_6r6ck"]
+[ext_resource type="PackedScene" uid="uid://d25sw6pet2vii" path="res://scenes/objects/torch.tscn" id="3_dfvvv"]
 [ext_resource type="PackedScene" uid="uid://s4kn4gpivjwh" path="res://scenes/objects/movable_brick.tscn" id="4_yqe3i"]
 [ext_resource type="PackedScene" uid="uid://br34fvuyehy22" path="res://scenes/objects/filter_brick.tscn" id="5_pdiin"]
 [ext_resource type="PackedScene" uid="uid://bdvkd68lu1inl" path="res://scenes/objects/switch.tscn" id="6_dn3vw"]
@@ -10,6 +11,18 @@
 [node name="Level_2_2" instance=ExtResource("1_e77df")]
 process_mode = 0
 script = ExtResource("2_0lq32")
+
+[node name="Torch" parent="Lights" index="0" instance=ExtResource("3_dfvvv")]
+position = Vector2(304, -240)
+
+[node name="Torch2" parent="Lights" index="1" instance=ExtResource("3_dfvvv")]
+position = Vector2(-240, -240)
+
+[node name="Torch3" parent="Lights" index="2" instance=ExtResource("3_dfvvv")]
+position = Vector2(432, 112)
+
+[node name="Torch4" parent="Lights" index="3" instance=ExtResource("3_dfvvv")]
+position = Vector2(-304, 112)
 
 [node name="_AnimatableBody2D_146" parent="Floor" index="0" instance=ExtResource("3_6r6ck")]
 position = Vector2(-560, 304)
@@ -551,7 +564,7 @@ position = Vector2(144, 272)
 [node name="_AnimatableBody2D_145" parent="Platforms" index="75" instance=ExtResource("4_yqe3i")]
 position = Vector2(176, 272)
 
-[node name="Transition" parent="." index="13"]
+[node name="Transition" parent="." index="14"]
 light_mask = 1
 
 [connection signal="switch_press" from="Platforms/Switch" to="." method="_on_switch_switch_press"]

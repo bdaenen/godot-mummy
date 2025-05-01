@@ -33,7 +33,7 @@ resource_local_to_scene = true
 shader = ExtResource("2_nnb8e")
 shader_parameter/onoff = null
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrc0r"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eu4o8"]
 resource_local_to_scene = true
 shader = ExtResource("8_jop7g")
 shader_parameter/onoff = 0.0
@@ -60,7 +60,7 @@ texture = ExtResource("1_5yeay")
 script = ExtResource("5_qbrr7")
 
 [node name="AutoBlock" parent="." instance=ExtResource("7_pgbdx")]
-material = SubResource("ShaderMaterial_rrc0r")
+material = SubResource("ShaderMaterial_eu4o8")
 texture = ExtResource("10_6a4jm")
 texture_top = ExtResource("8_6qolr")
 texture_right = ExtResource("9_4kyul")
