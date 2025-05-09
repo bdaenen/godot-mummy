@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://c5tcsxn61vwjf"]
 
 [ext_resource type="Script" path="res://scenes/base_settings_menu.gd" id="1_cud08"]
-[ext_resource type="Texture2D" uid="uid://dvjffdva57c6q" path="res://graphics/menu.png" id="2_htpga"]
+[ext_resource type="Texture2D" uid="uid://c78ieh1ji5em4" path="res://graphics/splash/intro.png" id="2_pp6ms"]
 
 [node name="BaseSettingsMenu" type="Node2D"]
 script = ExtResource("1_cud08")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(576.81, 320)
-scale = Vector2(1.63, 1.61)
-texture = ExtResource("2_htpga")
+position = Vector2(604, 336)
+scale = Vector2(1.189, 1.174)
+texture = ExtResource("2_pp6ms")
 offset = Vector2(2.08165e-12, 2.08165e-12)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
